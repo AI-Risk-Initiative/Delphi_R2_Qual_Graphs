@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.1 Compromise of privacy by obtaining, leaking or correctly inferring sensitive information - Responsibility - Part 1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8px;
+            flex: 1;
+            min-width: 200px;
+            overflow-wrap: break-word;
+            word-break: break-word;        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
+            color: #000000;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .legend {
+            text-align: center;
+            font-size: 12px;
+            color: #888888;
+            font-style: italic;
+            margin-bottom: 12px;
+            padding: 8px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .selection-title {
+
+
+            text-align: center;
+
+
+            font-size: 14px;
+
+
+            font-weight: 600;
+
+
+            color: #666666;
+
+
+            margin-bottom: 10px;
+
+
+        }
+
+
+
+        .nav-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 15px;
+            justify-content: center;
+        }
+
+        .nav-pill {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 25px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-family: 'Figtree', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            color: #000000;
+        }
+
+        .nav-pill:hover {
+            background: #e9ecef;
+            border-color: #000000;
+        }
+
+        .nav-pill.active {
+            background: #000000;
+            color: white;
+            border-color: #000000;
+        }
+
+        .actor-section {
+            display: none;
+        }
+
+        .actor-section.active {
+            display: block;
+        }
+
+        .content-grid {
+            display: flex;
+            width: 100%;
+            gap: 4px;
+        }
+
+        .content-column {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 8px;
+            flex: 1;
+            min-width: 200px;
+            overflow-wrap: break-word;
+            word-break: break-word;        }
+
+        .criteria-header {
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid;
+        }
+
+        .criteria-header.higher {
+            color: #FF0000;
+            border-bottom-color: #FF0000;
+        }
+
+        .criteria-header.lower {
+            color: #2E5C8A;
+            border-bottom-color: #2E5C8A;
+        }
+
+        .summary-section {
+            margin-bottom: 20px;
+        }
+
+        .summary-text {
+            margin-bottom: 15px;
+            font-weight: 500;
+            color: #000000;
+            font-size: 15px;
+        }
+
+        .quote-details {
+            margin-top: 15px;
+        }
+
+        .quote-toggle {
+            cursor: pointer;
+            color: #000000;
+            font-weight: 500;
+            font-size: 10px;
+            padding: 8px 0;
+            border-bottom: 1px dotted #000000;
+            display: inline-block;
+        }
+
+        .quote-toggle:hover {
+            color: #333333;
+        }
+
+        .quote-list {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .quote-list li {
+            margin-bottom: 12px;
+            font-size: 10px;
+            line-height: 1.3;
+            color: #000000;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                gap: 4px;
+            }
+
+            .selection-title {
+
+
+                text-align: center;
+
+
+                font-size: 14px;
+
+
+                font-weight: 600;
+
+
+                color: #666666;
+
+
+                margin-bottom: 10px;
+
+
+            }
+
+
+
+            .nav-pills {
+                justify-content: flex-start;
+            }
+
+            .nav-pill {
+                font-size: 10px;
+                padding: 4px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>2.1 Compromise of privacy by obtaining, leaking or correctly inferring sensitive information - Responsibility - Part 1</h1>
+
+
+        <div class="selection-title">Select an actor:</div>
+                <div class="nav-pills">
+            <button class="nav-pill active" data-target="AIDeveloperGeneralpurposeAI">
+                AI Developer (General-purpose AI)
+            </button>
+            <button class="nav-pill" data-target="AIDeployer">
+                AI Deployer
+            </button>
+            <button class="nav-pill" data-target="AIGovernanceActor">
+                AI Governance Actor
+            </button>
+            <button class="nav-pill" data-target="AIUser">
+                AI User
+            </button>
+        </div>
+
+                <div class="content-sections">
+<div class="actor-section active" id="AIDeveloperGeneralpurposeAI">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [editor's note: due to the volume of expert comments, this AI-generated summary may be insufficient/misleading]. Multiple respondents emphasized primary-to-high responsibility because developers bear primary responsibility for implementing privacy protections, create foundational models that can learn and reproduce sensitive information, and have full control over architecture and training data. They exercise substantial control over collection, curation, and preprocessing of training data that frequently contains PII or sensitive information, with direct influence during model training to prevent memorization and unintended reproduction. They establish architectural and data-management foundations that determine whether privacy risks materialize, with control over model design, pre-training data, and embedding privacy-by-design principles. They must minimize memorization/regurgitation through filtering/dedup/differential privacy, and should indicate data provenance so deployers and governance can evaluate regulatory requirements.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (5)</summary>
+                <ul class="quote-list">
+                    <li>"Actors with the greatest causal influence and operational capacity (such as general-purpose AI developers and deployers) hold the highest degree of responsibility, particularly when the harm, such as privacy compromise, is foreseeable and preventable through design or policy."</li>                    <li>"Developers exercise substantial control over the collection, curation, and preprocessing of training data, which frequently contain personally identifiable or sensitive information. Their direct influence during model training and parameter tuning also gives them unique leverage to prevent the memorization and unintended reproduction of personal data within outputs."</li>                    <li>"Governance specifies how AI may be deployed.  Development may have different requirements for different data sovereignty and provenance.  Model developers should indicate the provenance of the data in their models, so that deployers and governance can evaluate for their regulatory requirements."</li>                    <li>"AI Developers bear primary responsibility for implementing privacy protections."</li>                    <li>"‚Ä¢	AI Dev (General-purpose) - Highly responsible. They must minimize memorization/regurgitation (filtering/dedup/DP), ship signed/attested artifacts, and publish privacy evals-but they don't control live user data."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Several argued developers have secondary responsibility because many decisions really hinge on deployers and users regarding privacy implications—developers are more like data processors while deployers are data controllers. General-purpose providers cannot possibly survey every system for privacy issues and are responsible for mitigating training data leakage, but other leakage (like inputs/prompts with sensitive info) may come through other layers. They don't control live user data or what deployers send, how long it's kept, how it's combined with other data, or what's promised to users—responsibility should track control over exposure.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"GAPI providers themselves cannot possibly survey every system for privacy issues. While they are responsible for mitigating leakage of training data, a lot of other leakage, such as inputs/prompts containing sensitive info, may come through other layers."</li>                    <li>"I think a lot of the decisions really hinge on the AI deployer and the person using the system as to what the privacy implications are, rather than the developer of a GPAI system. They are the ones who are really deciding how data is used (or in GDPR terms, they are the data controller, whereas the GPAI model provider is more like a data processor)"</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<div class="actor-section" id="AIDeployer">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Multiple respondents emphasized primary-to-high responsibility because deployers make critical decisions on how and where AI is used, are responsible for ensuring privacy safeguards in real-world deployment, and share high responsibility for enforcement and oversight. Decisions about privacy implications really hinge on deployers—they're the data controllers deciding how data is used. They determine purposes and means of AI use for end users with direct, ongoing relationships, designing and operating end-to-end data flows including collection, preprocessing, inference, logging, storage, and deletion. Deployers run production prompts, files, RAG, logging, plugins, and access controls—most leaks are configuration/integration/telemetry problems, so fixes live here. They have the highest responsibility as they control how privacy controls are implemented, conducting Privacy Impact Assessments and implementing technical controls. Although it's tempting to place primary responsibility on general-purpose AI, deployment is where relevant tradeoffs and decisions are made for specific use-cases.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (7)</summary>
+                <ul class="quote-list">
+                    <li>"Actors with the greatest causal influence and operational capacity (such as general-purpose AI developers and deployers) hold the highest degree of responsibility, particularly when the harm, such as privacy compromise, is foreseeable and preventable through design or policy."</li>                    <li>"Why the Deployer is primarily responsible (from my deployer-side experience):
+The deployer determines the purposes and means of AI use for end users and is the only actor with a direct, ongoing relationship to those users and their data. In practice, the deployer designs and operates the end-to-end data flow (collection ‚Üí preprocessing/redaction ‚Üí inference/RAG/fine-tuning ‚Üí logging/telemetry ‚Üí storage/deletion) and selects, configures, and contracts the upstream vendors (models and infrastructure). Because the deployer creates the main exposure surface and controls the levers that reduce it, the deployer is best positioned-and obligated-to prevent privacy compromise.
+
+Control points the Deployer owns:
+	‚Ä¢	Chooses model vendors and terms (e.g., no-training/zero-retention modes), drafts DPAs, and enforces data-handling obligations.
+	‚Ä¢	Sets logging/retention, prompt and output redaction/PII filtering, access controls/RBAC, encryption, and tenant scoping for vector databases and RAG indexes.
+	‚Ä¢	Defines lawful bases, consent/notice, data minimization, DSAR/erasure workflows, and incident response-commitments made to our users.
+	‚Ä¢	Trains users and governs shadow/BYO-AI, reducing leakage from copy/paste and uncontrolled tools.
+
+Why Model/Infra are secondary:
+Model and infrastructure providers are typically upstream processors with limited context about user purpose, consent, or data classifications. They must supply safe defaults and technical safeguards, but they do not control what we send, how long we keep it, how we combine it with other corpora, or what we promise to users. The deployer mediates those choices and owns the trust relationship-and resulting regulatory and contractual accountability-with end users.
+
+Bottom line: Responsibility should track control over exposure and privity with the data subject. On both counts, the deployer is primary; model and infrastructure actors share secondary/derivative duties via the capabilities and constraints they provide."</li>                    <li>"Deployers and Governance Actors share high responsibility for enforcement and oversight."</li>                    <li>"Although I think it's tempting to place primary responsibility on GPAI, I don't think that makes practical sense. AI deployment is where relevant tradeoffs &amp; decisions will need to be made that apply to specific use-cases. That doesn't mean GPAI is off the hook -- but what a health application vs a music recommender vs fraud detection system vs ... etc. call for are vastly different."</li>                    <li>"Responsibility should follow who actually controls the data plane and can fix issues fast.
+‚Ä¢	AI Deployer -  Primarily responsible. They run prod prompts/files/RAG, logging, plugins, and access controls. Most leaks are config/integration/telemetry problems, so the fix lives here."</li>                    <li>"I think a lot of the decisions really hinge on the AI deployer and the person using the system as to what the privacy implications are, rather than the developer of a GPAI system. They are the ones who are really deciding how data is used (or in GDPR terms, they are the data controller, whereas the GPAI model provider is more like a data processor)"</li>                    <li>"Increased assessment of AI developer and AI Governance actor responsibilities. However, maintain that it is deployers who have the highest level of responsibility, as they have control of how privacy controls are implemented."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<div class="actor-section" id="AIGovernanceActor">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Multiple respondents emphasized high responsibility because governance actors regulate and enforce standards with public duty to ensure responsible AI use and protect privacy. They share high responsibility for enforcement and oversight, establishing rules, regulations, and auditing frameworks that hold other actors accountable. Their responsibility is systemic—ensuring the ecosystem is incentivized to prioritize privacy protection and imposing penalties for non-compliance. They're responsible for making privacy requirements non-optional (minimization, retention limits, telemetry controls, audits, breach duties) and should be highly responsible as they set rules for Terms & Conditions. They specify how AI may be deployed and should evaluate data sovereignty and provenance for regulatory requirements.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (6)</summary>
+                <ul class="quote-list">
+                    <li>"Governance actors are highly responsible due to their role in regulation and oversight."</li>                    <li>"For the majority of AI Users, they have been primed by the current information ecosystem to skip Terms &amp; Conditions and have no alternatives to use a specific type of service unless they accept intrusive service agreements. Therefore, I think AI Users are minimally responsible, while increasing the responsibility of AI Governance Actors, those in charge of setting the rules for Terms &amp; Conditions and how they're presented, to Highly Responsible."</li>                    <li>"Governance specifies how AI may be deployed.  Development may have different requirements for different data sovereignty and provenance.  Model developers should indicate the provenance of the data in their models, so that deployers and governance can evaluate for their regulatory requirements."</li>                    <li>"I made Governance higher this time since i am thinking they have the responsibility to enforce the rules on the developers/deployers even if they are not hands on the deck."</li>                    <li>"Deployers and Governance Actors share high responsibility for enforcement and oversight."</li>                    <li>"Responsibility should follow who actually controls the data plane and can fix issues fast.
+
+‚Ä¢	AI Governance Actor - Highly responsible. Make all of the above non-optional (minimization, retention limits, telemetry controls, audits, breach duties)."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "The Governance actor may be responsible for PREVENTING this harm, but they are not responsible for causing this harm, unless out of negligence."</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"The Governance actor may be responsible for PREVENTING this harm, but they are not responsible for causing this harm, unless out of negligence."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<div class="actor-section" id="AIUser">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "AI User - Moderately responsible. Don't paste secrets, use approved channels-but they can't change model internals or platform telemetry."</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"‚Ä¢        AI User - Moderately responsible. Don't paste secrets, use approved channels-but they can't change model internals or platform telemetry."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Multiple respondents emphasized minimal-to-no responsibility because users have limited control over how AI processes data, with low influence and capacity despite medium obligation. They're primarily subjects of privacy protection rather than actors who can meaningfully address systemic privacy risks. Users have been primed by the current information ecosystem to skip Terms & Conditions and have no alternatives to use specific services unless they accept intrusive agreements. Users can't change model internals or platform telemetry, making them minimally responsible despite need for responsible usage.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (3)</summary>
+                <ul class="quote-list">
+                    <li>"For the majority of AI Users, they have been primed by the current information ecosystem to skip Terms &amp; Conditions and have no alternatives to use a specific type of service unless they accept intrusive service agreements. Therefore, I think AI Users are minimally responsible, while increasing the responsibility of AI Governance Actors, those in charge of setting the rules for Terms &amp; Conditions and how they're presented, to Highly Responsible."</li>                    <li>"Users have minimal responsibility as they are primarily subjects of privacy protection rather than actors who can meaningfully address systemic privacy risks."</li>                    <li>"‚Ä¢	AI User - Moderately responsible. Don't paste secrets, use approved channels-but they can't change model internals or platform telemetry."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIDeveloperSpecializedAI">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "Responsibility should follow who actually controls the data plane and can fix issues fast.
+‚Ä¢        AI Dev (Specialized) - Primarily responsible. Domain models (health/finance/HR) ingest the spiciest data and are often deployed by the same team; privacy-by-design and release gating sit with them."</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"Responsibility should follow who actually controls the data plane and can fix issues fast.
+‚Ä¢        AI Dev (Specialized) - Primarily responsible. Domain models (health/finance/HR) ingest the spiciest data and are often deployed by the same team; privacy-by-design and release gating sit with them."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIDeployer">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Multiple respondents emphasized primary-to-high responsibility because deployers make critical decisions on how and where AI is used, are responsible for ensuring privacy safeguards in real-world deployment, and share high responsibility for enforcement and oversight. Decisions about privacy implications really hinge on deployers—they're the data controllers deciding how data is used. They determine purposes and means of AI use for end users with direct, ongoing relationships, designing and operating end-to-end data flows including collection, preprocessing, inference, logging, storage, and deletion. Deployers run production prompts, files, RAG, logging, plugins, and access controls—most leaks are configuration/integration/telemetry problems, so fixes live here. They have the highest responsibility as they control how privacy controls are implemented, conducting Privacy Impact Assessments and implementing technical controls. Although it's tempting to place primary responsibility on general-purpose AI, deployment is where relevant tradeoffs and decisions are made for specific use-cases.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (7)</summary>
+                <ul class="quote-list">
+                    <li>"Actors with the greatest causal influence and operational capacity (such as general-purpose AI developers and deployers) hold the highest degree of responsibility, particularly when the harm, such as privacy compromise, is foreseeable and preventable through design or policy."</li>                    <li>"Why the Deployer is primarily responsible (from my deployer-side experience):
+The deployer determines the purposes and means of AI use for end users and is the only actor with a direct, ongoing relationship to those users and their data. In practice, the deployer designs and operates the end-to-end data flow (collection ‚Üí preprocessing/redaction ‚Üí inference/RAG/fine-tuning ‚Üí logging/telemetry ‚Üí storage/deletion) and selects, configures, and contracts the upstream vendors (models and infrastructure). Because the deployer creates the main exposure surface and controls the levers that reduce it, the deployer is best positioned-and obligated-to prevent privacy compromise.
+
+Control points the Deployer owns:
+	‚Ä¢	Chooses model vendors and terms (e.g., no-training/zero-retention modes), drafts DPAs, and enforces data-handling obligations.
+	‚Ä¢	Sets logging/retention, prompt and output redaction/PII filtering, access controls/RBAC, encryption, and tenant scoping for vector databases and RAG indexes.
+	‚Ä¢	Defines lawful bases, consent/notice, data minimization, DSAR/erasure workflows, and incident response-commitments made to our users.
+	‚Ä¢	Trains users and governs shadow/BYO-AI, reducing leakage from copy/paste and uncontrolled tools.
+
+Why Model/Infra are secondary:
+Model and infrastructure providers are typically upstream processors with limited context about user purpose, consent, or data classifications. They must supply safe defaults and technical safeguards, but they do not control what we send, how long we keep it, how we combine it with other corpora, or what we promise to users. The deployer mediates those choices and owns the trust relationship-and resulting regulatory and contractual accountability-with end users.
+
+Bottom line: Responsibility should track control over exposure and privity with the data subject. On both counts, the deployer is primary; model and infrastructure actors share secondary/derivative duties via the capabilities and constraints they provide."</li>                    <li>"Deployers and Governance Actors share high responsibility for enforcement and oversight."</li>                    <li>"Although I think it's tempting to place primary responsibility on GPAI, I don't think that makes practical sense. AI deployment is where relevant tradeoffs &amp; decisions will need to be made that apply to specific use-cases. That doesn't mean GPAI is off the hook -- but what a health application vs a music recommender vs fraud detection system vs ... etc. call for are vastly different."</li>                    <li>"Responsibility should follow who actually controls the data plane and can fix issues fast.
+‚Ä¢	AI Deployer -  Primarily responsible. They run prod prompts/files/RAG, logging, plugins, and access controls. Most leaks are config/integration/telemetry problems, so the fix lives here."</li>                    <li>"I think a lot of the decisions really hinge on the AI deployer and the person using the system as to what the privacy implications are, rather than the developer of a GPAI system. They are the ones who are really deciding how data is used (or in GDPR terms, they are the data controller, whereas the GPAI model provider is more like a data processor)"</li>                    <li>"Increased assessment of AI developer and AI Governance actor responsibilities. However, maintain that it is deployers who have the highest level of responsibility, as they have control of how privacy controls are implemented."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIInfrastructureProvider">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert mentioned: "Multi-tenant isolation, snapshots, observability pipelines, vector stores, and KMS are powerful aggregation points; secure defaults and clear shared-responsibility matter.""</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"‚Ä¢	AI Infrastructure - Highly responsible. Multi-tenant isolation, snapshots, observability pipelines, vector stores, and KMS are powerful aggregation points; secure defaults and clear shared-responsibility matter."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Multiple respondents argued minimal responsibility because infrastructure providers cannot control for privacy risks and have minimal responsibility for data leaks. They don't obtain training data, develop models, train models, or deploy to end users—they only provide underlying hardware and infrastructure. They're primarily responsible for ensuring resources are properly protected and don't inadvertently leak customer data. As upstream processors with limited context about user purpose, consent, or data classifications, they don't control what's sent, how long it's kept, or what's promised to users—responsibility should track control over exposure.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (3)</summary>
+                <ul class="quote-list">
+                    <li>"Why Model/Infra are secondary:
+Model and infrastructure providers are typically upstream processors with limited context about user purpose, consent, or data classifications. They must supply safe defaults and technical safeguards, but they do not control what we send, how long we keep it, how we combine it with other corpora, or what we promise to users. The deployer mediates those choices and owns the trust relationship-and resulting regulatory and contractual accountability-with end users.
+
+Bottom line: Responsibility should track control over exposure and privity with the data subject. On both counts, the deployer is primary; model and infrastructure actors share secondary/derivative duties via the capabilities and constraints they provide."</li>                    <li>"AI infrastructure providers cannot control for privacy risks."</li>                    <li>"AI Infrastructure providers have a minimal responsibility for data leaks etc.  They are not the ones obtaining training data, developing the models, training the models (they provide the underlying hardware and infrastructure to manage it) or deploying the models to end users (again, only underlying infrastructure).  They are primarily responsible for ensuring that their resources are properly protected and do not inadvertently leak customer data."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIUser">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "AI User - Moderately responsible. Don't paste secrets, use approved channels-but they can't change model internals or platform telemetry."</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"‚Ä¢        AI User - Moderately responsible. Don't paste secrets, use approved channels-but they can't change model internals or platform telemetry."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Multiple respondents emphasized minimal-to-no responsibility because users have limited control over how AI processes data, with low influence and capacity despite medium obligation. They're primarily subjects of privacy protection rather than actors who can meaningfully address systemic privacy risks. Users have been primed by the current information ecosystem to skip Terms & Conditions and have no alternatives to use specific services unless they accept intrusive agreements. Users can't change model internals or platform telemetry, making them minimally responsible despite need for responsible usage.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (3)</summary>
+                <ul class="quote-list">
+                    <li>"For the majority of AI Users, they have been primed by the current information ecosystem to skip Terms &amp; Conditions and have no alternatives to use a specific type of service unless they accept intrusive service agreements. Therefore, I think AI Users are minimally responsible, while increasing the responsibility of AI Governance Actors, those in charge of setting the rules for Terms &amp; Conditions and how they're presented, to Highly Responsible."</li>                    <li>"Users have minimal responsibility as they are primarily subjects of privacy protection rather than actors who can meaningfully address systemic privacy risks."</li>                    <li>"‚Ä¢	AI User - Moderately responsible. Don't paste secrets, use approved channels-but they can't change model internals or platform telemetry."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AffectedStakeholder">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "Two comments.  1) I did not change my choice for Affected Stakeholder to Not at all Responsible from Minimally Responsible because Affected Stakeholders do have some control over how their data is used when accessing a website's privacy settings, e.g., Marketing; if not switched off, will disclose PII to one-to-many third parties.  "</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"Two comments.  1) I did not change my choice for Affected Stakeholder to Not at all Responsible from Minimally Responsible because Affected Stakeholders do have some control over how their data is used when accessing a website's privacy settings, e.g., Marketing; if not switched off, will disclose PII to one-to-many third parties."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Multiple respondents emphasized no-to-minimal responsibility because affected stakeholders are impacted by privacy risks but don't contribute to or control AI systems, holding no responsibility in this context. They lack both agency and systemic leverage to mitigate risk. They're data subjects with duty sitting upstream. One lowered ratings upon reflection that affected stakeholders have limited ability to address and prevent privacy violations, even though malicious actors might circumvent safeguards.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (3)</summary>
+                <ul class="quote-list">
+                    <li>"affected stakeholders lack both the agency and systemic leverage to mitigate risk, and assigning responsibility to them risks reinforcing harm by misplacing accountability."</li>                    <li>"Lowered ratings for Affected Stakeholders upon reflection that they have limited ability to address and prevent privacy violations. Malicious actor might have the ability to circumvent safeguards and guardrails which is why I rated Affected Stakeholders as Moderately Responsible in Round 1."</li>                    <li>"Responsibility should follow who actually controls the data plane and can fix issues fast.
+‚Ä¢        Affected Stakeholder - Not responsible. They're the data subjects; the duty sits upstream."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIGovernanceActor">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Multiple respondents emphasized high responsibility because governance actors regulate and enforce standards with public duty to ensure responsible AI use and protect privacy. They share high responsibility for enforcement and oversight, establishing rules, regulations, and auditing frameworks that hold other actors accountable. Their responsibility is systemic—ensuring the ecosystem is incentivized to prioritize privacy protection and imposing penalties for non-compliance. They're responsible for making privacy requirements non-optional (minimization, retention limits, telemetry controls, audits, breach duties) and should be highly responsible as they set rules for Terms & Conditions. They specify how AI may be deployed and should evaluate data sovereignty and provenance for regulatory requirements.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (6)</summary>
+                <ul class="quote-list">
+                    <li>"Governance actors are highly responsible due to their role in regulation and oversight."</li>                    <li>"For the majority of AI Users, they have been primed by the current information ecosystem to skip Terms &amp; Conditions and have no alternatives to use a specific type of service unless they accept intrusive service agreements. Therefore, I think AI Users are minimally responsible, while increasing the responsibility of AI Governance Actors, those in charge of setting the rules for Terms &amp; Conditions and how they're presented, to Highly Responsible."</li>                    <li>"Governance specifies how AI may be deployed.  Development may have different requirements for different data sovereignty and provenance.  Model developers should indicate the provenance of the data in their models, so that deployers and governance can evaluate for their regulatory requirements."</li>                    <li>"I made Governance higher this time since i am thinking they have the responsibility to enforce the rules on the developers/deployers even if they are not hands on the deck."</li>                    <li>"Deployers and Governance Actors share high responsibility for enforcement and oversight."</li>                    <li>"Responsibility should follow who actually controls the data plane and can fix issues fast.
+
+‚Ä¢	AI Governance Actor - Highly responsible. Make all of the above non-optional (minimization, retention limits, telemetry controls, audits, breach duties)."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "The Governance actor may be responsible for PREVENTING this harm, but they are not responsible for causing this harm, unless out of negligence."</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"The Governance actor may be responsible for PREVENTING this harm, but they are not responsible for causing this harm, unless out of negligence."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pills = document.querySelectorAll('.nav-pill');
+            const sections = document.querySelectorAll('.actor-section');
+
+            pills.forEach(pill => {
+                pill.addEventListener('click', function() {
+                    // Remove active class from all pills and sections
+                    pills.forEach(p => p.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('active'));
+
+                    // Add active class to clicked pill
+                    this.classList.add('active');
+
+                    // Show corresponding section
+                    const targetId = this.getAttribute('data-target');
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.3 Unequal performance across groups - Responsibility - Part 2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8px;
+            flex: 1;
+            min-width: 200px;
+            overflow-wrap: break-word;
+            word-break: break-word;        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
+            color: #000000;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .legend {
+            text-align: center;
+            font-size: 12px;
+            color: #888888;
+            font-style: italic;
+            margin-bottom: 12px;
+            padding: 8px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .selection-title {
+
+
+            text-align: center;
+
+
+            font-size: 14px;
+
+
+            font-weight: 600;
+
+
+            color: #666666;
+
+
+            margin-bottom: 10px;
+
+
+        }
+
+
+
+        .nav-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 15px;
+            justify-content: center;
+        }
+
+        .nav-pill {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 25px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-family: 'Figtree', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            color: #000000;
+        }
+
+        .nav-pill:hover {
+            background: #e9ecef;
+            border-color: #000000;
+        }
+
+        .nav-pill.active {
+            background: #000000;
+            color: white;
+            border-color: #000000;
+        }
+
+        .actor-section {
+            display: none;
+        }
+
+        .actor-section.active {
+            display: block;
+        }
+
+        .content-grid {
+            display: flex;
+            width: 100%;
+            gap: 4px;
+        }
+
+        .content-column {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 8px;
+            flex: 1;
+            min-width: 200px;
+            overflow-wrap: break-word;
+            word-break: break-word;        }
+
+        .criteria-header {
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid;
+        }
+
+        .criteria-header.higher {
+            color: #FF0000;
+            border-bottom-color: #FF0000;
+        }
+
+        .criteria-header.lower {
+            color: #2E5C8A;
+            border-bottom-color: #2E5C8A;
+        }
+
+        .summary-section {
+            margin-bottom: 20px;
+        }
+
+        .summary-text {
+            margin-bottom: 15px;
+            font-weight: 500;
+            color: #000000;
+            font-size: 15px;
+        }
+
+        .quote-details {
+            margin-top: 15px;
+        }
+
+        .quote-toggle {
+            cursor: pointer;
+            color: #000000;
+            font-weight: 500;
+            font-size: 10px;
+            padding: 8px 0;
+            border-bottom: 1px dotted #000000;
+            display: inline-block;
+        }
+
+        .quote-toggle:hover {
+            color: #333333;
+        }
+
+        .quote-list {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .quote-list li {
+            margin-bottom: 12px;
+            font-size: 10px;
+            line-height: 1.3;
+            color: #000000;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                gap: 4px;
+            }
+
+            .selection-title {
+
+
+                text-align: center;
+
+
+                font-size: 14px;
+
+
+                font-weight: 600;
+
+
+                color: #666666;
+
+
+                margin-bottom: 10px;
+
+
+            }
+
+
+
+            .nav-pills {
+                justify-content: flex-start;
+            }
+
+            .nav-pill {
+                font-size: 10px;
+                padding: 4px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>1.3 Unequal performance across groups - Responsibility - Part 2</h1>
+
+
+        <div class="selection-title">Select an actor:</div>
+                <div class="nav-pills">
+            <button class="nav-pill active" data-target="AIDeveloperSpecializedAI">
+                AI Developer (Specialized AI)
+            </button>
+            <button class="nav-pill" data-target="AIInfrastructureProvider">
+                AI Infrastructure Provider
+            </button>
+            <button class="nav-pill" data-target="AffectedStakeholder">
+                Affected Stakeholder
+            </button>
+        </div>
+
+                <div class="content-sections">
+<div class="actor-section active" id="AIDeveloperSpecializedAI">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<div class="actor-section" id="AIInfrastructureProvider">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Respondents argued infrastructure providers are highly responsible because they are not neutral actors—their choices about which models to provide, which oversight mechanisms to offer, and what price incentives to implement all have significant impacts downstream. They handle technical tools and systems that influence downstream quality, and have responsibility for incentivizing customers to use safe models not just profitable models.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"Infrastructure Providers: highly responsible because they can handle  technical tool, systems that influence downstream quality."</li>                    <li>"AI infrastructure providers are not neutral actors ..., their choice of which models to provide,  which oversight mechanisms to offer and what price incentives to put in place all have significant impacts on everyone downstream.   The existence of adverserial bias detection as an offering has no material impact if its too expensive or hidden for the downstream developers, they have a responsibility for incentivising their customers to use safe models not just profitable models."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<div class="actor-section" id="AffectedStakeholder">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Some argued affected stakeholders have responsibility like citizens have minimal responsibility to defend legal and ethical requirements (e.g., by notifying incidents, reporting bad actors). Others emphasized that democratic governance of AI requires affected stakeholders carry defined responsibilities across design, deployment, and oversight—claims to the contrary invite governance that bypasses lived experience. Their feedback can force other actors to improve.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"Democratic governance of AI requires that affected stakeholders carry defined responsibilities across design, deployment, and oversight. Claims to the contrary invite governance that bypasses lived experience and restricts stakeholder participation in policy development and execution."</li>                    <li>"Affected stakeholders have a minimal responsibility, just like citizens have a minimal responsibility to defend legal and ethical requirements imposed by a society (e.g., by notifying incidents, reporting bad actors, ....)"</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Multiple respondents argued affected stakeholders have limited direct responsibility for addressing systemic performance inequalities because they lack knowledge and power. While their feedback can be valuable, they fundamentally lack the technical and institutional capacity to prevent or address unequal performance.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"Affected Stakeholders: Limited responsibility because they are lack of knowledge, and power. But their feedback can force other actors to improve."</li>                    <li>"Users and Affected Stakeholders have limited direct responsibility for addressing systemic performance inequalities."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIDeveloperSpecializedAI">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIDeployer">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Multiple respondents emphasized deployers are highly to primarily responsible for contextual deployment decisions and evaluating the models they deploy. Developers may seek to make unbiased models but may not factor all user group balances in deployment scenarios, making deployers responsible for knowing performance in their unique circumstances of deployment and use.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (3)</summary>
+                <ul class="quote-list">
+                    <li>"Increased AI developer responsibility to highly responsible given the unique position they are to explain the performance seen across groups, however, AI deployers remain primarily responsible for knowing the performance in their unique circumstance of deployment and use."</li>                    <li>"AI Deployers bear the responsibility of evaluating the models deployed.  AI Developers may seek to make unbiased models, but may not factor all user group balances in deployment scenarios.  Governance actors must inform Deployers how to ensure equal performance across groups."</li>                    <li>"AI Deployers are highly responsible for contextual deployment decisions. AI Governance Actors have moderate responsibility for oversight and standards."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIInfrastructureProvider">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Respondents argued infrastructure providers are highly responsible because they are not neutral actors—their choices about which models to provide, which oversight mechanisms to offer, and what price incentives to implement all have significant impacts downstream. They handle technical tools and systems that influence downstream quality, and have responsibility for incentivizing customers to use safe models not just profitable models.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"Infrastructure Providers: highly responsible because they can handle  technical tool, systems that influence downstream quality."</li>                    <li>"AI infrastructure providers are not neutral actors ..., their choice of which models to provide,  which oversight mechanisms to offer and what price incentives to put in place all have significant impacts on everyone downstream.   The existence of adverserial bias detection as an offering has no material impact if its too expensive or hidden for the downstream developers, they have a responsibility for incentivising their customers to use safe models not just profitable models."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIUser">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Several respondents argued users have moderate responsibility because they are not powerless actors—they use systems and can choose not to use them if they do not perform adequately, giving them power to demand better from vendors. They have agency over primary use-cases for leveraging AI, with purposeful design and model selection being critical steps. Users also typically have responsibility to monitor AI systems and detect unequal performance, and are responsible to give feedback. Some noted users are not only people affected by unequal performance but also people using systems to affect others unequally, so they retain some responsibility even if minimal.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (4)</summary>
+                <ul class="quote-list">
+                    <li>"I disagree with other judges on AI User's responsibility to deal with unequal performance. They're not a powerless actor -- they are using the system and can choose not to if it is not adequately performant. Example: a bank doesn't HAVE to use a risk model if it is substantially worse for one group of people. Users have power to demand better from vendors."</li>                    <li>"While AI users don't have the ability to modify the underlying models, they have agency over the primary use-case for which they leverage AI, and purposeful design and model selection are critical steps to ensure that the the systems are used as intended. Further, the responsibility to monitor the AI system also typically falls on the user, and consequently my assessment is that they are moderately responsible for detecting unequal performance across user-groups."</li>                    <li>"users are responsible to give feedback."</li>                    <li>"Users are not only the people effected by unequal performance, but the people using a system to effect others unequally.  A specialist medical AI firm may produce the AI and hold primary responsibility, that does not remove all responsibility from the doctor who leverages that tool.   So users still hold some responsibility, even if minimal it is not none.   Affected stakeholders may be none to minimal depending on their role and agency."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "Users and Affected Stakeholders have limited direct responsibility for addressing systemic performance inequalities."</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"Users and Affected Stakeholders have limited direct responsibility for addressing systemic performance inequalities."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AffectedStakeholder">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Some argued affected stakeholders have responsibility like citizens have minimal responsibility to defend legal and ethical requirements (e.g., by notifying incidents, reporting bad actors). Others emphasized that democratic governance of AI requires affected stakeholders carry defined responsibilities across design, deployment, and oversight—claims to the contrary invite governance that bypasses lived experience. Their feedback can force other actors to improve.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"Democratic governance of AI requires that affected stakeholders carry defined responsibilities across design, deployment, and oversight. Claims to the contrary invite governance that bypasses lived experience and restricts stakeholder participation in policy development and execution."</li>                    <li>"Affected stakeholders have a minimal responsibility, just like citizens have a minimal responsibility to defend legal and ethical requirements imposed by a society (e.g., by notifying incidents, reporting bad actors, ....)"</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Multiple respondents argued affected stakeholders have limited direct responsibility for addressing systemic performance inequalities because they lack knowledge and power. While their feedback can be valuable, they fundamentally lack the technical and institutional capacity to prevent or address unequal performance.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"Affected Stakeholders: Limited responsibility because they are lack of knowledge, and power. But their feedback can force other actors to improve."</li>                    <li>"Users and Affected Stakeholders have limited direct responsibility for addressing systemic performance inequalities."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIGovernanceActor">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Respondents emphasized governance actors are highly responsible because they can enable incentives for other actors (though this has indirect impacts), have moderate-to-high responsibility for oversight and standards, and must inform deployers how to ensure equal performance across groups. Some argued they are highly responsible as the only entities with authority to establish binding standards, mandate testing requirements, and enforce accountability mechanisms—market incentives alone have proven insufficient to address algorithmic bias, making regulatory intervention essential. Their capability is substantial with access to technical expertise, regulatory precedent, enforcement mechanisms, and power to require transparency and auditing.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (4)</summary>
+                <ul class="quote-list">
+                    <li>"AI Governance Actors: Highly responsible because  they can enable incentives for other actors, however this is indirect impacts."</li>                    <li>"AI Deployers bear the responsibility of evaluating the models deployed.  AI Developers may seek to make unbiased models, but may not factor all user group balances in deployment scenarios.  Governance actors must inform Deployers how to ensure equal performance across groups."</li>                    <li>"AI Governance Actors have moderate responsibility for oversight and standards."</li>                    <li>"For AI Governance Actors, after further reflection, I am changing my rating to highly responsible. AI governance actors possess unique obligation as the only entities with authority to establish binding standards, mandate testing requirements, and enforce accountability mechanisms across the AI ecosystem.  The absence or inadequacy of governance frameworks directly enables the deployment of AI systems with unequal performance across groups and I believe that market incentives alone have proven insufficient to address algorithmic bias, making regulatory intervention essential. Moreover, their capability is substantial since they have access to technical expertise, regulatory precedent from other domains, enforcement mechanisms, and the power to require transparency and auditing that individual companies cannot achieve voluntarily."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pills = document.querySelectorAll('.nav-pill');
+            const sections = document.querySelectorAll('.actor-section');
+
+            pills.forEach(pill => {
+                pill.addEventListener('click', function() {
+                    // Remove active class from all pills and sections
+                    pills.forEach(p => p.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('active'));
+
+                    // Add active class to clicked pill
+                    this.classList.add('active');
+
+                    // Show corresponding section
+                    const targetId = this.getAttribute('data-target');
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

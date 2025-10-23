@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.2 AI possessing dangerous capabilities - Responsibility - Part 1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8px;
+            flex: 1;
+            min-width: 200px;
+            overflow-wrap: break-word;
+            word-break: break-word;        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
+            color: #000000;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .legend {
+            text-align: center;
+            font-size: 12px;
+            color: #888888;
+            font-style: italic;
+            margin-bottom: 12px;
+            padding: 8px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .selection-title {
+
+
+            text-align: center;
+
+
+            font-size: 14px;
+
+
+            font-weight: 600;
+
+
+            color: #666666;
+
+
+            margin-bottom: 10px;
+
+
+        }
+
+
+
+        .nav-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 15px;
+            justify-content: center;
+        }
+
+        .nav-pill {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 25px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-family: 'Figtree', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            color: #000000;
+        }
+
+        .nav-pill:hover {
+            background: #e9ecef;
+            border-color: #000000;
+        }
+
+        .nav-pill.active {
+            background: #000000;
+            color: white;
+            border-color: #000000;
+        }
+
+        .actor-section {
+            display: none;
+        }
+
+        .actor-section.active {
+            display: block;
+        }
+
+        .content-grid {
+            display: flex;
+            width: 100%;
+            gap: 4px;
+        }
+
+        .content-column {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 8px;
+            flex: 1;
+            min-width: 200px;
+            overflow-wrap: break-word;
+            word-break: break-word;        }
+
+        .criteria-header {
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid;
+        }
+
+        .criteria-header.higher {
+            color: #FF0000;
+            border-bottom-color: #FF0000;
+        }
+
+        .criteria-header.lower {
+            color: #2E5C8A;
+            border-bottom-color: #2E5C8A;
+        }
+
+        .summary-section {
+            margin-bottom: 20px;
+        }
+
+        .summary-text {
+            margin-bottom: 15px;
+            font-weight: 500;
+            color: #000000;
+            font-size: 15px;
+        }
+
+        .quote-details {
+            margin-top: 15px;
+        }
+
+        .quote-toggle {
+            cursor: pointer;
+            color: #000000;
+            font-weight: 500;
+            font-size: 10px;
+            padding: 8px 0;
+            border-bottom: 1px dotted #000000;
+            display: inline-block;
+        }
+
+        .quote-toggle:hover {
+            color: #333333;
+        }
+
+        .quote-list {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .quote-list li {
+            margin-bottom: 12px;
+            font-size: 10px;
+            line-height: 1.3;
+            color: #000000;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                gap: 4px;
+            }
+
+            .selection-title {
+
+
+                text-align: center;
+
+
+                font-size: 14px;
+
+
+                font-weight: 600;
+
+
+                color: #666666;
+
+
+                margin-bottom: 10px;
+
+
+            }
+
+
+
+            .nav-pills {
+                justify-content: flex-start;
+            }
+
+            .nav-pill {
+                font-size: 10px;
+                padding: 4px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>7.2 AI possessing dangerous capabilities - Responsibility - Part 1</h1>
+
+
+        <div class="selection-title">Select an actor:</div>
+                <div class="nav-pills">
+            <button class="nav-pill active" data-target="AIDeveloperGeneralpurposeAI">
+                AI Developer (General-purpose AI)
+            </button>
+            <button class="nav-pill" data-target="AIDeployer">
+                AI Deployer
+            </button>
+            <button class="nav-pill" data-target="AIGovernanceActor">
+                AI Governance Actor
+            </button>
+            <button class="nav-pill" data-target="AIUser">
+                AI User
+            </button>
+        </div>
+
+                <div class="content-sections">
+<div class="actor-section active" id="AIDeveloperGeneralpurposeAI">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Two experts argued that the risk from from possessing the capabilities, which is the developer's role (as opposed to using them which might be deployer's). In a world where no amount of guardrails can prevent a model from being jailbroken, the underlying capabilities matter most. Primary responsibility sits with those who create and route capabilities into the world—developers determine what is possible.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"The reason for my low rating on AI deployers' responsibility is that I read the question as being about *possessing* capabilities, not using them. I see that other respondent comments emphasize deployers limiting risk from model deployments, e.g. monitoring misuse. It's reasonable to read things this way, but I would separate misuse from underlying capabilities. In a world where no amount of guardrails can prevent a model from being jailbroken, for example, I would say that the key question of models possessing dangerous capabilities has to do with model developers"</li>                    <li>"Primary responsibility sits with those who create and route capabilities into the world. Developers determine what is possible, deployers determine where and how it is exposed, and infrastructure and governance actors determine who can scale or weaponize it. Users and affected stakeholders have limited leverage relative to these upstream controls."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<div class="actor-section" id="AIDeployer">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Deployers are responsible for actions taken by a system, not the model creators. Many dual use scenarios prevent model creators from building effective models that can do no harm—deployment should safeguard actions taken by models, with security architectures that limit blast radius of any harm. Users and deployers are at least partially responsible because they control the demand side and shape what kinds of capabilities are built into AI systems. Primary responsibility sits with those who create and route capabilities into the world—deployers determine where and how capabilities are exposed.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (3)</summary>
+                <ul class="quote-list">
+                    <li>"Deployers are responsible for actions taken by a system, not the model creators.  Many dual use scenarios prevent model creators from building effective models that can do no harm.  Deployment should safeguard actions taken models, with security architectures that limit blast radius of any harm."</li>                    <li>"Users and deployers are at least partially responsible for risks from dangerous capabilities because they, to a certain extent, control the demand side and shape what kinds of capabilities are built into AI systems.  For example, GPT5 was very much an advancement in terms of product, not intelligence (better tool use and longer context).  If we can collectively demonstrate that we want to use AI to replace low-level level mundane cognitive workflows (AI as tools), we can maybe avoid the dangerous capabilities needed to make AI as agents."</li>                    <li>"Primary responsibility sits with those who create and route capabilities into the world. Developers determine what is possible, deployers determine where and how it is exposed, and infrastructure and governance actors determine who can scale or weaponize it. Users and affected stakeholders have limited leverage relative to these upstream controls."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "The reason for my low rating on AI deployers' responsibility is that I read the question as being about *possessing* capabilities, not using them. I see that other respondent comments emphasize deployers limiting risk from model deployments, e.g. monitoring misuse. It's reasonable to read things this way, but I would separate misuse from underlying capabilities. In a world where no amount of guardrails can prevent a model from being jailbroken, for example, I would say that the key question of models possessing dangerous capabilities has to do with model developers"</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"The reason for my low rating on AI deployers' responsibility is that I read the question as being about *possessing* capabilities, not using them. I see that other respondent comments emphasize deployers limiting risk from model deployments, e.g. monitoring misuse. It's reasonable to read things this way, but I would separate misuse from underlying capabilities. In a world where no amount of guardrails can prevent a model from being jailbroken, for example, I would say that the key question of models possessing dangerous capabilities has to do with model developers"</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<div class="actor-section" id="AIGovernanceActor">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "Primary responsibility sits with those who create and route capabilities into the world. Developers determine what is possible, deployers determine where and how it is exposed, and infrastructure and governance actors determine who can scale or weaponize it. Users and affected stakeholders have limited leverage relative to these upstream controls."</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"Primary responsibility sits with those who create and route capabilities into the world. Developers determine what is possible, deployers determine where and how it is exposed, and infrastructure and governance actors determine who can scale or weaponize it. Users and affected stakeholders have limited leverage relative to these upstream controls."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert argued it's hard for these actors to lead without government buy-in. Another said "Saying AI governance actors are responsible for AI risks is like saying that judges are responsible for crimes being committed. The kind of responsibility a judge has is very different from the kind of responsibility that a criminal or a lock-pick-maker has. The specific question asks how responsible should the AI governance actor be for addressing the risk. In almost all cases, the AI governance actor is responsible for requiring some other actor to address the risk, not addressing the risk themselves. The better way to think of this is that the AI governance actor is responsible for holding responsible the actor who is properly responsible. It would be recursive that AI governance actor is themselves responsible. Would we propose some meta-AI-goverance governor who holds responsible the AI governance actors that fail to hold responsible the actors that should be responsible? This is not the right way of thinking. We can rightly say that AI governance actors are responsible for some meta issues, like ensuring that Governments are properly informed etc."</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"I continue to assess that AI governance actors are "minimally responsible". I think a category error is at work here. Saying AI governance actors are responsible for AI risks is like saying that judges are responsible for crimes being committed. The kind of responsibility a judge has is very different from the kind of responsibility that a criminal or a lock-pick-maker has.
+
+The specific question asks how responsible should the AI governance actor be for addressing the risk. In almost all cases, the AI governance actor is responsible for requiring some other actor to address the risk, not addressing the risk themselves. 
+
+The better way to think of this is that the AI governance actor is responsible for holding responsible the actor who is properly responsible. It would be recursive that AI governance actor is themselves responsible. Would we propose some meta-AI-goverance governor who holds responsible the AI governance actors that fail to hold responsible the actors that should be responsible? 
+
+This is not the right way of thinking. We can rightly say that AI governance actors are responsible for some meta issues, like ensuring that Governments are properly informed etc."</li>                    <li>"While AI governance actors would ideally be placed to have these responsibilities, in fact they cannot proactively lead or initiate efforts to address the risk without government buy-in, which is lacking, and have far more limited capability or causal influence than developers - regulation certainly isn't magical."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<div class="actor-section" id="AIUser">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> AI users may include bad actors capitalizing on dangerous capabilities, warranting a moderately responsible ranking. Users and deployers are at least partially responsible because they control the demand side and shape what kinds of capabilities are built into AI systems. If we can collectively demonstrate that we want to use AI to replace low-level mundane cognitive workflows (AI as tools), we can maybe avoid the dangerous capabilities needed to make AI as agents.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (3)</summary>
+                <ul class="quote-list">
+                    <li>"AI users may include bad actors capitalising on dangerous capabilities, hence the moderately responsible ranking."</li>                    <li>"Users and deployers are at least partially responsible for risks from dangerous capabilities because they, to a certain extent, control the demand side and shape what kinds of capabilities are built into AI systems.  For example, GPT5 was very much an advancement in terms of product, not intelligence (better tool use and longer context).  If we can collectively demonstrate that we want to use AI to replace low-level level mundane cognitive workflows (AI as tools), we can maybe avoid the dangerous capabilities needed to make AI as agents."</li>                    <li>"Primary responsibility sits with those who create and route capabilities into the world. Developers determine what is possible, deployers determine where and how it is exposed, and infrastructure and governance actors determine who can scale or weaponize it. Users and affected stakeholders have limited leverage relative to these upstream controls."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIDeveloperSpecializedAI">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "Specialized AI, and particuarly biology models pose massive CBRN risks if they advance; developers have the unique ability to mitigate this risk and to explore safety research for their specific fields, making them primarily responsible for capabilities risks."</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"Specialized AI, and particuarly biology models pose massive CBRN risks if they advance; developers have the unique ability to mitigate this risk and to explore safety research for their specific fields, making them primarily responsible for capabilities risks."</li>                    <li>"The reason for my low rating on AI deployers' responsibility is that I read the question as being about *possessing* capabilities, not using them. I see that other respondent comments emphasize deployers limiting risk from model deployments, e.g. monitoring misuse. It's reasonable to read things this way, but I would separate misuse from underlying capabilities. In a world where no amount of guardrails can prevent a model from being jailbroken, for example, I would say that the key question of models possessing dangerous capabilities has to do with model developers"</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIDeployer">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Deployers are responsible for actions taken by a system, not the model creators. Many dual use scenarios prevent model creators from building effective models that can do no harm—deployment should safeguard actions taken by models, with security architectures that limit blast radius of any harm. Users and deployers are at least partially responsible because they control the demand side and shape what kinds of capabilities are built into AI systems. Primary responsibility sits with those who create and route capabilities into the world—deployers determine where and how capabilities are exposed.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (3)</summary>
+                <ul class="quote-list">
+                    <li>"Deployers are responsible for actions taken by a system, not the model creators.  Many dual use scenarios prevent model creators from building effective models that can do no harm.  Deployment should safeguard actions taken models, with security architectures that limit blast radius of any harm."</li>                    <li>"Users and deployers are at least partially responsible for risks from dangerous capabilities because they, to a certain extent, control the demand side and shape what kinds of capabilities are built into AI systems.  For example, GPT5 was very much an advancement in terms of product, not intelligence (better tool use and longer context).  If we can collectively demonstrate that we want to use AI to replace low-level level mundane cognitive workflows (AI as tools), we can maybe avoid the dangerous capabilities needed to make AI as agents."</li>                    <li>"Primary responsibility sits with those who create and route capabilities into the world. Developers determine what is possible, deployers determine where and how it is exposed, and infrastructure and governance actors determine who can scale or weaponize it. Users and affected stakeholders have limited leverage relative to these upstream controls."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "The reason for my low rating on AI deployers' responsibility is that I read the question as being about *possessing* capabilities, not using them. I see that other respondent comments emphasize deployers limiting risk from model deployments, e.g. monitoring misuse. It's reasonable to read things this way, but I would separate misuse from underlying capabilities. In a world where no amount of guardrails can prevent a model from being jailbroken, for example, I would say that the key question of models possessing dangerous capabilities has to do with model developers"</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"The reason for my low rating on AI deployers' responsibility is that I read the question as being about *possessing* capabilities, not using them. I see that other respondent comments emphasize deployers limiting risk from model deployments, e.g. monitoring misuse. It's reasonable to read things this way, but I would separate misuse from underlying capabilities. In a world where no amount of guardrails can prevent a model from being jailbroken, for example, I would say that the key question of models possessing dangerous capabilities has to do with model developers"</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIInfrastructureProvider">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "Primary responsibility sits with those who create and route capabilities into the world. Developers determine what is possible, deployers determine where and how it is exposed, and infrastructure and governance actors determine who can scale or weaponize it. Users and affected stakeholders have limited leverage relative to these upstream controls."</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"Primary responsibility sits with those who create and route capabilities into the world. Developers determine what is possible, deployers determine where and how it is exposed, and infrastructure and governance actors determine who can scale or weaponize it. Users and affected stakeholders have limited leverage relative to these upstream controls."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIUser">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> AI users may include bad actors capitalizing on dangerous capabilities, warranting a moderately responsible ranking. Users and deployers are at least partially responsible because they control the demand side and shape what kinds of capabilities are built into AI systems. If we can collectively demonstrate that we want to use AI to replace low-level mundane cognitive workflows (AI as tools), we can maybe avoid the dangerous capabilities needed to make AI as agents.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (3)</summary>
+                <ul class="quote-list">
+                    <li>"AI users may include bad actors capitalising on dangerous capabilities, hence the moderately responsible ranking."</li>                    <li>"Users and deployers are at least partially responsible for risks from dangerous capabilities because they, to a certain extent, control the demand side and shape what kinds of capabilities are built into AI systems.  For example, GPT5 was very much an advancement in terms of product, not intelligence (better tool use and longer context).  If we can collectively demonstrate that we want to use AI to replace low-level level mundane cognitive workflows (AI as tools), we can maybe avoid the dangerous capabilities needed to make AI as agents."</li>                    <li>"Primary responsibility sits with those who create and route capabilities into the world. Developers determine what is possible, deployers determine where and how it is exposed, and infrastructure and governance actors determine who can scale or weaponize it. Users and affected stakeholders have limited leverage relative to these upstream controls."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AffectedStakeholder">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "Primary responsibility sits with those who create and route capabilities into the world. Developers determine what is possible, deployers determine where and how it is exposed, and infrastructure and governance actors determine who can scale or weaponize it. Users and affected stakeholders have limited leverage relative to these upstream controls."</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"Primary responsibility sits with those who create and route capabilities into the world. Developers determine what is possible, deployers determine where and how it is exposed, and infrastructure and governance actors determine who can scale or weaponize it. Users and affected stakeholders have limited leverage relative to these upstream controls."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIGovernanceActor">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "Primary responsibility sits with those who create and route capabilities into the world. Developers determine what is possible, deployers determine where and how it is exposed, and infrastructure and governance actors determine who can scale or weaponize it. Users and affected stakeholders have limited leverage relative to these upstream controls."</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"Primary responsibility sits with those who create and route capabilities into the world. Developers determine what is possible, deployers determine where and how it is exposed, and infrastructure and governance actors determine who can scale or weaponize it. Users and affected stakeholders have limited leverage relative to these upstream controls."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert argued it's hard for these actors to lead without government buy-in. Another said "Saying AI governance actors are responsible for AI risks is like saying that judges are responsible for crimes being committed. The kind of responsibility a judge has is very different from the kind of responsibility that a criminal or a lock-pick-maker has. The specific question asks how responsible should the AI governance actor be for addressing the risk. In almost all cases, the AI governance actor is responsible for requiring some other actor to address the risk, not addressing the risk themselves. The better way to think of this is that the AI governance actor is responsible for holding responsible the actor who is properly responsible. It would be recursive that AI governance actor is themselves responsible. Would we propose some meta-AI-goverance governor who holds responsible the AI governance actors that fail to hold responsible the actors that should be responsible? This is not the right way of thinking. We can rightly say that AI governance actors are responsible for some meta issues, like ensuring that Governments are properly informed etc."</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"I continue to assess that AI governance actors are "minimally responsible". I think a category error is at work here. Saying AI governance actors are responsible for AI risks is like saying that judges are responsible for crimes being committed. The kind of responsibility a judge has is very different from the kind of responsibility that a criminal or a lock-pick-maker has.
+
+The specific question asks how responsible should the AI governance actor be for addressing the risk. In almost all cases, the AI governance actor is responsible for requiring some other actor to address the risk, not addressing the risk themselves. 
+
+The better way to think of this is that the AI governance actor is responsible for holding responsible the actor who is properly responsible. It would be recursive that AI governance actor is themselves responsible. Would we propose some meta-AI-goverance governor who holds responsible the AI governance actors that fail to hold responsible the actors that should be responsible? 
+
+This is not the right way of thinking. We can rightly say that AI governance actors are responsible for some meta issues, like ensuring that Governments are properly informed etc."</li>                    <li>"While AI governance actors would ideally be placed to have these responsibilities, in fact they cannot proactively lead or initiate efforts to address the risk without government buy-in, which is lacking, and have far more limited capability or causal influence than developers - regulation certainly isn't magical."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pills = document.querySelectorAll('.nav-pill');
+            const sections = document.querySelectorAll('.actor-section');
+
+            pills.forEach(pill => {
+                pill.addEventListener('click', function() {
+                    // Remove active class from all pills and sections
+                    pills.forEach(p => p.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('active'));
+
+                    // Add active class to clicked pill
+                    this.classList.add('active');
+
+                    // Show corresponding section
+                    const targetId = this.getAttribute('data-target');
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

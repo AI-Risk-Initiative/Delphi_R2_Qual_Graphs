@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6.5 Governance failure - Responsibility - Part 1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8px;
+            flex: 1;
+            min-width: 200px;
+            overflow-wrap: break-word;
+            word-break: break-word;        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
+            color: #000000;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .legend {
+            text-align: center;
+            font-size: 12px;
+            color: #888888;
+            font-style: italic;
+            margin-bottom: 12px;
+            padding: 8px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .selection-title {
+
+
+            text-align: center;
+
+
+            font-size: 14px;
+
+
+            font-weight: 600;
+
+
+            color: #666666;
+
+
+            margin-bottom: 10px;
+
+
+        }
+
+
+
+        .nav-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 15px;
+            justify-content: center;
+        }
+
+        .nav-pill {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 25px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-family: 'Figtree', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            color: #000000;
+        }
+
+        .nav-pill:hover {
+            background: #e9ecef;
+            border-color: #000000;
+        }
+
+        .nav-pill.active {
+            background: #000000;
+            color: white;
+            border-color: #000000;
+        }
+
+        .actor-section {
+            display: none;
+        }
+
+        .actor-section.active {
+            display: block;
+        }
+
+        .content-grid {
+            display: flex;
+            width: 100%;
+            gap: 4px;
+        }
+
+        .content-column {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 8px;
+            flex: 1;
+            min-width: 200px;
+            overflow-wrap: break-word;
+            word-break: break-word;        }
+
+        .criteria-header {
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid;
+        }
+
+        .criteria-header.higher {
+            color: #FF0000;
+            border-bottom-color: #FF0000;
+        }
+
+        .criteria-header.lower {
+            color: #2E5C8A;
+            border-bottom-color: #2E5C8A;
+        }
+
+        .summary-section {
+            margin-bottom: 20px;
+        }
+
+        .summary-text {
+            margin-bottom: 15px;
+            font-weight: 500;
+            color: #000000;
+            font-size: 15px;
+        }
+
+        .quote-details {
+            margin-top: 15px;
+        }
+
+        .quote-toggle {
+            cursor: pointer;
+            color: #000000;
+            font-weight: 500;
+            font-size: 10px;
+            padding: 8px 0;
+            border-bottom: 1px dotted #000000;
+            display: inline-block;
+        }
+
+        .quote-toggle:hover {
+            color: #333333;
+        }
+
+        .quote-list {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .quote-list li {
+            margin-bottom: 12px;
+            font-size: 10px;
+            line-height: 1.3;
+            color: #000000;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                gap: 4px;
+            }
+
+            .selection-title {
+
+
+                text-align: center;
+
+
+                font-size: 14px;
+
+
+                font-weight: 600;
+
+
+                color: #666666;
+
+
+                margin-bottom: 10px;
+
+
+            }
+
+
+
+            .nav-pills {
+                justify-content: flex-start;
+            }
+
+            .nav-pill {
+                font-size: 10px;
+                padding: 4px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>6.5 Governance failure - Responsibility - Part 1</h1>
+
+
+        <div class="selection-title">Select an actor:</div>
+                <div class="nav-pills">
+            <button class="nav-pill active" data-target="AIDeveloperGeneralpurposeAI">
+                AI Developer (General-purpose AI)
+            </button>
+            <button class="nav-pill" data-target="AIDeployer">
+                AI Deployer
+            </button>
+            <button class="nav-pill" data-target="AIGovernanceActor">
+                AI Governance Actor
+            </button>
+            <button class="nav-pill" data-target="AIUser">
+                AI User
+            </button>
+        </div>
+
+                <div class="content-sections">
+<div class="actor-section active" id="AIDeveloperGeneralpurposeAI">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> General-purpose AI developers bear high responsibility as they operate systems and manage monitoring, procurement flows, and failure checkpoints, while also creating systems requiring governance. Their responsibility is heightened to the extent that AI firms explicitly undermine governance efforts through lobbying and undermining regulation.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (3)</summary>
+                <ul class="quote-list">
+                    <li>"AI Deployers &amp; AI Developers: highly responsible because they operate system, and manage monitoring, procurement flows and checks where failure posibilities."</li>                    <li>"General-purpose AI Developers bear moderate responsibility given their role in creating systems requiring governance."</li>                    <li>"To the extent that AI firms continue to explicitly undermine governance efforts, for example, via lobbying and undermining regulation efforts, they should be considered far more responsible than they otherwise would be."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<div class="actor-section" id="AIDeployer">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Deployers bear high responsibility as they operate systems, manage monitoring and procurement flows with failure possibilities, and implement governance in practice. They have information on real-world impacts and a moral obligation to share those impacts to inform governance (where it doesn't interfere with fiduciary duties or user privacy).</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (3)</summary>
+                <ul class="quote-list">
+                    <li>"AI deployers have information on real-world impacts, and are capable and have have a (moral) obligation to share those impacts to inform governance (where it doesn't directly interfere with fiduciary duties, user privacy etc.)"</li>                    <li>"AI Deployers &amp; AI Developers: highly responsible because they operate system, and manage monitoring, procurement flows and checks where failure posibilities."</li>                    <li>"AI Deployers also have moderate responsibility for implementing governance in practice."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<div class="actor-section" id="AIGovernanceActor">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Governance actors bear primary responsibility as they build standards and regulatory frameworks to ensure safe deployment, holding the direct mandate and capability to establish oversight frameworks.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"Governance Actors as primarily responsible because they build standards, and regulatory frameworks to ensure safe deployment."</li>                    <li>"AI Governance Actors are primarily responsible for governance failure as they have the direct mandate and capability to establish oversight frameworks."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<div class="actor-section" id="AIUser">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Some experts were convinced by others' feedback that users have higher responsibility than previously assumed, noting users can provide feedback and advocacy to prevent governance failures despite lacking technical knowledge and authority.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"I do not begrudge corporations the motivation and incentive to make profits. Therefore I have a hard time justifying holding them responsible to proactively improve governance. They have minimal responsibility for ensuring good governance. 
+
+However, based on other experts' feedback, I have been convinced that affected stakeholders and AI users have a higher responsibility than I previously assumed"</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Users bear minimal responsibility as they lack expertise and authority to address systemic governance issues. It's harsh to assign users responsibility for governance failure except insofar as treating them as proxies for participants in democracy.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (3)</summary>
+                <ul class="quote-list">
+                    <li>"Affected Stakeholders &amp; AI Users: minimally responsible because most of them are lack of technical knowledge and authority, but they can still provide feedback and advocacy to prevent governance failures."</li>                    <li>"I think its harsh to say that AI users have any responsibility for a governance failure. To the extent this has any logic, its only in treating AI users as a proxy for participants in democracy."</li>                    <li>"AI Users have minimal responsibility as they lack the expertise and authority to address systemic governance issues."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIDeveloperSpecializedAI">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Specialized AI developers bear high responsibility as they control sensitive domain knowledge in healthcare, finance, and defense while overseeing technical challenges. Responsibility depends on technical documentation of models and clear product liability frameworks. Some experts increased ratings to moderate to reflect domain specialization governance roles, though this is seen as less than general developers' responsibility since general models are also used in specialist domains.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (3)</summary>
+                <ul class="quote-list">
+                    <li>"Specialized AI Developers : highly responsible because they control sensitive domain  knowledge (healthcare, finance, defense) and oversight technical challenges."</li>                    <li>"I've increased the specialised AI developer's responsibility role to moderate from minimal, to represent their domain specialisation governance role.   I still think this is less than the general AI developer's role, as we've seen the general models get used for the specialist domains as well, so governance of the specialist domain is not unique to the specialist and a subset of all domains."</li>                    <li>"I agree with the expert comments that AI developer (specialised Al) should ideally be highly responsible. However, I decided to put the rating moderately responsible because a lot of this responsibility will also depend on the technical documentation of the model and a clear product liability framework."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIDeployer">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Deployers bear high responsibility as they operate systems, manage monitoring and procurement flows with failure possibilities, and implement governance in practice. They have information on real-world impacts and a moral obligation to share those impacts to inform governance (where it doesn't interfere with fiduciary duties or user privacy).</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (3)</summary>
+                <ul class="quote-list">
+                    <li>"AI deployers have information on real-world impacts, and are capable and have have a (moral) obligation to share those impacts to inform governance (where it doesn't directly interfere with fiduciary duties, user privacy etc.)"</li>                    <li>"AI Deployers &amp; AI Developers: highly responsible because they operate system, and manage monitoring, procurement flows and checks where failure posibilities."</li>                    <li>"AI Deployers also have moderate responsibility for implementing governance in practice."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIInfrastructureProvider">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Infrastructure providers bear moderate responsibility as they hold compliance primitives affecting governance outcomes and must enforce standards defined by regulatory and governance bodies. Lax application of standards can result in governance failure, giving infrastructure providers a shared responsibility for governance outcomes.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"AI infrastructure providers aren't central to governance, but they have a responsibility to enforce standards defined by regulatory and governance bodies. Lax application of standards can result in governance failure; hence AI infrastructure providers share a moderate responsibility towards governance failures."</li>                    <li>"Infrastructure Providers: moderately esponsible because they hold compliance primitives affecting governance outcomes."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIUser">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Some experts were convinced by others' feedback that users have higher responsibility than previously assumed, noting users can provide feedback and advocacy to prevent governance failures despite lacking technical knowledge and authority.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"I do not begrudge corporations the motivation and incentive to make profits. Therefore I have a hard time justifying holding them responsible to proactively improve governance. They have minimal responsibility for ensuring good governance. 
+
+However, based on other experts' feedback, I have been convinced that affected stakeholders and AI users have a higher responsibility than I previously assumed"</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Users bear minimal responsibility as they lack expertise and authority to address systemic governance issues. It's harsh to assign users responsibility for governance failure except insofar as treating them as proxies for participants in democracy.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (3)</summary>
+                <ul class="quote-list">
+                    <li>"Affected Stakeholders &amp; AI Users: minimally responsible because most of them are lack of technical knowledge and authority, but they can still provide feedback and advocacy to prevent governance failures."</li>                    <li>"I think its harsh to say that AI users have any responsibility for a governance failure. To the extent this has any logic, its only in treating AI users as a proxy for participants in democracy."</li>                    <li>"AI Users have minimal responsibility as they lack the expertise and authority to address systemic governance issues."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AffectedStakeholder">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Some experts were convinced by others' feedback that affected stakeholders have higher responsibility than previously assumed. Viewing governance and technology deployment as affecting collective interests (not just individual rights) suggests stakeholders could be highly responsible, particularly regarding AI environmental and sustainability concerns where collective pressure can drive stronger controls, though this requires transparency and accountability from developers and regulatory bodies.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"I do not begrudge corporations the motivation and incentive to make profits. Therefore I have a hard time justifying holding them responsible to proactively improve governance. They have minimal responsibility for ensuring good governance. 
+
+However, based on other experts' feedback, I have been convinced that affected stakeholders and AI users have a higher responsibility than I previously assumed"</li>                    <li>"Affected stakeholder is an interesting category; if we think of governance and technology deployment as not only affecting individual rights but affecting collective interests then I would classify them as highly-responsible (AI environmental and sustainability concerns is an area where I see collective interests and pressure can be seen as an important driver to induce stronger controls albeit I do admit that this requires transparency and accountability of developers and regulatory bodies)."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Affected stakeholders bear minimal responsibility as most lack technical knowledge and authority, though they can provide feedback and advocacy. Some maintain stakeholders are not at all responsible based on the definition that they have no obligation to proactively lead efforts, no capability with specialized skills and resources, and no causal influence in causing or contributing to harms. Stakeholders have voice and exit opportunities that are underused but could be critical, though they seem less than minimally responsible.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (3)</summary>
+                <ul class="quote-list">
+                    <li>"Affected Stakeholders &amp; AI Users: minimally responsible because most of them are lack of technical knowledge and authority, but they can still provide feedback and advocacy to prevent governance failures."</li>                    <li>"regarding affected stakeholder.  I did not change from not at all responsible for the definition outlined at the beginning of the page.  Specifically, none of these are the responsibiloity of the affected stakeholder,  Obligation: The extent to which the actor should proactively lead or initiate efforts to address the risk
+Capability: The extent to which the actor has the specialized skills and resources needed to address the risk 
+Causal Influence: The extent to which the actor causes or contributes to the harms resulting from the risk materializing"</li>                    <li>"Affected stakeholders have voice and exit opportunities that are underused, and could be critical, and seem less than minimally responsible."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIGovernanceActor">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Governance actors bear primary responsibility as they build standards and regulatory frameworks to ensure safe deployment, holding the direct mandate and capability to establish oversight frameworks.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"Governance Actors as primarily responsible because they build standards, and regulatory frameworks to ensure safe deployment."</li>                    <li>"AI Governance Actors are primarily responsible for governance failure as they have the direct mandate and capability to establish oversight frameworks."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pills = document.querySelectorAll('.nav-pill');
+            const sections = document.querySelectorAll('.actor-section');
+
+            pills.forEach(pill => {
+                pill.addEventListener('click', function() {
+                    // Remove active class from all pills and sections
+                    pills.forEach(p => p.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('active'));
+
+                    // Add active class to clicked pill
+                    this.classList.add('active');
+
+                    // Show corresponding section
+                    const targetId = this.getAttribute('data-target');
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

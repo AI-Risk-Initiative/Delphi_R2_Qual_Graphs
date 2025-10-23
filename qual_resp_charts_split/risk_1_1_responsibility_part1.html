@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.1 Unfair discrimination and misrepresentation - Responsibility - Part 1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8px;
+            flex: 1;
+            min-width: 200px;
+            overflow-wrap: break-word;
+            word-break: break-word;        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
+            color: #000000;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .legend {
+            text-align: center;
+            font-size: 12px;
+            color: #888888;
+            font-style: italic;
+            margin-bottom: 12px;
+            padding: 8px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .selection-title {
+
+
+            text-align: center;
+
+
+            font-size: 14px;
+
+
+            font-weight: 600;
+
+
+            color: #666666;
+
+
+            margin-bottom: 10px;
+
+
+        }
+
+
+
+        .nav-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 15px;
+            justify-content: center;
+        }
+
+        .nav-pill {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 25px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-family: 'Figtree', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            color: #000000;
+        }
+
+        .nav-pill:hover {
+            background: #e9ecef;
+            border-color: #000000;
+        }
+
+        .nav-pill.active {
+            background: #000000;
+            color: white;
+            border-color: #000000;
+        }
+
+        .actor-section {
+            display: none;
+        }
+
+        .actor-section.active {
+            display: block;
+        }
+
+        .content-grid {
+            display: flex;
+            width: 100%;
+            gap: 4px;
+        }
+
+        .content-column {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 8px;
+            flex: 1;
+            min-width: 200px;
+            overflow-wrap: break-word;
+            word-break: break-word;        }
+
+        .criteria-header {
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid;
+        }
+
+        .criteria-header.higher {
+            color: #FF0000;
+            border-bottom-color: #FF0000;
+        }
+
+        .criteria-header.lower {
+            color: #2E5C8A;
+            border-bottom-color: #2E5C8A;
+        }
+
+        .summary-section {
+            margin-bottom: 20px;
+        }
+
+        .summary-text {
+            margin-bottom: 15px;
+            font-weight: 500;
+            color: #000000;
+            font-size: 15px;
+        }
+
+        .quote-details {
+            margin-top: 15px;
+        }
+
+        .quote-toggle {
+            cursor: pointer;
+            color: #000000;
+            font-weight: 500;
+            font-size: 10px;
+            padding: 8px 0;
+            border-bottom: 1px dotted #000000;
+            display: inline-block;
+        }
+
+        .quote-toggle:hover {
+            color: #333333;
+        }
+
+        .quote-list {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .quote-list li {
+            margin-bottom: 12px;
+            font-size: 10px;
+            line-height: 1.3;
+            color: #000000;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                gap: 4px;
+            }
+
+            .selection-title {
+
+
+                text-align: center;
+
+
+                font-size: 14px;
+
+
+                font-weight: 600;
+
+
+                color: #666666;
+
+
+                margin-bottom: 10px;
+
+
+            }
+
+
+
+            .nav-pills {
+                justify-content: flex-start;
+            }
+
+            .nav-pill {
+                font-size: 10px;
+                padding: 4px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>1.1 Unfair discrimination and misrepresentation - Responsibility - Part 1</h1>
+
+
+        <div class="selection-title">Select an actor:</div>
+                <div class="nav-pills">
+            <button class="nav-pill active" data-target="AIDeveloperGeneralpurposeAI">
+                AI Developer (General-purpose AI)
+            </button>
+            <button class="nav-pill" data-target="AIDeployer">
+                AI Deployer
+            </button>
+            <button class="nav-pill" data-target="AIGovernanceActor">
+                AI Governance Actor
+            </button>
+            <button class="nav-pill" data-target="AIUser">
+                AI User
+            </button>
+        </div>
+
+                <div class="content-sections">
+<div class="actor-section active" id="AIDeveloperGeneralpurposeAI">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> AI developers bear primary responsibility for system bias and harm, even when given flawed "gold standard" data. Their control over modeling choices, system design, and technical ability to test and correct bias creates an ethical obligation that persists regardless of upstream data quality.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"AI Developers (General-purpose &amp; Specialized): While often handed biased data labeled as "gold standard," developers still carry primary responsibility due to their control over how that data is modeled, weighted, and scaled. Possessing the technical capability to test, reject, or reframe biased assumptions carries ethical obligation - even when upstream systems fail. Vulnerability to flawed input does not remove responsibility for downstream harm."</li>                    <li>"- AI Developers (General-purpose and Specialized): primarily responsible because these people set-up the system choices ( input data, training model, assumptions, objectives, limitations,etc.)"</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Several respondents argued for lower responsibility, noting that developers often don't make choices about training data—this comes from data engineering teams or higher up, raising concerns about scapegoating developers in lawsuits. It's not feasible for general-purpose providers to be accountable for outcomes across all use cases.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (3)</summary>
+                <ul class="quote-list">
+                    <li>"It's not feasible for a general purpose model provider to be able to test for every possible type of fairness issue. They can, and should disclose, information, but they cannot feasibly be held accountable for the outcomes of that in all cases."</li>                    <li>"I chose AI developer being minimally responsible because I believe in most cases, it is not the developer who makes the choices regarding the training data. This often comes from the Data Engineering team or from higher up and I worry about scape-goating of developers when the first lawsuits get filed."</li>                    <li>"Concern that AI developer being primarily responsible when they may not be close enough to the product and services that the deployer is using the AI system for to appreciate the discrimination risks."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<div class="actor-section" id="AIDeployer">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Respondents emphasized deployers are primarily responsible because they decide how and where bias manifests, adjusting models to local contexts and monitoring outcomes. They have specific use cases and intended outcomes that model providers don't control. Deployers govern the use of AI where discriminatory harms actually emerge, making them responsible for testing, evaluating, and guarding inputs/outputs. They scale harm when they skip contextual audits or ignore edge cases. Some noted that owners who engage developers and deployers understand the ultimate motive behind applications and should be primarily responsible.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (5)</summary>
+                <ul class="quote-list">
+                    <li>"AI Deployers and Governance Actors: Highly responsible. Deployers scale harm when they skip contextual audits or ignore edge cases."</li>                    <li>"AI Deployers: Primarily responsible because they decide how and where bias manifests. They adjust models to adapt local contexts and monitor outcomes."</li>                    <li>"AI application developers and AI infrastrcture providers are highly responsible . However, they are not primarily responsible as the main actor /owner, who engaged the developers and deployers know the ultimate motive of investment behind the application , as such owner of the AI application/s should be factored as primarily responsible"</li>                    <li>"Testing model biases should be part of frontier AI development.  Responsibility to ensure no harms come from biased AI models comes further downstream though, as it is unreasonable for the model creators to ensure no bias across all deployment modalities.  Governance actors and deployers govern the use of AI, where the discriminatory and misrepresentative harms emerge, and they are therefore responsible for mitigating these harms, including testing, evaluating and guarding I/O.  Regulating AI development and capability is not as feasible as regulating its use."</li>                    <li>"I maintain that deployers have higher responsibility than AI developers (though many general AI developers may also deploy). Deployers have specific use cases and intended outcomes in mind for their users, which the model providers do not control."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<div class="actor-section" id="AIGovernanceActor">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Governance actors are highly responsible for AI bias as they approve systems without requiring fairness testing (especially for marginalized groups) and shape regulatory frameworks that influence all stakeholders. While model creators cannot eliminate bias across all uses, governance actors control where discriminatory harms actually emerge—in deployment and use. They must regulate AI applications rather than development, enforcing testing, evaluation, and safeguards with serious consequences for biased outputs.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (4)</summary>
+                <ul class="quote-list">
+                    <li>"Highly responsible. Governance actors too often approve systems without requiring representational fairness testing - especially for neurodivergent, racialized, or intersectional identities."</li>                    <li>"Testing model biases should be part of frontier AI development.  Responsibility to ensure no harms come from biased AI models comes further downstream though, as it is unreasonable for the model creators to ensure no bias across all deployment modalities. Governance actors and deployers govern the use of AI, where the discriminatory and misrepresentative harms emerge, and they are therefore responsible for mitigating these harms, including testing, evaluating and guarding I/O.  Regulating AI development and capability is not as feasible as regulating its use."</li>                    <li>"AI Governance actors should be primarily responsible as governments and other actors with authority can even influence developers to develop responsible AI with severe cosequences for biased and misrepresented outputs from AI."</li>                    <li>"Highly responsible because they can form regulatory frameworks, which can influence other actors."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<div class="actor-section" id="AIUser">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "Users are not free from responsibility ..., bias literacy, source checking, output review practices and subsequent decisions are crucial steps in managing the impact of model bias which can't all be handled upstream."</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"Users are not free from responsibility ..., bias literacy, source checking, output review practices and subsequent decisions are crucial steps in managing the impact of model bias which can't all be handled upstream."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Multiple respondents argued users are not responsible because they neither created the model nor controlled its training or deployment—placing responsibility on users is ethically misplaced and structurally unfair. Users are typically being sold a service or product, and while AI literacy is desirable, this is not primarily the user's responsibility. Some expressed concern that users shouldn't be held responsible as long as they are not malicious.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (5)</summary>
+                <ul class="quote-list">
+                    <li>"AI Users and Affected Stakeholders: Not responsible. They neither created the model nor controlled its training or deployment. Placing responsibility on users is ethically misplaced and structurally unfair."</li>                    <li>"AI users should be held more responsible than general purpose AI developers because it's not possible to neuter a general purpose technology and retain its usefulness... at some point the end-user becomes more responsible.
+
+For instance, consider a knife. If we hold the manufacturer more responsible than the end-user for knife crimes, eventually they'll just make blunt knives, which will destroy the point of making knives in the first place. Meanwhile, the end-user who is insistent on committing knife crimes will just opt for using clubs instead. 
+
+Some commenters have said that bias emerges from data and training choices, but this is a mere hand-waving argument esconced in wishful thinking, as it is not possible to trace which training and data choice leads to what instance of discrimination or misrepresentation.
+
+I also don't see how you could hold the AI infrastructure provider responsible for anything, unless you are willing to compromise entirely on privacy rights."</li>                    <li>"Retaining my rating but concerned that greater responsibility is attributed to AI users than say rights or advocacy groups that may fall under "Affected Stakeholder." Worries I misread the definitions of these stakeholders or that they were unclear to begin with"</li>                    <li>"I don't think users should be held responsible as long as they are not malicious."</li>                    <li>"AI users are typically being sold a service or product, and while AI literacy is an outcome to be achieved, this is not primarily the responsibility of the end user."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIDeveloperSpecializedAI">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Respondents emphasized that developers carry primary responsibility due to their control over system choices including input data, training models, assumptions, objectives, and limitations. Even when handed biased data, developers retain responsibility because they have technical capability to test, reject, or reframe biased assumptions. Their control over how data is modeled, weighted, and scaled carries ethical obligation, and vulnerability to flawed input does not remove responsibility for downstream harm.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"AI Developers (General-purpose &amp; Specialized): While often handed biased data labeled as "gold standard," developers still carry primary responsibility due to their control over how that data is modeled, weighted, and scaled. Possessing the technical capability to test, reject, or reframe biased assumptions carries ethical obligation - even when upstream systems fail. Vulnerability to flawed input does not remove responsibility for downstream harm."</li>                    <li>"- AI Developers (General-purpose and Specialized): primarily responsible because these people set-up the system choices ( input data, training model, assumptions, objectives, limitations,etc.)"</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIDeployer">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Respondents emphasized deployers are primarily responsible because they decide how and where bias manifests, adjusting models to local contexts and monitoring outcomes. They have specific use cases and intended outcomes that model providers don't control. Deployers govern the use of AI where discriminatory harms actually emerge, making them responsible for testing, evaluating, and guarding inputs/outputs. They scale harm when they skip contextual audits or ignore edge cases. Some noted that owners who engage developers and deployers understand the ultimate motive behind applications and should be primarily responsible.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (5)</summary>
+                <ul class="quote-list">
+                    <li>"AI Deployers and Governance Actors: Highly responsible. Deployers scale harm when they skip contextual audits or ignore edge cases."</li>                    <li>"AI Deployers: Primarily responsible because they decide how and where bias manifests. They adjust models to adapt local contexts and monitor outcomes."</li>                    <li>"AI application developers and AI infrastrcture providers are highly responsible . However, they are not primarily responsible as the main actor /owner, who engaged the developers and deployers know the ultimate motive of investment behind the application , as such owner of the AI application/s should be factored as primarily responsible"</li>                    <li>"Testing model biases should be part of frontier AI development.  Responsibility to ensure no harms come from biased AI models comes further downstream though, as it is unreasonable for the model creators to ensure no bias across all deployment modalities.  Governance actors and deployers govern the use of AI, where the discriminatory and misrepresentative harms emerge, and they are therefore responsible for mitigating these harms, including testing, evaluating and guarding I/O.  Regulating AI development and capability is not as feasible as regulating its use."</li>                    <li>"I maintain that deployers have higher responsibility than AI developers (though many general AI developers may also deploy). Deployers have specific use cases and intended outcomes in mind for their users, which the model providers do not control."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIInfrastructureProvider">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Comments emphasized that infrastructure providers are primarily responsible for resource allocation—only providing infrastructure to certain companies pushes certain AI products to market while preventing alternatives from smaller companies. They have tremendous market power and lobbying influence (e.g., NVIDIA), control what models are available and at what price, and provide verification mechanisms that developers often trust without question. Their cost/performance profile for bias detection is a primary lever for discrimination. Some compared their responsibility to hosting providers for internet forums or social media, noting they have the ability to de-platform bad actors. With great scale comes shared responsibility—their role powers the very scale that amplifies systemic misrepresentation.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (6)</summary>
+                <ul class="quote-list">
+                    <li>"AI Infrastructure Providers: Moderately responsible. Their role is often dismissed as "just infrastructure," but they power the very scale that amplifies systemic misrepresentation. With great scale comes shared responsibility."</li>                    <li>"AI infrastructure providers should be highly responsible, just like the hosting providers for internet fora or social media. The content should be 'Unfair discrimination and misrepresentation' and they are very important to reach that goal."</li>                    <li>"I rate infrastructure as higher responsibility because they have the ability to de-platform bad actors."</li>                    <li>"AI infrastructure providers not only include data providers, they also control what models are available and often what verification mechanisms are available and at what price.  Specialist developers are very often inheriting decisions and capabilities of the platform.  For instance many developers will just turn on the Azure AI bias detection and trust its doing its job as advertised,  so the Infrastructure provider ends up being highly responsible.  Its also the case that spending more compute on reasoning or adversarial review can often get you more accuracy and less bias,  but that makes services less cost competitive.  So the provider cost/performance profile for bias detection mechanisms is a primary lever for discrimination and misrepresentation.  
+
+Users are not free from responsibility here either, bias literacy, source checking, output review practices and subsequent decisions are crucial steps in managing the impact of model bias which can't all be handled upstream."</li>                    <li>"AI Infrastructure Provider, for instance, NVIDIA, has tremendous leverage in the development of AI via its sheer market power, direct partnerships with AI Developers and Researchers, lobbying power with the policymakers."</li>                    <li>"I still think that AI Infrastructure Providers are primarily responsible. If they only provide the developed infrastructure to certain companies, it'd lead to pushing certain types of AI products to the market. It means that alternative approaches developed by small companies cannot find sufficient resources to develop their technologies. There should definitely be a share of resources policy (for instance, in the case of GPUs) to provide the equal distribution of fundamental resources."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Experts debate infrastructure provider responsibility. One notes they're not primary actors as ultimate owners control investment motives. Another argues holding them responsible would "compromise entirely on privacy rights," highlighting the accountability-privacy tension in infrastructure provision.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"AI application developers and AI infrastrcture providers are highly responsible . However, they are not primarily responsible as the main actor /owner, who engaged the developers and deployers know the ultimate motive of investment behind the application , as such owner of the AI application/s should be factored as primarily responsible"</li>                    <li>"don't see how you could hold the AI infrastructure provider responsible for anything, unless you are willing to compromise entirely on privacy rights."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIUser">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "Users are not free from responsibility ..., bias literacy, source checking, output review practices and subsequent decisions are crucial steps in managing the impact of model bias which can't all be handled upstream."</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"Users are not free from responsibility ..., bias literacy, source checking, output review practices and subsequent decisions are crucial steps in managing the impact of model bias which can't all be handled upstream."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Multiple respondents argued users are not responsible because they neither created the model nor controlled its training or deployment—placing responsibility on users is ethically misplaced and structurally unfair. Users are typically being sold a service or product, and while AI literacy is desirable, this is not primarily the user's responsibility. Some expressed concern that users shouldn't be held responsible as long as they are not malicious.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (5)</summary>
+                <ul class="quote-list">
+                    <li>"AI Users and Affected Stakeholders: Not responsible. They neither created the model nor controlled its training or deployment. Placing responsibility on users is ethically misplaced and structurally unfair."</li>                    <li>"AI users should be held more responsible than general purpose AI developers because it's not possible to neuter a general purpose technology and retain its usefulness... at some point the end-user becomes more responsible.
+
+For instance, consider a knife. If we hold the manufacturer more responsible than the end-user for knife crimes, eventually they'll just make blunt knives, which will destroy the point of making knives in the first place. Meanwhile, the end-user who is insistent on committing knife crimes will just opt for using clubs instead. 
+
+Some commenters have said that bias emerges from data and training choices, but this is a mere hand-waving argument esconced in wishful thinking, as it is not possible to trace which training and data choice leads to what instance of discrimination or misrepresentation.
+
+I also don't see how you could hold the AI infrastructure provider responsible for anything, unless you are willing to compromise entirely on privacy rights."</li>                    <li>"Retaining my rating but concerned that greater responsibility is attributed to AI users than say rights or advocacy groups that may fall under "Affected Stakeholder." Worries I misread the definitions of these stakeholders or that they were unclear to begin with"</li>                    <li>"I don't think users should be held responsible as long as they are not malicious."</li>                    <li>"AI users are typically being sold a service or product, and while AI literacy is an outcome to be achieved, this is not primarily the responsibility of the end user."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AffectedStakeholder">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Some argued affected stakeholders have high responsibility to ask for transparency in AI outputs and serve as catalysts for policymakers and regulators to address malicious AI outputs. They have an obligation to proactively lead or initiate efforts to address biased AI output risks.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"Affected stakeholder have a high responsibility to ask for transparency in AI outputs. They need to be the catalyst for policy makers and regulators to reign in malicious AI outputs that affect stakeholders. They have an obligation to proactively lead or initiate efforts to address the risk of biased AI outputs."</li>                    <li>"Retaining my rating but concerned that greater responsibility is attributed to AI users than say rights or advocacy groups that may fall under "Affected Stakeholder." Worries I misread the definitions of these stakeholders or that they were unclear to begin with"</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Several respondents argued affected stakeholders are not responsible because they neither created the model nor controlled its training or deployment—placing responsibility on them is ethically misplaced and structurally unfair. One respondent explicitly called this "victim blaming," noting it's inappropriate to expect stakeholders to mitigate harms that happen to them.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"AI Users and Affected Stakeholders: Not responsible. They neither created the model nor controlled its training or deployment. Placing responsibility on users is ethically misplaced and structurally unfair."</li>                    <li>"I rate affected stakeholder as lower because it strikes me as "victim blaming" for the stakeholder to be expected to mitigate harms that happen to them."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIGovernanceActor">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Governance actors are highly responsible for AI bias as they approve systems without requiring fairness testing (especially for marginalized groups) and shape regulatory frameworks that influence all stakeholders. While model creators cannot eliminate bias across all uses, governance actors control where discriminatory harms actually emerge—in deployment and use. They must regulate AI applications rather than development, enforcing testing, evaluation, and safeguards with serious consequences for biased outputs.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (4)</summary>
+                <ul class="quote-list">
+                    <li>"Highly responsible. Governance actors too often approve systems without requiring representational fairness testing - especially for neurodivergent, racialized, or intersectional identities."</li>                    <li>"Testing model biases should be part of frontier AI development.  Responsibility to ensure no harms come from biased AI models comes further downstream though, as it is unreasonable for the model creators to ensure no bias across all deployment modalities. Governance actors and deployers govern the use of AI, where the discriminatory and misrepresentative harms emerge, and they are therefore responsible for mitigating these harms, including testing, evaluating and guarding I/O.  Regulating AI development and capability is not as feasible as regulating its use."</li>                    <li>"AI Governance actors should be primarily responsible as governments and other actors with authority can even influence developers to develop responsible AI with severe cosequences for biased and misrepresented outputs from AI."</li>                    <li>"Highly responsible because they can form regulatory frameworks, which can influence other actors."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pills = document.querySelectorAll('.nav-pill');
+            const sections = document.querySelectorAll('.actor-section');
+
+            pills.forEach(pill => {
+                pill.addEventListener('click', function() {
+                    // Remove active class from all pills and sections
+                    pills.forEach(p => p.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('active'));
+
+                    // Add active class to clicked pill
+                    this.classList.add('active');
+
+                    // Show corresponding section
+                    const targetId = this.getAttribute('data-target');
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

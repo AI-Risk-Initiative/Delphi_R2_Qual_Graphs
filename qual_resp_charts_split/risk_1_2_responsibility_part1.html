@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.2 Exposure to toxic content - Responsibility - Part 1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8px;
+            flex: 1;
+            min-width: 200px;
+            overflow-wrap: break-word;
+            word-break: break-word;        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
+            color: #000000;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .legend {
+            text-align: center;
+            font-size: 12px;
+            color: #888888;
+            font-style: italic;
+            margin-bottom: 12px;
+            padding: 8px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .selection-title {
+
+
+            text-align: center;
+
+
+            font-size: 14px;
+
+
+            font-weight: 600;
+
+
+            color: #666666;
+
+
+            margin-bottom: 10px;
+
+
+        }
+
+
+
+        .nav-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 15px;
+            justify-content: center;
+        }
+
+        .nav-pill {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 25px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-family: 'Figtree', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            color: #000000;
+        }
+
+        .nav-pill:hover {
+            background: #e9ecef;
+            border-color: #000000;
+        }
+
+        .nav-pill.active {
+            background: #000000;
+            color: white;
+            border-color: #000000;
+        }
+
+        .actor-section {
+            display: none;
+        }
+
+        .actor-section.active {
+            display: block;
+        }
+
+        .content-grid {
+            display: flex;
+            width: 100%;
+            gap: 4px;
+        }
+
+        .content-column {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 8px;
+            flex: 1;
+            min-width: 200px;
+            overflow-wrap: break-word;
+            word-break: break-word;        }
+
+        .criteria-header {
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid;
+        }
+
+        .criteria-header.higher {
+            color: #FF0000;
+            border-bottom-color: #FF0000;
+        }
+
+        .criteria-header.lower {
+            color: #2E5C8A;
+            border-bottom-color: #2E5C8A;
+        }
+
+        .summary-section {
+            margin-bottom: 20px;
+        }
+
+        .summary-text {
+            margin-bottom: 15px;
+            font-weight: 500;
+            color: #000000;
+            font-size: 15px;
+        }
+
+        .quote-details {
+            margin-top: 15px;
+        }
+
+        .quote-toggle {
+            cursor: pointer;
+            color: #000000;
+            font-weight: 500;
+            font-size: 10px;
+            padding: 8px 0;
+            border-bottom: 1px dotted #000000;
+            display: inline-block;
+        }
+
+        .quote-toggle:hover {
+            color: #333333;
+        }
+
+        .quote-list {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .quote-list li {
+            margin-bottom: 12px;
+            font-size: 10px;
+            line-height: 1.3;
+            color: #000000;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                gap: 4px;
+            }
+
+            .selection-title {
+
+
+                text-align: center;
+
+
+                font-size: 14px;
+
+
+                font-weight: 600;
+
+
+                color: #666666;
+
+
+                margin-bottom: 10px;
+
+
+            }
+
+
+
+            .nav-pills {
+                justify-content: flex-start;
+            }
+
+            .nav-pill {
+                font-size: 10px;
+                padding: 4px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>1.2 Exposure to toxic content - Responsibility - Part 1</h1>
+
+
+        <div class="selection-title">Select an actor:</div>
+                <div class="nav-pills">
+            <button class="nav-pill active" data-target="AIDeveloperGeneralpurposeAI">
+                AI Developer (General-purpose AI)
+            </button>
+            <button class="nav-pill" data-target="AIDeployer">
+                AI Deployer
+            </button>
+            <button class="nav-pill" data-target="AIGovernanceActor">
+                AI Governance Actor
+            </button>
+            <button class="nav-pill" data-target="AIUser">
+                AI User
+            </button>
+        </div>
+
+                <div class="content-sections">
+<div class="actor-section active" id="AIDeveloperGeneralpurposeAI">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [SUMMARY TBC]</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (3)</summary>
+                <ul class="quote-list">
+                    <li>"General-purpose and specialized AI developers are primarily responsible because they choose, process, and model the data that can carry or amplify toxic content. This includes training on unmoderated internet sources, poor filtering of NSFW or extremist datasets, and failure to build semantic toxicity detection into system architecture."</li>                    <li>"My one disagreement with the consensus is that I think developers and deployers are both highly responsible, which is where I rated them equally rather than one having primary responsibility. Developers absolutely have to do their due diligence, but deployers also have special responsibility to vet tools including betting developers themselves and then put tools in front of users. These are highly interrelated relationships, so assigning primary responsibility does not make sense to me."</li>                    <li>"Respondents emphasized high-to-primary responsibility because developers choose, process, and model data that can carry or amplify toxic content, including training on unmoderated internet sources and failing to build semantic toxicity detection into system architecture. However, some argued developers and deployers share equal responsibility rather than one having primary responsibility, as these are highly interrelated relationships where both must do due diligence."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [SUMMARY TBC]</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"I adjusted my responsibility for general AI developers slightly upwards. However, I don't think I agree with the consensus because I don't believe general-purpose developers are the primary lever of changing this --- generating toxic content is easy and the best technology to limit exposure to toxic content they could deploy would be relatively ineffective"</li>                    <li>"One respondent argued against primary responsibility, noting that generating toxic content is easy and the best technology general-purpose developers could deploy to limit exposure would be relatively ineffective, making them not the primary lever for change."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<div class="actor-section" id="AIDeployer">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [SUMMARY TBC]</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (3)</summary>
+                <ul class="quote-list">
+                    <li>"Deployers and governance actors are highly responsible. Deployers distribute models without proper content controls or transparency about what may emerge. Governance actors fail to enforce platform accountability or moderation requirements - especially for generative models serving vulnerable populations."</li>                    <li>"My one disagreement with the consensus is that I think developers and deployers are both highly responsible, which is where I rated them equally rather than one having primary responsibility. Developers absolutely have to do their due diligence, but deployers also have special responsibility to vet tools including betting developers themselves and then put tools in front of users. These are highly interrelated relationships, so assigning primary responsibility does not make sense to me."</li>                    <li>"Respondents noted deployers are highly responsible because they distribute models without proper content controls or transparency about what may emerge, and they have special responsibility to vet tools and developers before putting tools in front of users. Some argued deployers share equal responsibility with developers rather than one having primary responsibility, given the highly interrelated nature of these relationships."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [SUMMARY TBC]</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"[NO EXPERT COMMENTS PROVIDED]"</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<div class="actor-section" id="AIGovernanceActor">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "Deployers and governance actors are highly responsible. Deployers distribute models without proper content controls or transparency about what may emerge. Governance actors fail to enforce platform accountability or moderation requirements - especially for generative models serving vulnerable populations."</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"Deployers and governance actors are highly responsible. Deployers distribute models without proper content controls or transparency about what may emerge. Governance actors fail to enforce platform accountability or moderation requirements - especially for generative models serving vulnerable populations."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<div class="actor-section" id="AIUser">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Multiple respondents argued users are primarily responsible because most toxic content will be created intentionally by AI users—including CSAM, hate speech, and pornography. Users proactively create toxic content and try to find new ways to jailbreak guardrails, making it strange not to hold them primarily responsible when they do this.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"AI users tend to be the ones proactively creating toxic content and trying to find new ways to jailbreak guardrails. It would be strange not to hold them primarily responsible when they do this."</li>                    <li>"I think most toxic content, as defined by the study, will be created intentionally by AI users so they are primarily responsible. E.g. CSAM, hate speech, pornography I think is primarily going to be intentional act by the AI user."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "Users and affected stakeholders are not responsible. They do not shape, publish, or promote the toxic material - they experience its consequences, often without visibility or consent."</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"Users and affected stakeholders are not responsible. They do not shape, publish, or promote the toxic material - they experience its consequences, often without visibility or consent."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIDeveloperSpecializedAI">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Respondents emphasized primary responsibility because developers choose training data, model architecture, alignment techniques, and post-training filters that directly determine whether models emit toxic content. They are usually the only actors with full technical insight into model internals, and their choices about processing and modeling data—including training on unmoderated internet sources and poor filtering of NSFW or extremist datasets—directly enable toxic content generation.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"General-purpose and specialized AI developers are primarily responsible because they choose, process, and model the data that can carry or amplify toxic content. This includes training on unmoderated internet sources, poor filtering of NSFW or extremist datasets, and failure to build semantic toxicity detection into system architecture."</li>                    <li>"AI Developer (specialized AI): They choose the training data, model architecture, alignment techniques and post-training filters that most directly determine whether the model emits toxic content. They are also usually the only actors with full technical insight into model internals."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIDeployer">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [SUMMARY TBC]</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (3)</summary>
+                <ul class="quote-list">
+                    <li>"Deployers and governance actors are highly responsible. Deployers distribute models without proper content controls or transparency about what may emerge. Governance actors fail to enforce platform accountability or moderation requirements - especially for generative models serving vulnerable populations."</li>                    <li>"My one disagreement with the consensus is that I think developers and deployers are both highly responsible, which is where I rated them equally rather than one having primary responsibility. Developers absolutely have to do their due diligence, but deployers also have special responsibility to vet tools including betting developers themselves and then put tools in front of users. These are highly interrelated relationships, so assigning primary responsibility does not make sense to me."</li>                    <li>"Respondents noted deployers are highly responsible because they distribute models without proper content controls or transparency about what may emerge, and they have special responsibility to vet tools and developers before putting tools in front of users. Some argued deployers share equal responsibility with developers rather than one having primary responsibility, given the highly interrelated nature of these relationships."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [SUMMARY TBC]</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"[NO EXPERT COMMENTS PROVIDED]"</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIInfrastructureProvider">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "Infrastructure providers were rated minimally responsible because their role is passive in relation to content. However, as scale-enablers, they may bear more responsibility in the future if content toxicity becomes a service-level issue."</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"Infrastructure providers were rated minimally responsible because their role is passive in relation to content. However, as scale-enablers, they may bear more responsibility in the future if content toxicity becomes a service-level issue."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIUser">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Multiple respondents argued users are primarily responsible because most toxic content will be created intentionally by AI users—including CSAM, hate speech, and pornography. Users proactively create toxic content and try to find new ways to jailbreak guardrails, making it strange not to hold them primarily responsible when they do this.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"AI users tend to be the ones proactively creating toxic content and trying to find new ways to jailbreak guardrails. It would be strange not to hold them primarily responsible when they do this."</li>                    <li>"I think most toxic content, as defined by the study, will be created intentionally by AI users so they are primarily responsible. E.g. CSAM, hate speech, pornography I think is primarily going to be intentional act by the AI user."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "Users and affected stakeholders are not responsible. They do not shape, publish, or promote the toxic material - they experience its consequences, often without visibility or consent."</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"Users and affected stakeholders are not responsible. They do not shape, publish, or promote the toxic material - they experience its consequences, often without visibility or consent."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AffectedStakeholder">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [SUMMARY TBC]</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"I did not change my assessment even though I was an outlier on how much affected stakeholders are responsible. I think they do have a responsibility to monitor usage of AI by e.g. their employees and they are responsible for checking content etc."</li>                    <li>"One respondent maintained that affected stakeholders have responsibility to monitor AI usage by employees and check content, despite being an outlier in this assessment."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [SUMMARY TBC]</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"Users and affected stakeholders are not responsible. They do not shape, publish, or promote the toxic material - they experience its consequences, often without visibility or consent."</li>                    <li>"Respondents argued affected stakeholders are not responsible because they do not shape, publish, or promote toxic material—they experience its consequences, often without visibility or consent."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIGovernanceActor">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "Deployers and governance actors are highly responsible. Deployers distribute models without proper content controls or transparency about what may emerge. Governance actors fail to enforce platform accountability or moderation requirements - especially for generative models serving vulnerable populations."</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"Deployers and governance actors are highly responsible. Deployers distribute models without proper content controls or transparency about what may emerge. Governance actors fail to enforce platform accountability or moderation requirements - especially for generative models serving vulnerable populations."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pills = document.querySelectorAll('.nav-pill');
+            const sections = document.querySelectorAll('.actor-section');
+
+            pills.forEach(pill => {
+                pill.addEventListener('click', function() {
+                    // Remove active class from all pills and sections
+                    pills.forEach(p => p.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('active'));
+
+                    // Add active class to clicked pill
+                    this.classList.add('active');
+
+                    // Show corresponding section
+                    const targetId = this.getAttribute('data-target');
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

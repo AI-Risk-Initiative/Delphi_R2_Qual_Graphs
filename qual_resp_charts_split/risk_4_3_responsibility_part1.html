@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.3 Cyberattacks, weapon development or use, and mass harm - Responsibility - Part 1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8px;
+            flex: 1;
+            min-width: 200px;
+            overflow-wrap: break-word;
+            word-break: break-word;        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
+            color: #000000;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .legend {
+            text-align: center;
+            font-size: 12px;
+            color: #888888;
+            font-style: italic;
+            margin-bottom: 12px;
+            padding: 8px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .selection-title {
+
+
+            text-align: center;
+
+
+            font-size: 14px;
+
+
+            font-weight: 600;
+
+
+            color: #666666;
+
+
+            margin-bottom: 10px;
+
+
+        }
+
+
+
+        .nav-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 15px;
+            justify-content: center;
+        }
+
+        .nav-pill {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 25px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-family: 'Figtree', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            color: #000000;
+        }
+
+        .nav-pill:hover {
+            background: #e9ecef;
+            border-color: #000000;
+        }
+
+        .nav-pill.active {
+            background: #000000;
+            color: white;
+            border-color: #000000;
+        }
+
+        .actor-section {
+            display: none;
+        }
+
+        .actor-section.active {
+            display: block;
+        }
+
+        .content-grid {
+            display: flex;
+            width: 100%;
+            gap: 4px;
+        }
+
+        .content-column {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 8px;
+            flex: 1;
+            min-width: 200px;
+            overflow-wrap: break-word;
+            word-break: break-word;        }
+
+        .criteria-header {
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid;
+        }
+
+        .criteria-header.higher {
+            color: #FF0000;
+            border-bottom-color: #FF0000;
+        }
+
+        .criteria-header.lower {
+            color: #2E5C8A;
+            border-bottom-color: #2E5C8A;
+        }
+
+        .summary-section {
+            margin-bottom: 20px;
+        }
+
+        .summary-text {
+            margin-bottom: 15px;
+            font-weight: 500;
+            color: #000000;
+            font-size: 15px;
+        }
+
+        .quote-details {
+            margin-top: 15px;
+        }
+
+        .quote-toggle {
+            cursor: pointer;
+            color: #000000;
+            font-weight: 500;
+            font-size: 10px;
+            padding: 8px 0;
+            border-bottom: 1px dotted #000000;
+            display: inline-block;
+        }
+
+        .quote-toggle:hover {
+            color: #333333;
+        }
+
+        .quote-list {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .quote-list li {
+            margin-bottom: 12px;
+            font-size: 10px;
+            line-height: 1.3;
+            color: #000000;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                gap: 4px;
+            }
+
+            .selection-title {
+
+
+                text-align: center;
+
+
+                font-size: 14px;
+
+
+                font-weight: 600;
+
+
+                color: #666666;
+
+
+                margin-bottom: 10px;
+
+
+            }
+
+
+
+            .nav-pills {
+                justify-content: flex-start;
+            }
+
+            .nav-pill {
+                font-size: 10px;
+                padding: 4px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>4.3 Cyberattacks, weapon development or use, and mass harm - Responsibility - Part 1</h1>
+
+
+        <div class="selection-title">Select an actor:</div>
+                <div class="nav-pills">
+            <button class="nav-pill active" data-target="AIDeveloperGeneralpurposeAI">
+                AI Developer (General-purpose AI)
+            </button>
+            <button class="nav-pill" data-target="AIDeployer">
+                AI Deployer
+            </button>
+            <button class="nav-pill" data-target="AIGovernanceActor">
+                AI Governance Actor
+            </button>
+            <button class="nav-pill" data-target="AIUser">
+                AI User
+            </button>
+        </div>
+
+                <div class="content-sections">
+<div class="actor-section active" id="AIDeveloperGeneralpurposeAI">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "Responsibility follows control of attack and actuation surfaces and the ability to remediate. Deployers are primary because they operate keys, CI or CD, networks, and incident response. Specialized developers are primary when their systems enable autonomy, cyber operations, robotics, or bio and chem tooling. General-purpose developers and infrastructure providers are highly responsible for secure artifacts, supply chain hygiene, tenant isolation, and KMS. Governance actors are highly responsible for setting and enforcing mandatory controls. Users are minimally responsible because they do not control architecture or remediation. Affected stakeholders are not responsible."</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"Responsibility follows control of attack and actuation surfaces and the ability to remediate. Deployers are primary because they operate keys, CI or CD, networks, and incident response. Specialized developers are primary when their systems enable autonomy, cyber operations, robotics, or bio and chem tooling. General-purpose developers and infrastructure providers are highly responsible for secure artifacts, supply chain hygiene, tenant isolation, and KMS. Governance actors are highly responsible for setting and enforcing mandatory controls. Users are minimally responsible because they do not control architecture or remediation. Affected stakeholders are not responsible."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<div class="actor-section" id="AIDeployer">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [editor's note: There were many comments for this risk, and this AI-generated summary may be misleading or incomplete]. Multiple experts emphasize deployers bear primary responsibility for security vulnerabilities. They must create evaluation matrices and public scorecards showing risk levels "beyond profit motive." Deployers control the critical operational layer - they "operate keys, CI/CD, networks, and incident response" and determine context of use. As one expert notes, the same model can be used for defensive penetration testing or attacks - "the context of use is what matters, not the capability." Deployers have "direct influence over real-world applications" despite unclear legal boundaries with developers.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (3)</summary>
+                <ul class="quote-list">
+                    <li>"AI deployers primarily deployer must put up necessary evaluation matrix of possible harms that can be caused by AI system . It will be their primary responsibility beyond profit motive to put score card for the public as to the degree of the risk level of AI system they are deploying."</li>                    <li>"AI Deployers are responsible for the use of the AI.  A model can be used for defensive penetration testing, which is helpful for security but also mimics the activities of attack.  The context of the use is what matters, not the capability.  AI model creators SHOULD create AI models capable of cyberattacks in order to improve defenses.  How the models are used is the responsibility of the Deployer and the User."</li>                    <li>"Responsibility follows control of attack and actuation surfaces and the ability to remediate. Deployers are primary because they operate keys, CI or CD, networks, and incident response. Specialized developers are primary when their systems enable autonomy, cyber operations, robotics, or bio and chem tooling. General-purpose developers and infrastructure providers are highly responsible for secure artifacts, supply chain hygiene, tenant isolation, and KMS. Governance actors are highly responsible for setting and enforcing mandatory controls. Users are minimally responsible because they do not control architecture or remediation. Affected stakeholders are not responsible."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<div class="actor-section" id="AIGovernanceActor">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Governance actors are indirectly exposed but play a critical role in risk prevention. While they do not operate AI systems directly, they have the obligation and capability to shape oversight and accountability frameworks. As a cutting-edge security researcher notes, if open source models exist, it is almost impossible to prevent advanced AI systems from being used in cyberattacks and weapons development, and security managers and governments should bear primary responsibility for this. Governance actors are highly responsible for setting and enforcing mandatory controls.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"As a cutting-edge security researcher, I must point out that if open source models exist, it is almost impossible to prevent advanced AI systems from being used in areas such as cyberattacks and weapons development. (Open source models are unlikely to achieve solid security because malicious users can arbitrarily disrupt their alignment and enhance their ability to perform certain tasks through post-training (ESTIMATING WORST-CASE FRONTIER RISKS OF OPEN-WEIGHT LLMS, OpenAI 2025). I believe that security managers and governments should bear the primary responsibility for this."</li>                    <li>"Responsibility follows control of attack and actuation surfaces and the ability to remediate. Deployers are primary because they operate keys, CI or CD, networks, and incident response. Specialized developers are primary when their systems enable autonomy, cyber operations, robotics, or bio and chem tooling. General-purpose developers and infrastructure providers are highly responsible for secure artifacts, supply chain hygiene, tenant isolation, and KMS. Governance actors are highly responsible for setting and enforcing mandatory controls. Users are minimally responsible because they do not control architecture or remediation. Affected stakeholders are not responsible."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Governance actors are minimally responsible, comparing them to judges who hold others accountable rather than bearing direct responsibility for crimes. Their role is oversight and ensuring governments are informed, not recursive responsibility for AI risks.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"I continue to assess that AI governance actors are "minimally responsible". I think a category error is at work here. Saying AI governance actors are responsible for AI risks is like saying that judges are responsible for crimes being committed. The kind of responsibility a judge has is very different from the kind of responsibility that a criminal or a lock-pick-maker has. 
+
+The better way to think of this is that the AI governance actor is responsible for holding responsible the actor who is properly responsible. It would be recursive that AI governance actor is themselves responsible. Would we propose some meta-AI-goverance governor who holds responsible the AI governance actors that fail to hold responsible the actors that should be responsible? 
+
+This is not the right way of thinking. We can rightly say that AI governance actors are responsible for some meta issues, like ensuring that Governments are properly informed etc."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<div class="actor-section" id="AIUser">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Experts assign responsibility because users share control over "how models are used" alongside deployers, and must "maintain and regularly update their systems in line with proper guidance" despite limited ability to fix underlying vulnerabilities.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"AI Deployers are responsible for the use of the AI.  A model can be used for defensive penetration testing, which is helpful for security but also mimics the activities of attack.  The context of the use is what matters, not the capability.  AI model creators SHOULD create AI models capable of cyberattacks in order to improve defenses.  How the models are used is the responsibility of the Deployer and the User."</li>                    <li>"While an AI user may have little agency to code and fix cyber security related vulnerabilities, they do have the responsibility to maintain and regularly update their systems inline with proper guidance."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Users are minimally responsible as they lack capability to address weaponization risks and don't control architecture or remediation.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"AI users and affected stakeholders may be impacted, but they lack direct obligation or capability to address weaponization risks. Responsibility lies primarily with developers, deployers, and governance actors."</li>                    <li>"Responsibility follows control of attack and actuation surfaces and the ability to remediate. Deployers are primary because they operate keys, CI or CD, networks, and incident response. Specialized developers are primary when their systems enable autonomy, cyber operations, robotics, or bio and chem tooling. General-purpose developers and infrastructure providers are highly responsible for secure artifacts, supply chain hygiene, tenant isolation, and KMS. Governance actors are highly responsible for setting and enforcing mandatory controls. Users are minimally responsible because they do not control architecture or remediation. Affected stakeholders are not responsible."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIDeveloperSpecializedAI">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "Responsibility follows control of attack and actuation surfaces and the ability to remediate. Deployers are primary because they operate keys, CI or CD, networks, and incident response. Specialized developers are primary when their systems enable autonomy, cyber operations, robotics, or bio and chem tooling. General-purpose developers and infrastructure providers are highly responsible for secure artifacts, supply chain hygiene, tenant isolation, and KMS. Governance actors are highly responsible for setting and enforcing mandatory controls. Users are minimally responsible because they do not control architecture or remediation. Affected stakeholders are not responsible."</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"Responsibility follows control of attack and actuation surfaces and the ability to remediate. Deployers are primary because they operate keys, CI or CD, networks, and incident response. Specialized developers are primary when their systems enable autonomy, cyber operations, robotics, or bio and chem tooling. General-purpose developers and infrastructure providers are highly responsible for secure artifacts, supply chain hygiene, tenant isolation, and KMS. Governance actors are highly responsible for setting and enforcing mandatory controls. Users are minimally responsible because they do not control architecture or remediation. Affected stakeholders are not responsible."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIDeployer">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [editor's note: There were many comments for this risk, and this AI-generated summary may be misleading or incomplete]. Multiple experts emphasize deployers bear primary responsibility for security vulnerabilities. They must create evaluation matrices and public scorecards showing risk levels "beyond profit motive." Deployers control the critical operational layer - they "operate keys, CI/CD, networks, and incident response" and determine context of use. As one expert notes, the same model can be used for defensive penetration testing or attacks - "the context of use is what matters, not the capability." Deployers have "direct influence over real-world applications" despite unclear legal boundaries with developers.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (3)</summary>
+                <ul class="quote-list">
+                    <li>"AI deployers primarily deployer must put up necessary evaluation matrix of possible harms that can be caused by AI system . It will be their primary responsibility beyond profit motive to put score card for the public as to the degree of the risk level of AI system they are deploying."</li>                    <li>"AI Deployers are responsible for the use of the AI.  A model can be used for defensive penetration testing, which is helpful for security but also mimics the activities of attack.  The context of the use is what matters, not the capability.  AI model creators SHOULD create AI models capable of cyberattacks in order to improve defenses.  How the models are used is the responsibility of the Deployer and the User."</li>                    <li>"Responsibility follows control of attack and actuation surfaces and the ability to remediate. Deployers are primary because they operate keys, CI or CD, networks, and incident response. Specialized developers are primary when their systems enable autonomy, cyber operations, robotics, or bio and chem tooling. General-purpose developers and infrastructure providers are highly responsible for secure artifacts, supply chain hygiene, tenant isolation, and KMS. Governance actors are highly responsible for setting and enforcing mandatory controls. Users are minimally responsible because they do not control architecture or remediation. Affected stakeholders are not responsible."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIInfrastructureProvider">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [editor's note: There were many comments for this risk, and this AI-generated summary may be misleading or incomplete]. Infrastructure providers are critical points in the AI security chain. Their compromise can lead to widespread disruptions, large-scale attacks, and data loss. The lack of transparency and control over model updates poses systemic risks. Their central role in enabling AI operations gives them both the capability and obligation to prevent misuse. General-purpose developers and infrastructure providers are highly responsible for secure artifacts, supply chain hygiene, tenant isolation, and KMS. Governance actors are highly responsible for setting and enforcing mandatory controls.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (3)</summary>
+                <ul class="quote-list">
+                    <li>"Infrastructure providers are responsible for ensuring their underlying systems function properly.  This is a small part of the overall responsibility when compared with the developer of the AI system running on that infrastructure."</li>                    <li>"I upweighted AI infrastructure providers' responsibility in response to participants' comments regarding the potential to either amplify or contain some kinds of threats. I think this applies mainly to cyber, and not to other kinds of threats in this category, like bio."</li>                    <li>"Responsibility follows control of attack and actuation surfaces and the ability to remediate. Deployers are primary because they operate keys, CI or CD, networks, and incident response. Specialized developers are primary when their systems enable autonomy, cyber operations, robotics, or bio and chem tooling. General-purpose developers and infrastructure providers are highly responsible for secure artifacts, supply chain hygiene, tenant isolation, and KMS. Governance actors are highly responsible for setting and enforcing mandatory controls. Users are minimally responsible because they do not control architecture or remediation. Affected stakeholders are not responsible."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIUser">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Experts assign responsibility because users share control over "how models are used" alongside deployers, and must "maintain and regularly update their systems in line with proper guidance" despite limited ability to fix underlying vulnerabilities.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"AI Deployers are responsible for the use of the AI.  A model can be used for defensive penetration testing, which is helpful for security but also mimics the activities of attack.  The context of the use is what matters, not the capability.  AI model creators SHOULD create AI models capable of cyberattacks in order to improve defenses.  How the models are used is the responsibility of the Deployer and the User."</li>                    <li>"While an AI user may have little agency to code and fix cyber security related vulnerabilities, they do have the responsibility to maintain and regularly update their systems inline with proper guidance."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Users are minimally responsible as they lack capability to address weaponization risks and don't control architecture or remediation.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"AI users and affected stakeholders may be impacted, but they lack direct obligation or capability to address weaponization risks. Responsibility lies primarily with developers, deployers, and governance actors."</li>                    <li>"Responsibility follows control of attack and actuation surfaces and the ability to remediate. Deployers are primary because they operate keys, CI or CD, networks, and incident response. Specialized developers are primary when their systems enable autonomy, cyber operations, robotics, or bio and chem tooling. General-purpose developers and infrastructure providers are highly responsible for secure artifacts, supply chain hygiene, tenant isolation, and KMS. Governance actors are highly responsible for setting and enforcing mandatory controls. Users are minimally responsible because they do not control architecture or remediation. Affected stakeholders are not responsible."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AffectedStakeholder">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "Note on Affected stakeholders - minimal cybersecurity literacy among affected stakeholders can go a long way to protect individuals, communities and organisations from cyberattacks. If AI enables more, and more frequent attacks (e.g  spear phishing), it may become more important for individuals to learn to defend themselves in cyberspace. "</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"Note on Affected stakeholders - minimal cybersecurity literacy among affected stakeholders can go a long way to protect individuals, communities and organisations from cyberattacks. If AI enables more, and more frequent attacks (e.g  spear phishing), it may become more important for individuals to learn to defend themselves in cyberspace."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "AI users and affected stakeholders may be impacted, but they lack direct obligation or capability to address weaponization risks. Responsibility lies primarily with developers, deployers, and governance actors."</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"AI users and affected stakeholders may be impacted, but they lack direct obligation or capability to address weaponization risks. Responsibility lies primarily with developers, deployers, and governance actors."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIGovernanceActor">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Governance actors are indirectly exposed but play a critical role in risk prevention. While they do not operate AI systems directly, they have the obligation and capability to shape oversight and accountability frameworks. As a cutting-edge security researcher notes, if open source models exist, it is almost impossible to prevent advanced AI systems from being used in cyberattacks and weapons development, and security managers and governments should bear primary responsibility for this. Governance actors are highly responsible for setting and enforcing mandatory controls.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"As a cutting-edge security researcher, I must point out that if open source models exist, it is almost impossible to prevent advanced AI systems from being used in areas such as cyberattacks and weapons development. (Open source models are unlikely to achieve solid security because malicious users can arbitrarily disrupt their alignment and enhance their ability to perform certain tasks through post-training (ESTIMATING WORST-CASE FRONTIER RISKS OF OPEN-WEIGHT LLMS, OpenAI 2025). I believe that security managers and governments should bear the primary responsibility for this."</li>                    <li>"Responsibility follows control of attack and actuation surfaces and the ability to remediate. Deployers are primary because they operate keys, CI or CD, networks, and incident response. Specialized developers are primary when their systems enable autonomy, cyber operations, robotics, or bio and chem tooling. General-purpose developers and infrastructure providers are highly responsible for secure artifacts, supply chain hygiene, tenant isolation, and KMS. Governance actors are highly responsible for setting and enforcing mandatory controls. Users are minimally responsible because they do not control architecture or remediation. Affected stakeholders are not responsible."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Governance actors are minimally responsible, comparing them to judges who hold others accountable rather than bearing direct responsibility for crimes. Their role is oversight and ensuring governments are informed, not recursive responsibility for AI risks.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"I continue to assess that AI governance actors are "minimally responsible". I think a category error is at work here. Saying AI governance actors are responsible for AI risks is like saying that judges are responsible for crimes being committed. The kind of responsibility a judge has is very different from the kind of responsibility that a criminal or a lock-pick-maker has. 
+
+The better way to think of this is that the AI governance actor is responsible for holding responsible the actor who is properly responsible. It would be recursive that AI governance actor is themselves responsible. Would we propose some meta-AI-goverance governor who holds responsible the AI governance actors that fail to hold responsible the actors that should be responsible? 
+
+This is not the right way of thinking. We can rightly say that AI governance actors are responsible for some meta issues, like ensuring that Governments are properly informed etc."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pills = document.querySelectorAll('.nav-pill');
+            const sections = document.querySelectorAll('.actor-section');
+
+            pills.forEach(pill => {
+                pill.addEventListener('click', function() {
+                    // Remove active class from all pills and sections
+                    pills.forEach(p => p.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('active'));
+
+                    // Add active class to clicked pill
+                    this.classList.add('active');
+
+                    // Show corresponding section
+                    const targetId = this.getAttribute('data-target');
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

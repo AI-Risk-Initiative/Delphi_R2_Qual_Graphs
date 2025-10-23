@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6.2 Increased inequality and decline in employment quality - Responsibility</title>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8px;
+            flex: 1;
+            min-width: 200px;
+            overflow-wrap: break-word;
+            word-break: break-word;        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
+            color: #000000;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .legend {
+            text-align: center;
+            font-size: 12px;
+            color: #888888;
+            font-style: italic;
+            margin-bottom: 12px;
+            padding: 8px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .selection-title {
+
+
+            text-align: center;
+
+
+            font-size: 14px;
+
+
+            font-weight: 600;
+
+
+            color: #666666;
+
+
+            margin-bottom: 10px;
+
+
+        }
+
+
+
+        .nav-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 15px;
+            justify-content: center;
+        }
+
+        .nav-pill {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 25px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-family: 'Figtree', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            color: #000000;
+        }
+
+        .nav-pill:hover {
+            background: #e9ecef;
+            border-color: #000000;
+        }
+
+        .nav-pill.active {
+            background: #000000;
+            color: white;
+            border-color: #000000;
+        }
+
+        .actor-section {
+            display: none;
+        }
+
+        .actor-section.active {
+            display: block;
+        }
+
+        .content-grid {
+            display: flex;
+            width: 100%;
+            gap: 4px;
+        }
+
+        .content-column {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 8px;
+            flex: 1;
+            min-width: 200px;
+            overflow-wrap: break-word;
+            word-break: break-word;        }
+
+        .criteria-header {
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid;
+        }
+
+        .criteria-header.higher {
+            color: #FF0000;
+            border-bottom-color: #FF0000;
+        }
+
+        .criteria-header.lower {
+            color: #2E5C8A;
+            border-bottom-color: #2E5C8A;
+        }
+
+        .summary-section {
+            margin-bottom: 20px;
+        }
+
+        .summary-text {
+            margin-bottom: 15px;
+            font-weight: 500;
+            color: #000000;
+            font-size: 15px;
+        }
+
+        .quote-details {
+            margin-top: 15px;
+        }
+
+        .quote-toggle {
+            cursor: pointer;
+            color: #000000;
+            font-weight: 500;
+            font-size: 10px;
+            padding: 8px 0;
+            border-bottom: 1px dotted #000000;
+            display: inline-block;
+        }
+
+        .quote-toggle:hover {
+            color: #333333;
+        }
+
+        .quote-list {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .quote-list li {
+            margin-bottom: 12px;
+            font-size: 10px;
+            line-height: 1.3;
+            color: #000000;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                gap: 4px;
+            }
+
+            .selection-title {
+
+
+                text-align: center;
+
+
+                font-size: 14px;
+
+
+                font-weight: 600;
+
+
+                color: #666666;
+
+
+                margin-bottom: 10px;
+
+
+            }
+
+
+
+            .nav-pills {
+                justify-content: flex-start;
+            }
+
+            .nav-pill {
+                font-size: 10px;
+                padding: 4px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>6.2 Increased inequality and decline in employment quality - Responsibility</h1>
+
+
+        <div class="selection-title">Select an actor:</div>
+        <div class="nav-pills">
+            <button class="nav-pill active" data-target="AIDeveloperGeneralpurposeAI">
+                AI Developer (General-purpose AI)
+            </button>
+            <button class="nav-pill" data-target="AIDeveloperSpecializedAI">
+                AI Developer (Specialized AI)
+            </button>
+            <button class="nav-pill" data-target="AIDeployer">
+                AI Deployer
+            </button>
+            <button class="nav-pill" data-target="AIInfrastructureProvider">
+                AI Infrastructure Provider
+            </button>
+            <button class="nav-pill" data-target="AIUser">
+                AI User
+            </button>
+            <button class="nav-pill" data-target="AffectedStakeholder">
+                Affected Stakeholder
+            </button>
+            <button class="nav-pill" data-target="AIGovernanceActor">
+                AI Governance Actor
+            </button>
+        </div>
+
+        <div class="content-sections">
+            <div class="actor-section active" id="AIDeveloperGeneralpurposeAI">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Frontier model developers and major AI providers bear high responsibility as they shape capability trajectories and market structure. They can publish workforce impact assessments, support reskilling, and design products that augment rather than fully substitute workers. Developers determine architecture and deployment policies which impact employment and job quality.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"AI Developers (both general-purpose and specialized) and AI Governance Actors are rated as primarily responsible because they determine architecture and deployment policies which impact employment and job quality."</li>                    <li>"Frontier model developers and major AI providers - High. They shape capability trajectories and market structure. They can publish workforce impact assessments, support reskilling, and design products that augment rather than fully substitute."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "It is not the responsibility of an automation supplier to addrfess the jobs potentially lost due to that innovation. That's the responsibility of the adopter who is using the innovation to change processes and jobs. Solar cell manufacturers should not be held responsible for loss of coal mining jobs. The responsibility is with mine owners or unions or governments to take care of the miners. Makers of chatbots should not be reponsible for protecting call center workers. That's the responsibility of call center operators who adopt chatbots and displace or retrain call center workers."</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"It is not the responsibility of an automation supplier to addrfess the jobs potentially lost due to that innovation. That's the responsibility of the adopter who is using the innovation to change processes and jobs.  Solar cell manufacturers should not be held responsible for loss of coal mining jobs. The responsibility is with mine owners or unions or governments to take care of the miners.  Makers of chatbots should not be reponsible for protecting call center workers.  That's the responsibility of call center operators who adopt chatbots and displace or retrain call center workers."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIDeveloperSpecializedAI">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "AI Developers (both general-purpose and specialized) and AI Governance Actors are rated as primarily responsible because they determine architecture and deployment policies which impact employment and job quality."</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"AI Developers (both general-purpose and specialized) and AI Governance Actors are rated as primarily responsible because they determine architecture and deployment policies which impact employment and job quality."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIDeployer">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Large deploying enterprises bear high responsibility as they directly choose deployment patterns, job redesign, and worker transition support. They control data, processes, and incentives inside firms. It's the responsibility of the adopter using the innovation to change processes and jobs—call center operators who adopt chatbots should protect call center workers, not the makers of chatbots.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"It is not the responsibility of an automation supplier to addrfess the jobs potentially lost due to that innovation. That's the responsibility of the adopter who is using the innovation to change processes and jobs.  Solar cell manufacturers should not be held responsible for loss of coal mining jobs. The responsibility is with mine owners or unions or governments to take care of the miners.  Makers of chatbots should not be reponsible for protecting call center workers.  That's the responsibility of call center operators who adopt chatbots and displace or retrain call center workers."</li>                    <li>"Large deploying enterprises - High. They directly choose deployment patterns, job redesign, and worker transition support. They control data, processes, and incentives inside firms."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIInfrastructureProvider">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Cloud and compute providers bear medium to high responsibility as they influence economics of scale and access. They can provide guardrails, deployment analytics, and credits targeted at worker-augmenting use. Infrastructure providers are highly responsible because they favor existing enterprise clients (often shareholders/decision makers) when allocating GPU, while small startups trying to use AI for good find it more difficult and expensive to get compute.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"Cloud and compute providers - Medium to high. They influence economics of scale and access. They can provide guardrails, deployment analytics, and credits targeted at worker-augmenting use."</li>                    <li>"I argue that AI Infra provider are highly responsible because as an AI startup we had difficulties getting dedicated GPU from the main cloud providers a while ago. Cloud providers favour their existing enterprise clients who are often also shareholders/decision makers when allocating GPU and many of these are the cause of the current trajectory of Increased inequality and decline in employment quality. For the small biotech or edTech startups who are trying to use AI for good it is more difficult and more expensive to get compute."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIUser">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert's placement of "user" is on the understanding that the "user" is a company/public service using a system on its own users/clients/etc. rather than the public end user themselves.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"My placement of 'user' is on the understanding that the 'user' is a company/public service using a system on its own users/clients/etc. rather than the public end user themsevles"</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AffectedStakeholder">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "Affected stakeholders should have a minimum literacy to use this tool properly, just like we all need to have a minimum literacy to use the internet properly."</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"Affected stakeholders should have a minimum literacy to use this tool properly, just like we all need to have a minimum literacy to use the internet properly."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "Not sure if we should be assigning responsibility to the affected stakeholders. This might cause moral hazard or incentivize rent-seeking."</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"Not sure if we should be assigning responsibility to the affected stakeholders. This might cause moral hazard or incentivize rent-seeking."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIGovernanceActor">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> National governments, legislatures, regulators, and inspectorates bear very high responsibility. They hold the mandate to set redistribution, competition, safety nets, labor law, and education policy. Capability is high and causal influence is large through tax and transfer systems. Regulators can require transparency on workforce impact, enforce labor standards, and condition deployment approvals on mitigation plans. Developers and governance actors determine architecture and deployment policies which impact employment and job quality.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"AI Developers (both general-purpose and specialized) and AI Governance Actors are rated as primarily responsible because they determine architecture and deployment policies which impact employment and job quality."</li>                    <li>"National governments and legislatures - Very high. They hold the mandate to set redistribution, competition, safety nets, labor law, and education policy. Capability is high and causal influence is large through tax and transfer systems.
+
+Regulators and inspectorates - Very high. They can require transparency on workforce impact, enforce labor standards, and condition deployment approvals on mitigation plans."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pills = document.querySelectorAll('.nav-pill');
+            const sections = document.querySelectorAll('.actor-section');
+
+            pills.forEach(pill => {
+                pill.addEventListener('click', function() {
+                    // Remove active class from all pills and sections
+                    pills.forEach(p => p.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('active'));
+
+                    // Add active class to clicked pill
+                    this.classList.add('active');
+
+                    // Show corresponding section
+                    const targetId = this.getAttribute('data-target');
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

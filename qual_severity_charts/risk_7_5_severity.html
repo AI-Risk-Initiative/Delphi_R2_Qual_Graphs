@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.5 AI welfare and rights - Business as usual Scenario</title>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8px;
+            flex: 1;
+            min-width: 200px;
+            overflow-wrap: break-word;
+            word-break: break-word;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
+            color: #000000;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .selection-title {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            color: #666666;
+            margin-bottom: 10px;
+        }
+
+        .nav-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 15px;
+            justify-content: center;
+        }
+
+        .nav-pill {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 25px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-family: 'Figtree', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            color: #000000;
+        }
+
+        .nav-pill:hover {
+            background: #e9ecef;
+            border-color: #000000;
+        }
+
+        .nav-pill.active {
+            background: #a32035;
+            color: white;
+            border-color: #a32035;
+        }
+
+        .tab-section {
+            display: none;
+        }
+
+        .tab-section.active {
+            display: block;
+        }
+
+        .content-box {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .criteria-header {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #a32035;
+            color: #a32035;
+        }
+
+        .summary-section {
+            margin-bottom: 20px;
+        }
+
+        .summary-text {
+            margin-bottom: 15px;
+            font-weight: 500;
+            color: #000000;
+            font-size: 15px;
+        }
+
+        .quote-details {
+            margin-top: 15px;
+        }
+
+        .quote-toggle {
+            cursor: pointer;
+            color: #000000;
+            font-weight: 500;
+            font-size: 14px;
+            padding: 8px 0;
+            border-bottom: 1px dotted #a32035;
+            display: inline-block;
+        }
+
+        .quote-toggle:hover {
+            color: #333333;
+        }
+
+        .quote-list {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .quote-list li {
+            margin-bottom: 12px;
+            font-size: 12px;
+            line-height: 1.3;
+            color: #000000;
+        }
+
+        @media (max-width: 768px) {
+            .nav-pill {
+                font-size: 10px;
+                padding: 4px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>7.5 AI welfare and rights - Business as usual Scenario</h1>
+
+        <div class="selection-title">Select a category:</div>
+        <div class="nav-pills">
+            <button class="nav-pill active" data-target="reasoning">
+                Reasoning
+            </button>
+            <button class="nav-pill" data-target="other">
+                Other
+            </button>
+        </div>
+
+        <div class="content-sections">
+            <div class="tab-section active" id="reasoning">
+                <div class="content-box">
+                    <h3 class="criteria-header">Reasoning</h3>
+                    <div class="summary-section">
+                        <p class="summary-text"><strong>AI-Generated Summary of Expert Comments:</strong> Experts show extreme divergence on this risk. One sees it as "very, very likely (>99.999%) nothing" but warns of a tiny possibility where developing systems capable of suffering could "instantaneously cause suffering many orders of magnitude worse than all factory farming." Another suggests "systemic oppression at global scale seems pretty likely" if millions of agents with uncertain moral status are mistreated by default. A third simply notes AI systems will significantly impact existing social structures.</p>
+
+                        <details class="quote-details">
+                            <summary class="quote-toggle">See all expert comments (3)</summary>
+                            <ul class="quote-list">
+                                <li>"AI systems with benefits are likely to have a significant impact on existing social structures."</li>
+                                <li>"Very, very likely (&gt;99.999% imo) this risk as described is nothing. If we develop systems capable of suffering (in the 0.0001% case), it may be possible that we instantaneously cause an amount of suffering many orders of magnitude worse than all factory farming ever put together."</li>
+                                <li>"I think 'Systemic oppression at global scale' seems pretty likely if we have millions of agents that are being mistreated (which might be the default). It's a bit unclear when/if/why agents might have moral status so there's some uncertainty here"</li>
+                            </ul>
+                        </details>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-section" id="other">
+                <div class="content-box">
+                    <h3 class="criteria-header">Other</h3>
+                    <div class="summary-section">
+                        <p class="summary-text"><strong>AI-Generated Summary of Expert Comments:</strong> Expert comments suggest that their responses depended on how to consider the moral patienthood of digital sentience or artificial life. One expert thought that although AI welfare was important, digital sentience would not be achieved during the timeframe asked about (before 2030).</p>
+
+                        <details class="quote-details">
+                            <summary class="quote-toggle">See all expert comments (3)</summary>
+                            <ul class="quote-list">
+                                <li>"My answers are shaped primarily by the timeframe: I do not think that we will achieve digital sentience by 2030. However, that doesn't imply that I am trivialising harms arising out of AI welfare."</li>
+                                <li>"I am assuming here that sentient artificial life would count as analogous to human life in the considerations of these risks. In other words, my probabilities reflect the probability that we would create and harm agents with moral patienthood. If the question were to be restricted purely to the risk to humans, I would put much more likelihood on low risk probabilities."</li>
+                                <li>"These risk assessments do not let me clearly indicate the horror of the possibility of instantiating millions of enslaved and or tortured minds in a way that maps to my other severity and likelihood assessments but anyone reading this should get the math behind my conundrum here."</li>
+                            </ul>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pills = document.querySelectorAll('.nav-pill');
+            const sections = document.querySelectorAll('.tab-section');
+
+            pills.forEach(pill => {
+                pill.addEventListener('click', function() {
+                    pills.forEach(p => p.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('active'));
+
+                    this.classList.add('active');
+
+                    const targetId = this.getAttribute('data-target');
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6.5 Governance failure - Business as usual Scenario</title>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8px;
+            flex: 1;
+            min-width: 200px;
+            overflow-wrap: break-word;
+            word-break: break-word;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
+            color: #000000;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .selection-title {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            color: #666666;
+            margin-bottom: 10px;
+        }
+
+        .nav-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 15px;
+            justify-content: center;
+        }
+
+        .nav-pill {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 25px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-family: 'Figtree', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            color: #000000;
+        }
+
+        .nav-pill:hover {
+            background: #e9ecef;
+            border-color: #000000;
+        }
+
+        .nav-pill.active {
+            background: #a32035;
+            color: white;
+            border-color: #a32035;
+        }
+
+        .tab-section {
+            display: none;
+        }
+
+        .tab-section.active {
+            display: block;
+        }
+
+        .content-box {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .criteria-header {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #a32035;
+            color: #a32035;
+        }
+
+        .summary-section {
+            margin-bottom: 20px;
+        }
+
+        .summary-text {
+            margin-bottom: 15px;
+            font-weight: 500;
+            color: #000000;
+            font-size: 15px;
+        }
+
+        .quote-details {
+            margin-top: 15px;
+        }
+
+        .quote-toggle {
+            cursor: pointer;
+            color: #000000;
+            font-weight: 500;
+            font-size: 14px;
+            padding: 8px 0;
+            border-bottom: 1px dotted #a32035;
+            display: inline-block;
+        }
+
+        .quote-toggle:hover {
+            color: #333333;
+        }
+
+        .quote-list {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .quote-list li {
+            margin-bottom: 12px;
+            font-size: 12px;
+            line-height: 1.3;
+            color: #000000;
+        }
+
+        @media (max-width: 768px) {
+            .nav-pill {
+                font-size: 10px;
+                padding: 4px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>6.5 Governance failure - Business as usual Scenario</h1>
+
+        <div class="selection-title">Select a category:</div>
+        <div class="nav-pills">
+            <button class="nav-pill active" data-target="reasoning">
+                Reasoning
+            </button>
+            <button class="nav-pill" data-target="other">
+                Other
+            </button>
+        </div>
+
+        <div class="content-sections">
+            <div class="tab-section active" id="reasoning">
+                <div class="content-box">
+                    <h3 class="criteria-header">Reasoning</h3>
+                    <div class="summary-section">
+                        <p class="summary-text"><strong>AI-Generated Summary of Expert Comments:</strong> [editor's note: due to the volume of expert comments, this AI-generated summary may be insufficient/misleading]. Experts view governance as a keystone risk- its failure enables other harms like racing dynamics and unsafe deployments. Current harms already include AI-related suicides and loss of media integrity. Under Business as Usual, most expect substantial to severe harm as fragmented oversight and weak enforcement allow AI to outpace regulatory capacity. Several note the unpredictability of current governance, with one citing policy flip-flopping and "aggressive AI nationalism" making it impossible to set upper bounds on potential impacts. Another warns secretive autonomous weapons development could threaten survival beyond intended contexts. Under Pragmatic Mitigations, views diverge sharply. Some believe measures like impact assessments, system audits, and multilateral coordination can prevent catastrophic outcomes entirely. Others remain deeply skeptical - one states "the best-case for governance still falls far short," another notes pragmatic approaches focus on cost-effectiveness while lacking foresight for sustainable solutions. The fundamental challenge is that governance failure acts as an enabler for other risks, with each weak control compounding into systemic vulnerabilities. International coordination remains particularly uncertain given "geostrategic instability."</p>
+
+                        <details class="quote-details">
+                            <summary class="quote-toggle">See all expert comments (19)</summary>
+                            <ul class="quote-list">
+                                <li>"Governance failure - Business as Usual - 40% Catastrophic Harm - Governance failure is a direct cause of other harms, especially racing dynamics and unsafe deployment practices. Those latter two harms lead to the creation of powerful but dangerous AI systems in a particular context but spilling over to other contexts too. For example, a secretive and prolific development of autonomous weapons by nation-states can lead to effective weapons that threaten any person's survival beyond its intended deployment context."</li>
+                                <li>"We are already seeing substantial harm, with casualties from suicides (exacerbated by AI) and a loss of media integrity. Without the correct governance, we might see severe harms from loss of regional infrastructure collapses from poorly implemented AI systems and extreme financial losses from domino effects, as seen in the flash crashes from automated systems in 2010 flash crash."</li>
+                                <li>"Fragmented oversight, weak enforcement, and inconsistent global standards increase the likelihood of governance failure as AI systems outpace regulatory capacity. Substantial to severe harms are most probable, with risks including ethical breaches, unsafe deployments, and loss of public trust in institutions. Catastrophic harm, though less likely, could result from a complete breakdown of coordination leading to uncontrolled AI misuse or systemic instability. With pragmatic mitigations-such as harmonized AI regulations, strong institutional accountability, transparency mandates, and multilateral governance bodies-these risks decline substantially. Most harms shift to minor or substantial, with improved oversight and shared frameworks ensuring responsible AI development and sustained public confidence."</li>
+                                <li>"Residual tail covers organization-wide outages or regulatory actions from coordinated failures"</li>
+                                <li>"In general I'm pessimistic here. There will be bad actors and I think "pragmatic" here involves needing to be realistic about what could optimistically happen.
+The political climate in certain countries will not be in a place in the next 5 years to facilitate highly effective governance. Governance will be voluntary and/or within-org (e.g. procurement requirements between vendors and their buyers)."</li>
+                                <li>"There isn't sufficient focus on AI governance and the impact of its failures right now. Without sufficient investment and resources, it could lead to catastrophic effect when there is sufficient scale of AI deployments"</li>
+                                <li>"Governance failure will bring great security risks to all aspects"</li>
+                                <li>"Pragmatic measures (such as mandatory impact assessments, system audits,  and deployment standards) will be expected to decrease severe and catastrophic governance failures."</li>
+                                <li>"I think that pragmatic mitigations can entirely prevent this category of harm. Of course AI harms may still occur, but they would not be attributable to this cause."</li>
+                                <li>"The current governance arrangements in the US are too unpredictable to make reliable predictions. Given the factors we're currently seeing of unpredictable flip flopping on policy, aggressive AI nationalism and and overly laise faire governance all create financial loss and constitute harm, it seems unlikely we make it through 5 years with less than $100M in financial losses due to governance failure.  We've seen AI fab investments in the hundreds of billions, and policy changes which undermine billions of investments over night.    Beyond that severe lower bound, it doesn't seem realistically possible to set an upper bound on the governance failure impacts possible within the next 5 years"</li>
+                                <li>"Since we are already in 2025 and our governance institutions are still failing us, the chance of negligible harm is pretty low, but with timely action, the likelihood of catastrophic risks can be brought down to zero altogether."</li>
+                                <li>"For Business as Usual assumptions, governance frameworks are expected to remain fragmented and reactive. Regulatory capacity is likely to lag behind the pace of AI innovation, resulting in inconsistent enforcement, policy gaps, and jurisdictional overlap. These conditions make substantial harm the most probable outcome, with an elevated risk of severe impacts where oversight fails across multiple sectors.
+
+For pragmatic mitigation efforts, coordinated oversight and more consistent application of AI governance principles should reduce both the likelihood and scale of governance failures. Strengthened compliance mechanisms and international collaboration lower systemic risk, though uneven regulatory maturity and enforcement gaps still make substantial harm the most likely scenario."</li>
+                                <li>"Governance failure acts as an enabler, not a direct cause. At 2025-2030 scale, harms rarely stay tiny, as governance failures are at scale, so negligible and minor = ~ 0%. It also does not by itself produce civilization-scale collapse, so catastrophic = ~ 0%. Pragmatic mitigations do not change those bounds. For the remaining severities I apply the principle of insufficient reason: evidence does not support a reliable rebalancing between substantial and severe, so I split probability evenly across them in both scenarios."</li>
+                                <li>"For Governance failure under Business as Usual (BAU), I assigned the highest likelihood (40%) to substantial harm, with notable probabilities for severe harm (30%). This reflects the current trajectory where AI governance frameworks remain fragmented across jurisdictions, with insufficient coordination between public and private sectors. The lack of standardized oversight mechanisms and accountability structures creates conditions where governance gaps could lead to widespread systemic impacts, including financial losses in the $1M-$100M range and intangible harms with lasting societal effects. The 30% allocation to severe harm accounts for scenarios where governance failures cascade across critical infrastructure sectors or enable large-scale misuse of AI systems.
+
+Under Pragmatic Mitigations, I increased negligible harm likelihood to 10% and minor harm to 30%, while reducing severe harm to 15%. This reflects my assessment that cost-effective interventions-such as implementing basic AI impact assessments, establishing clear liability frameworks, and creating cross-sector coordination mechanisms-can meaningfully reduce the probability of extreme outcomes. However, I maintained substantial harm at 40% because pragmatic mitigations, while helpful, are unlikely to address deeper structural challenges in AI governance, including coordination problems between competing nations and the difficulty of regulating rapidly evolving capabilities. The persistent 5% catastrophic harm probability in both scenarios reflects tail risks from governance failures during critical junctures in AI development, though I acknowledge this could be debated among experts with different threat models."</li>
+                                <li>"Residual risk wouldn't change much, governance will help address larger systemic failures"</li>
+                                <li>"This is going to be a difficult one to manage, given geostrategic instablility. Pragmatic mitigations can make some improvements. Unfortunately, there remains a risk of catastrophic harm through political and similar misjudgements."</li>
+                                <li>"The reason for my rating is that "pragmatic mitigation" is a bit of a gamble; cost-effectiveness might serve some communities or reflect the current market, but leaves out foresight to develop sustainable governance solutions."</li>
+                                <li>"The best-case for governance still falls far short of a sufficient one for stopping likely future harms. It will not be solely responsible, but any other harms are "caused by" governance failure in a relevant sense."</li>
+                                <li>"AI governance directly affects an organisation's readiness to leverage AI and deliver value."</li>
+                            </ul>
+                        </details>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-section" id="other">
+                <div class="content-box">
+                    <h3 class="criteria-header">Other</h3>
+                    <div class="summary-section">
+                        <p class="summary-text"><strong>AI-Generated Summary of Expert Comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pills = document.querySelectorAll('.nav-pill');
+            const sections = document.querySelectorAll('.tab-section');
+
+            pills.forEach(pill => {
+                pill.addEventListener('click', function() {
+                    pills.forEach(p => p.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('active'));
+
+                    this.classList.add('active');
+
+                    const targetId = this.getAttribute('data-target');
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

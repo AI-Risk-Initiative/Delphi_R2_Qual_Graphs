@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.2 AI system security vulnerabilities and attacks - Business as usual Scenario</title>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8px;
+            flex: 1;
+            min-width: 200px;
+            overflow-wrap: break-word;
+            word-break: break-word;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
+            color: #000000;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .selection-title {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            color: #666666;
+            margin-bottom: 10px;
+        }
+
+        .nav-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 15px;
+            justify-content: center;
+        }
+
+        .nav-pill {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 25px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-family: 'Figtree', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            color: #000000;
+        }
+
+        .nav-pill:hover {
+            background: #e9ecef;
+            border-color: #000000;
+        }
+
+        .nav-pill.active {
+            background: #a32035;
+            color: white;
+            border-color: #a32035;
+        }
+
+        .tab-section {
+            display: none;
+        }
+
+        .tab-section.active {
+            display: block;
+        }
+
+        .content-box {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .criteria-header {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #a32035;
+            color: #a32035;
+        }
+
+        .summary-section {
+            margin-bottom: 20px;
+        }
+
+        .summary-text {
+            margin-bottom: 15px;
+            font-weight: 500;
+            color: #000000;
+            font-size: 15px;
+        }
+
+        .quote-details {
+            margin-top: 15px;
+        }
+
+        .quote-toggle {
+            cursor: pointer;
+            color: #000000;
+            font-weight: 500;
+            font-size: 14px;
+            padding: 8px 0;
+            border-bottom: 1px dotted #a32035;
+            display: inline-block;
+        }
+
+        .quote-toggle:hover {
+            color: #333333;
+        }
+
+        .quote-list {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .quote-list li {
+            margin-bottom: 12px;
+            font-size: 12px;
+            line-height: 1.3;
+            color: #000000;
+        }
+
+        @media (max-width: 768px) {
+            .nav-pill {
+                font-size: 10px;
+                padding: 4px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>2.2 AI system security vulnerabilities and attacks - Business as usual Scenario</h1>
+
+        <div class="selection-title">Select a category:</div>
+        <div class="nav-pills">
+            <button class="nav-pill active" data-target="reasoning">
+                Reasoning
+            </button>
+            <button class="nav-pill" data-target="other">
+                Other
+            </button>
+        </div>
+
+        <div class="content-sections">
+            <div class="tab-section active" id="reasoning">
+                <div class="content-box">
+                    <h3 class="criteria-header">Reasoning</h3>
+                    <div class="summary-section">
+                        <p class="summary-text"><strong>AI-Generated Summary of Expert Comments:</strong> [editor's note: due to the volume of expert comments, this AI-generated summary may be insufficient/misleading]. 
+Main harms identified include model poisoning, prompt injection, supply-chain compromises, adversarial attacks on AI systems, and exploitation of vulnerabilities in GenAI-generated code, with cumulative cyberattack costs already reaching billions to trillions annually and expected to escalate as AI becomes a primary attack vector. Under Business as Usual, experts expect substantial to severe harm as the attack surface expands faster than hardening through agents, plugins, RAG systems, and supply chains, with legacy cybersecurity controls inadequate for AI-specific threats and AI tipping the offensive-defensive balance toward attackers. Under Pragmatic Mitigations, red-teaming, zero-trust access, adversarial testing, model integrity monitoring, and signed artifacts reduce severe and catastrophic tail risks meaningfully. However, substantial harm remains common due to adoption growth outpacing defenses, residual vulnerabilities in complex supply chains, and persistent adversarial threats, with some experts viewing pragmatic measures as totally inadequate while one contrarian suggests smaller failures may slow AI deployment similar to Three Mile Island's effect on nuclear power.</p>
+
+                        <details class="quote-details">
+                            <summary class="quote-toggle">See all expert comments (20)</summary>
+                            <ul class="quote-list">
+                                <li>"While Business-as-Usual leaves systems vulnerable to catastrophic outcomes due to compounded drift and lack of AI-specific safeguards, even Pragmatic Mitigations remain probabilistic and reactive. Neither approach guarantees alignment or containment. Future assessments must move beyond heuristics toward deterministic clarity loops and alignment protocols. Local risk scoring is no longer enoug. We need global coherence."</li>
+                                <li>"everity and Likelihood of AI System Security Vulnerabilities and Attacks
+
+Under Business as Usual assumptions, AI system security vulnerabilities and attacks are most likely to result in substantial harm (75% likelihood) over the next five years (2025-2030). Without AI-specific risk mitigations, organizations and governments remain exposed to adversarial attacks, model poisoning, misconfigurations, and supply-chain compromises. These vulnerabilities can lead to significant financial losses, operational disruptions, reputational damage, and sector-wide consequences, particularly in high-value domains such as finance, healthcare, and critical infrastructure. Low-probability, high-impact events could also produce severe or catastrophic outcomes, including major infrastructure failures or systemic disruptions.
+
+With Pragmatic Mitigations, including secure deployment practices, access control, model monitoring, and threat detection, the likelihood of substantial harm decreases slightly to 70%, with corresponding small reductions in severe and catastrophic outcomes. While these interventions reduce exposure and impact, residual vulnerabilities remain due to complex supply chains, persistent adversarial threats, and systemic interconnectivity across AI systems. Overall, even with pragmatic mitigations, AI system security vulnerabilities remain a high-probability, high-impact risk that requires proactive governance, technical safeguards, and coordinated sector-level defense strategies."</li>
+                                <li>"AI system security vulnerabilities and attacks - Business as Usual - severe harm likelihood of 50% - It has been extensively shown AI systems are vulnerable to input-based attacks, and there has been no general theory that can allow us to predict vulnerability or theoretically guarantee robustness. Therefore, it is a matter of scale and to what sensitive tasks are AI systems applied to that drives this likelihood. Currently, AI services are being aggressively rolled-out."</li>
+                                <li>"Without AI-specific defenses, vulnerabilities such as model poisoning, prompt injection, and data exfiltration become more common as AI systems scale. Legacy cybersecurity controls are often inadequate for protecting model supply chains or training data integrity, making substantial to severe harms most likely. These include model manipulation, downtime, or loss of sensitive information. Catastrophic harm remains low-probability but possible if compromised AI systems control critical infrastructure or defense functions.
+With pragmatic mitigations such as continuous red-teaming, zero-trust access, adversarial testing, and model integrity monitoring, most incidents are limited to minor or substantial harms that can be contained and recovered. Severe or catastrophic events become rare, tied only to highly sophisticated or coordinated attacks. Business as usual reflects systemic exposure, while pragmatic mitigation reduces both frequency and impact through proactive governance, layered security, and AI-specific resilience measures."</li>
+                                <li>"As AI gets more powerful, there are extremely strong incentives and potential for effective, state-level cyberattacks and data extraction attacks. AI probably tips the offensive-defensive balance towards the former without heavy and politically costly investments. Even with these investments, quite a bit of research still remains in understanding in how frontier labs can get to, e.g. SL-5 protection. Latent catastrophic risk from AI cybersec. misuse is unlikely, just because directly causing harm would likely require other tools (e.g. bioweapons), and this risk is difficult to mitigate without even more extreme investments than what is listed above (for instance, fundamentally rethinking how we approach securing critical infrastructure or severely restricting open-source models)."</li>
+                                <li>"Given the global cost of cyber harms is already in the billions, if AI becomes globally significant, it's almost inevitable that AI vulnerabilities will also be in the many millions or billions."</li>
+                                <li>"Cumulative loss from cyberattacks is expected to exceed $10T in 2025, which is catastrophic harm.  As AI adoption increases, AI vulnerabilities will increasingly be the vector exploited in attacks.  Over 5 years, with currently increasing software vulnerabilities and increasing loss due to cyberattacks, further catastrophic loss is inevitable without pragmatic mitigations."</li>
+                                <li>"Severe Harm (under the assumption of "Business as Usual") - 5%
+Actors with substantial financial resources, such as nation-states, might attempt to steal the model weights of the most powerful AI models. Such actions could disrupt global security and economic order, either to restore a status quo or to act against their adversaries.
+Substantial Harm (under the assumption of "Business as Usual") - 52%
+AI-enabled cyber intrusions and operations are already causing harm, and some AI-enhanced malicious activities may go undetected. AI increasingly serves as an enabler for both nation-state and non-state actors to inflict harm. Given that these actors are sometimes engaged in asymmetric warfare, the frequency and scale of AI-driven malicious activity are likely to grow."</li>
+                                <li>"2.2 AI System Security Vulnerabilities and Attacks - Business as Usual
+Severity Band	Reasoning
+Negligible (5%)  A few incidents are stopped early by standard controls, leaving little or no lasting harm.
+Minor (20%)	Localized security issues cause limited operational or reputational impact and are resolved quickly.
+Substantial (43%) The most frequent outcome involves compromises that disrupt systems or data, resulting in measurable business losses.
+Severe (28%)	Broader attacks spread through shared infrastructure or vendor ecosystems, affecting multiple organizations.
+Catastrophic (4%)	Rare, large-scale failures result from state-level or highly coordinated attacks that cause widespread disruption.
+2.2 AI System Security Vulnerabilities and Attacks - Pragmatic Mitigations
+Severity Band	Reasoning
+Negligible (10%)	Stronger monitoring and access management detect and stop more attacks before damage occurs.
+Minor (30%)	Encryption, segmentation, and faster response reduce most events to minor, localized breaches.
+Substantial (37%)	Significant but controlled incidents remain possible, mainly from residual model or data weaknesses.
+Severe (20%)	Platform-wide incidents decline as audits, provenance checks, and disclosure programs strengthen defenses.
+Catastrophic (3%)	Extreme cases are still possible, driven by systemic or geopolitical risks beyond organizational control."</li>
+                                <li>"Business as Usual: Current security practices aren't designed for AI-specific threats, leading to a 35% chance of substantial harm. The 15% catastrophic risk reflects potential failures in critical infrastructure.
+
+Pragmatic Mitigations: Basic security improvements reduce severe outcomes significantly (from 15% to 5% catastrophic harm). Simple measures like monitoring and testing can prevent most incidents from escalating."</li>
+                                <li>"Mitigants are being designed at a velocity that is lower than the attack vector's growth and sophistication, while they can mitigate the damage, likelihood would still be high"</li>
+                                <li>"Research has demonstrated the security vulnerabilities inherent in GenAI-generated code (https://arxiv.org/pdf/2506.11022), a concern that is likely to intensify as GenAI tools increasingly assist in backend and frontend code development."</li>
+                                <li>"For business as usual, the rise in smaller failures will likely provide a doorstop on AI development writ large. It can result in a large failure mode, also that prohibit widespread deployment. Similar event occurred with nuclear and Three-Mile Island, where there was a major accident, but no harm. This resulted in zero nuclear deployment in the years that followed. Similarly, with protective measures, the impact will be mitigated and better understood. The threat of a severe accident will always exist, but diluted due to operating experience and lessons learned about use and deployment."</li>
+                                <li>"Harms primarily expected from financial path. 'Substantial' is a wide range: $1M-$100M. Hundreds of thousands of dollars per year globally is not very much. Millions is plausible, even billions (global financial crime is currently trillions level). Businesses will limit exposure due to high profile events, though adoption will increase as reliability increases. There might be a Peltzman effect, where exposure increases more than risk decreases, for some regime."</li>
+                                <li>"BAU: attack surface expands faster than hardening (agents/plugins, RAG, CI/CD, supply chain, keys/secrets). Expect frequent substantial incidents and non-trivial severe events; catastrophic remains low but plausible via OT/critical services or widespread artifact compromise.
+Pragmatic: with signed/attested artifacts, strong isolation/KMS, poisoning-aware pipelines, default-deny tool coupling, and incident response drills, the severe/catastrophic tail drops, but substantial stays common due to adoption growth."</li>
+                                <li>"Assuming Business as Usual, AI system security vulnerabilities and attacks risk over the next 5 years (2025-2030) is most likely to result in substantial harm because infrastructure damage, financial loss, and privacy are standing out in terms of materialization. 
+
+Thanks to pragmatic mitigations, I think that substantial harm becomes less likely but still remains at the top. Another impact of pragmatic mitigations, in my opinion, is that it cumulatively reduces the likelihood of substantial harm or less. Obviously, as a result of mitigations, I increased the likelihood of minor and negligible harms."</li>
+                                <li>"Probably some overlap with the category before
+
+Also as before $8bn is already spent on compliance with GDPR, so this is effectively direct costs already of preventing things like data/privacy breaches"</li>
+                                <li>"As with other assessments, I consider most 'pragmatic' responses to be totally inadequate at preventing severe and catastrophic harm and may be a strong outlier in these responses"</li>
+                                <li>"With better security practices such as red-teaming, patching, access management and least-privilege controls, most AI-related attacks are detected early and cause minor harm in most cases. Some incidents may still lead to moderate business disruption or data leaks, but severe or system-wide failures will be limited, though their impact would remain high as organizations strengthen monitoring and response processes."</li>
+                                <li>"McDonalds used "123456" as their password, let's get real nobody is mitigating these vulnerabilities."</li>
+                            </ul>
+                        </details>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-section" id="other">
+                <div class="content-box">
+                    <h3 class="criteria-header">Other</h3>
+                    <div class="summary-section">
+                        <p class="summary-text"><strong>AI-Generated Summary of Expert Comments:</strong> Experts emphasize the need for continuous review, monitoring, and rapid patching of AI services and models, using both CVSS and EPSS (Exploit Prediction Scoring System) scores together to prioritize vulnerabilities. One expert clarifies their assessments represent cumulative harm from multiple events rather than single incidents.</p>
+
+                        <details class="quote-details">
+                            <summary class="quote-toggle">See all expert comments (2)</summary>
+                            <ul class="quote-list">
+                                <li>"Anything that is going to run and host AI services and models have to be reviewed, monitored and patched as soon as possible. When we look at vulnerability, it is not just about CVSS score. EPSS (Exploit Prediction Scoring System) have to looked at side by side with CVSS. If both of them are high, it becomes priority one to patch that vulnerability."</li>
+                                <li>"My values are sums of multiple events, not a single event."</li>
+                            </ul>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pills = document.querySelectorAll('.nav-pill');
+            const sections = document.querySelectorAll('.tab-section');
+
+            pills.forEach(pill => {
+                pill.addEventListener('click', function() {
+                    pills.forEach(p => p.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('active'));
+
+                    this.classList.add('active');
+
+                    const targetId = this.getAttribute('data-target');
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

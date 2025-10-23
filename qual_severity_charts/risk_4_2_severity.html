@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.2 Fraud, scams, and targeted manipulation - Business as usual Scenario</title>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8px;
+            flex: 1;
+            min-width: 200px;
+            overflow-wrap: break-word;
+            word-break: break-word;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
+            color: #000000;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .selection-title {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            color: #666666;
+            margin-bottom: 10px;
+        }
+
+        .nav-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 15px;
+            justify-content: center;
+        }
+
+        .nav-pill {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 25px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-family: 'Figtree', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            color: #000000;
+        }
+
+        .nav-pill:hover {
+            background: #e9ecef;
+            border-color: #000000;
+        }
+
+        .nav-pill.active {
+            background: #a32035;
+            color: white;
+            border-color: #a32035;
+        }
+
+        .tab-section {
+            display: none;
+        }
+
+        .tab-section.active {
+            display: block;
+        }
+
+        .content-box {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .criteria-header {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #a32035;
+            color: #a32035;
+        }
+
+        .summary-section {
+            margin-bottom: 20px;
+        }
+
+        .summary-text {
+            margin-bottom: 15px;
+            font-weight: 500;
+            color: #000000;
+            font-size: 15px;
+        }
+
+        .quote-details {
+            margin-top: 15px;
+        }
+
+        .quote-toggle {
+            cursor: pointer;
+            color: #000000;
+            font-weight: 500;
+            font-size: 14px;
+            padding: 8px 0;
+            border-bottom: 1px dotted #a32035;
+            display: inline-block;
+        }
+
+        .quote-toggle:hover {
+            color: #333333;
+        }
+
+        .quote-list {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .quote-list li {
+            margin-bottom: 12px;
+            font-size: 12px;
+            line-height: 1.3;
+            color: #000000;
+        }
+
+        @media (max-width: 768px) {
+            .nav-pill {
+                font-size: 10px;
+                padding: 4px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>4.2 Fraud, scams, and targeted manipulation - Business as usual Scenario</h1>
+
+        <div class="selection-title">Select a category:</div>
+        <div class="nav-pills">
+            <button class="nav-pill active" data-target="reasoning">
+                Reasoning
+            </button>
+            <button class="nav-pill" data-target="other">
+                Other
+            </button>
+        </div>
+
+        <div class="content-sections">
+            <div class="tab-section active" id="reasoning">
+                <div class="content-box">
+                    <h3 class="criteria-header">Reasoning</h3>
+                    <div class="summary-section">
+                        <p class="summary-text"><strong>AI-Generated Summary of Expert Comments:</strong> [editor's note: due to the volume of expert comments, this AI-generated summary may be insufficient/misleading]. Main harms identified include financial losses already exceeding catastrophic thresholds at $200+ billion annually globally, loss of life from suicide due to online harassment and humiliating imagery, and potential disruption of critical infrastructure if privileged access holders are targeted. Under Business as Usual, experts expect substantial to catastrophic harm as AI enables hyper-personalized deception, deepfake voice cloning, and synthetic identity fraud at scale, creating what some describe as a perfect storm where personalization, photorealistic video, cyber breaches, and breakdown of collective truth combine to amplify scamming. Under Pragmatic Mitigations, digital identity verification, watermarking, behavioral monitoring, sender authentication, and fraud detection systems shift distribution toward lower severity levels. However, experts emphasize that effectiveness hinges on public awareness and education, with the digital divide rendering some populations persistently vulnerable and threat actor tactics continuing to outpace defensive systems, making substantial harm the most likely outcome even with mitigations.</p>
+
+                        <details class="quote-details">
+                            <summary class="quote-toggle">See all expert comments (12)</summary>
+                            <ul class="quote-list">
+                                <li>"With generative AI tools enabling hyper-personalized deception, deepfake voice cloning, and synthetic identity fraud, targeted manipulation and scams are expected to surge under business as usual. Substantial to severe harms are most probable as individuals, corporations, and institutions face large-scale financial and reputational losses, with catastrophic harm possible where manipulation undermines social trust or financial stability. Under pragmatic mitigations, proactive measures such as digital identity verification, watermarking, behavioral monitoring, and coordinated regulatory enforcement significantly reduce the scale and impact of these risks. Most incidents remain within minor to substantial severity, with rapid detection, public awareness, and fraud-prevention AI systems curbing major losses and maintaining institutional trust."</li>
+                                <li>"Loss of life including suicide from online harassment - seems highly unlikely that not one person will commit suicide as a result of AI used in online harassment or humiliating or sexual imagery, hence a high rating on substantial harm."</li>
+                                <li>"AI financial scams already exceed the catastrophic threshold of $20b per year, and are on track to get more widespread and harder to spot.  There isn't an industry or group who are immune, and even quite sophisticated and expensive measures are unlikely to reduce the global cost below the catastrophic level within 5 years.  The compounding nature of personalisation, photorealistic realtime video, hyper convincing realtime models, mass cyber breaches and the breakdown of collective truth all combine to create a perfect storm for scammers to step into."</li>
+                                <li>"Severe harm (under the assumption of business as usual) - 5% - If a person with privileged access to critical infrastructure is targeted using AI-enabled tools and acts in the interest of the intruder, disruption of critical infrastructure (e.g., hospitals, the electric grid, water systems) could result in serious physical harm."</li>
+                                <li>"Despite well meaning efforts to mitigate these harms, so much of it hinges upon public awareness and education. Traditional frauds and scams cause hundreds of millions of dollars in financial losses every year, and AI-enabled ones will be no different despite any mitigation as long as the digital divide renders some populations more vulnerable or as long as threat actor tactics continue to outpace defensive systems"</li>
+                                <li>"Fraud and scams pose substantial to severe harm under Business as Usual given increasing sophistication of AI-enabled manipulation techniques. With Pragmatic Mitigations, harm distribution shifts toward lower severity as fraud detection and user education improve, though substantial harm remains the most likely outcome."</li>
+                                <li>"Same comment as for cyber-attacks. It's more of an aggregative risk than a single-event, devastating one. Mitigations would help much more here."</li>
+                                <li>"Obviously it cannot be business as usual as it could lead to severe harm.  With pragmatic mitigations expect harm to be reduced but some harm will still linger as it hard to keep with fraudsters who also use new technologies."</li>
+                                <li>"Fraud, scams, and targeted manipulation in the context of telecom fraud have already led to substantial financial loss major to severe direct financial loss ($1M-$100M) in absence of AI assistance.
+For instance, "a study by Gasa and ScamAdviser revealed that scammers amassed a shocking US$1.02 trillion globally between August 2022 and August 2023, with Singapore recording the highest average losses. Singapore Police Force's (SPF) data revealed victims in Singapore lost S$660.7 million in 2022, up from S$632 million in 2021." (https://www.theonlinecitizen.com/2023/10/20/singapore-tops-global-losses-as-scammers-amass-us1-02-trillion-reports-gasa-and-scamadviser/#:~:text=SINGAPORE%3A%20According%20to%20a%20joint,August%202022%20and%20August%202023)
+With AI's assistance, the financial loss is likely to be more substantial."</li>
+                                <li>"BAU: high-volume social engineering, synthetic identity, and BEC-style attacks scale with AI assistance, producing frequent substantial losses and periodic severe multi-tenant incidents. Catastrophic outcomes are rare and would require coordinated exploitation across major payment or identity rails. Pragmatic: sender authentication, verified identity, transaction holdbacks, content provenance, rate limiting, and model-use auditing shift mass to minor and substantial while compressing the severe tail."</li>
+                                <li>"Based on 'Financial Loss: $100B-10T+', scams already are $200B+/year. So even a small increase due to AI would liekly push the risk over this limit."</li>
+                                <li>"I reference the US FBI's Internet Crime Complaint Center (IC3) data. The treat is currently severe to catastrophic in terms of financial impact and one could probably find evidence in the number of self harm events attributed to being a victim of a scam or fraud as counting to the physical harm metrics here. This stands as an area needing regulation and enforcement for those actively working to enhance scammers efficacy."</li>
+                            </ul>
+                        </details>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-section" id="other">
+                <div class="content-box">
+                    <h3 class="criteria-header">Other</h3>
+                    <div class="summary-section">
+                        <p class="summary-text"><strong>AI-Generated Summary of Expert Comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pills = document.querySelectorAll('.nav-pill');
+            const sections = document.querySelectorAll('.tab-section');
+
+            pills.forEach(pill => {
+                pill.addEventListener('click', function() {
+                    pills.forEach(p => p.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('active'));
+
+                    this.classList.add('active');
+
+                    const targetId = this.getAttribute('data-target');
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

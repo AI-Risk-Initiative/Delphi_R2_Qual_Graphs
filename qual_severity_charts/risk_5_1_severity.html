@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.1 Overreliance and unsafe use - Business as usual Scenario</title>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8px;
+            flex: 1;
+            min-width: 200px;
+            overflow-wrap: break-word;
+            word-break: break-word;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
+            color: #000000;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .selection-title {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            color: #666666;
+            margin-bottom: 10px;
+        }
+
+        .nav-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 15px;
+            justify-content: center;
+        }
+
+        .nav-pill {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 25px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-family: 'Figtree', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            color: #000000;
+        }
+
+        .nav-pill:hover {
+            background: #e9ecef;
+            border-color: #000000;
+        }
+
+        .nav-pill.active {
+            background: #a32035;
+            color: white;
+            border-color: #a32035;
+        }
+
+        .tab-section {
+            display: none;
+        }
+
+        .tab-section.active {
+            display: block;
+        }
+
+        .content-box {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .criteria-header {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #a32035;
+            color: #a32035;
+        }
+
+        .summary-section {
+            margin-bottom: 20px;
+        }
+
+        .summary-text {
+            margin-bottom: 15px;
+            font-weight: 500;
+            color: #000000;
+            font-size: 15px;
+        }
+
+        .quote-details {
+            margin-top: 15px;
+        }
+
+        .quote-toggle {
+            cursor: pointer;
+            color: #000000;
+            font-weight: 500;
+            font-size: 14px;
+            padding: 8px 0;
+            border-bottom: 1px dotted #a32035;
+            display: inline-block;
+        }
+
+        .quote-toggle:hover {
+            color: #333333;
+        }
+
+        .quote-list {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .quote-list li {
+            margin-bottom: 12px;
+            font-size: 12px;
+            line-height: 1.3;
+            color: #000000;
+        }
+
+        @media (max-width: 768px) {
+            .nav-pill {
+                font-size: 10px;
+                padding: 4px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>5.1 Overreliance and unsafe use - Business as usual Scenario</h1>
+
+        <div class="selection-title">Select a category:</div>
+        <div class="nav-pills">
+            <button class="nav-pill active" data-target="reasoning">
+                Reasoning
+            </button>
+            <button class="nav-pill" data-target="other">
+                Other
+            </button>
+        </div>
+
+        <div class="content-sections">
+            <div class="tab-section active" id="reasoning">
+                <div class="content-box">
+                    <h3 class="criteria-header">Reasoning</h3>
+                    <div class="summary-section">
+                        <p class="summary-text"><strong>AI-Generated Summary of Expert Comments:</strong> [editor's note: due to the volume of expert comments, this AI-generated summary may be insufficient/misleading]. Main harms identified include systemic dependency on unreliable outputs in medical, infrastructure, supply chain, and conflict decisions leading to cascading failures and lost lives, permanent loss of human skills and abilities, and rapid creation of echo chambers feeding confirmation bias toward radicalization or delusional thought. Under Business as Usual, experts expect substantial to severe harm as AI expands without consistent safeguards or user understanding of system limits, with users deferring to automated outputs without validation across critical sectors. Under Pragmatic Mitigations, human-in-the-loop design, validation protocols, explainability tools, and information campaigns shift risk toward minor and substantial levels. However, multiple experts express skepticism that "cost-effective" pragmatic measures are sufficient, arguing nuclear safety-level approaches are needed and that economic value creates strong incentives to circumvent policies that cannot be reliably verified or enforced, with military use probabilities remaining unchanged and overreliance costs effectively baked in with widespread adoption.</p>
+
+                        <details class="quote-details">
+                            <summary class="quote-toggle">See all expert comments (12)</summary>
+                            <ul class="quote-list">
+                                <li>"The 10% for catastrophic harm reflects the non-zero tail risk introduced by large-scale overreliance. Not just from AGI hype, but systemic dependency on unreliable outputs without checks (medical, infrastructure, supply chains, conflict decisions). This is not doomsday talk, just honest modeling of worst-case scenarios given current deployment momentum."</li>
+                                <li>"I think in the definition of pragmatic mitigation, "Pragmatic Mitigations assumes organizations &amp; governments make pragmatic and cost-effective efforts to address risks from AI.", the troublesome term is cost-effective. Unless we worry most about cost, we will still end up with substantial harm. LIke in Nuclear safety, we do not cut down on cost when it comes to security and safety, similar approach is needed with AI systems. Without any mitigation, we are bound to be doomed, not by AI systems malfunctioning, but mostly by their unsafe usage by people who don't understand their limitations."</li>
+                                <li>"Overreliance is much more an awareness issue than really technical, which means that well-designed information campaigns can have a huge effect to completely change the current trend, and significantly reduce the likelihood or severity of that risk."</li>
+                                <li>"Growing dependence on AI systems without sufficient human oversight increases the likelihood of unsafe use and decision errors across critical sectors such as healthcare, finance, and transportation. Substantial to severe harms are most likely as users defer to automated outputs without validation, leading to cascading failures, bias amplification, or safety incidents. Catastrophic outcomes, while less frequent, could emerge if autonomous or high-stakes systems malfunction at scale. With pragmatic mitigations, including human-in-the-loop design, robust validation protocols, explainability tools, and mandatory AI safety governance, these risks are significantly reduced. Most harms shift to minor or substantial, with well-trained operators and safety frameworks preventing widespread overreliance and enabling corrective intervention before failures escalate."</li>
+                                <li>"Without pragmatic mitigations, the risk of severe harm is very high, given the nature of heuristic bias in human relations. AI can generate strong echo chambers more quickly than humans, and the confirmation bias can be fed incrementally by an AI. These scenarios can be enacted as severe behavior changes, radicalization of ideas or even delusional thought, supported by an AI."</li>
+                                <li>"There are a few good historical examples of where over-reliance on technology could have triggered nuclear events. Luckily, there were well trained, reasonable 'humans' in the loops of those systems who ignored their technology."</li>
+                                <li>"This is a completely reversible harm, provided there is are good faith efforts in a timely manner"</li>
+                                <li>"Business as Usual Summary
+Under Business as Usual conditions, AI use expands without consistent safeguards or user understanding of system limits. Overreliance on AI decision-making increases the likelihood of operational failures and misjudgments, with substantial harm most probable and severe harm remaining a credible risk in critical sectors. Catastrophic outcomes are unlikely but possible where interconnected AI systems amplify failures.
+
+Pragmatic Mitigations Summary
+With pragmatic mitigations, improved human oversight, explainability measures, and governance controls reduce the frequency and scale of harm. Risk shifts toward minor and substantial levels, reflecting stronger safeguards and better-informed use. However, residual exposure persists where controls are inconsistently applied or oversight maturity remains low."</li>
+                                <li>"This risk is more about permanent loss of skills, knowledge and abilities than about high-impact events."</li>
+                                <li>"It goes without saying that both of these scenarios are very difficult to attribute probabilities to, but I see the most likely cause of severe and catastrophic harms as a result of military use. In both scenarios, I think the probability of AI being used by militaries to commit harms against civilians is very high given that we've seen evidence of this already. This is why the probability distribution doesn't change substantially in the mitigations scenario."</li>
+                                <li>"Even pragmatic administrative interventions are unlikely to be fully effective, as the economic value of AI is too large to be fully constrained. When policies cannot be reliably verified or enforced, compliance effectively means forgoing revenue or efficiency, which creates strong incentives for organizations to deviate or circumvent. This makes non-adherence highly likely. If policies underperform, the severity is moderate to high, since organizations that comply may face competitive disadvantages, while uneven adoption will create operational, ethical, and governance risks at scale. In short, administrative measures alone are unlikely to secure durable organizational advantage in the face of strong incentives to deploy AI broadly."</li>
+                                <li>"Overreliance has already baked-in costs if there is widespread usage. Even if the net impact of moving to AI-based systems is tremendously positive, the damage in lost lives due to overreliance will almost certainly occur at least occasionally."</li>
+                            </ul>
+                        </details>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-section" id="other">
+                <div class="content-box">
+                    <h3 class="criteria-header">Other</h3>
+                    <div class="summary-section">
+                        <p class="summary-text"><strong>AI-Generated Summary of Expert Comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pills = document.querySelectorAll('.nav-pill');
+            const sections = document.querySelectorAll('.tab-section');
+
+            pills.forEach(pill => {
+                pill.addEventListener('click', function() {
+                    pills.forEach(p => p.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('active'));
+
+                    this.classList.add('active');
+
+                    const targetId = this.getAttribute('data-target');
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

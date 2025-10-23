@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.3 Cyberattacks, weapon development or use, and mass harm - Business as usual Scenario</title>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8px;
+            flex: 1;
+            min-width: 200px;
+            overflow-wrap: break-word;
+            word-break: break-word;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
+            color: #000000;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .selection-title {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            color: #666666;
+            margin-bottom: 10px;
+        }
+
+        .nav-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 15px;
+            justify-content: center;
+        }
+
+        .nav-pill {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 25px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-family: 'Figtree', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            color: #000000;
+        }
+
+        .nav-pill:hover {
+            background: #e9ecef;
+            border-color: #000000;
+        }
+
+        .nav-pill.active {
+            background: #a32035;
+            color: white;
+            border-color: #a32035;
+        }
+
+        .tab-section {
+            display: none;
+        }
+
+        .tab-section.active {
+            display: block;
+        }
+
+        .content-box {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .criteria-header {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #a32035;
+            color: #a32035;
+        }
+
+        .summary-section {
+            margin-bottom: 20px;
+        }
+
+        .summary-text {
+            margin-bottom: 15px;
+            font-weight: 500;
+            color: #000000;
+            font-size: 15px;
+        }
+
+        .quote-details {
+            margin-top: 15px;
+        }
+
+        .quote-toggle {
+            cursor: pointer;
+            color: #000000;
+            font-weight: 500;
+            font-size: 14px;
+            padding: 8px 0;
+            border-bottom: 1px dotted #a32035;
+            display: inline-block;
+        }
+
+        .quote-toggle:hover {
+            color: #333333;
+        }
+
+        .quote-list {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .quote-list li {
+            margin-bottom: 12px;
+            font-size: 12px;
+            line-height: 1.3;
+            color: #000000;
+        }
+
+        @media (max-width: 768px) {
+            .nav-pill {
+                font-size: 10px;
+                padding: 4px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>4.3 Cyberattacks, weapon development or use, and mass harm - Business as usual Scenario</h1>
+
+        <div class="selection-title">Select a category:</div>
+        <div class="nav-pills">
+            <button class="nav-pill active" data-target="reasoning">
+                Reasoning
+            </button>
+            <button class="nav-pill" data-target="other">
+                Other
+            </button>
+        </div>
+
+        <div class="content-sections">
+            <div class="tab-section active" id="reasoning">
+                <div class="content-box">
+                    <h3 class="criteria-header">Reasoning</h3>
+                    <div class="summary-section">
+                        <p class="summary-text"><strong>AI-Generated Summary of Expert Comments:</strong> [editor's note: due to the volume of expert comments, this AI-generated summary may be insufficient/misleading]. Main harms identified include lethal autonomous weapons already causing over 100 deaths in conflicts like Ukraine and Gaza, AI-assisted cyberattacks already exceeding catastrophic economic thresholds at $20+ billion annually globally, novel out-of-bound attack vectors that cyber professionals are unaware of, and potential for mass harm through infrastructure collapse or weaponization at scale. Under Business as Usual, experts expect substantial to catastrophic harm as rapid diffusion of model-assisted cyber offense, autonomous tooling, and dual-use research expands the threat space, with weak global governance and proliferation of open-source models enabling both state and non-state actors. Under Pragmatic Mitigations, AI safety standards, international treaties, red-teaming, capability gating, dual-use evals, and human-in-the-loop controls reduce extreme outcomes and may create defensive equilibrium where sides can detect and rebuild more effectively. However, experts emphasize that substantial incidents remain common as usage grows, severe harm stays likely particularly for lethal autonomous weapons, and systemic vulnerabilities plus geopolitical factors keep high-severity outcomes in play since mitigations take time to catch up with the expanded threat space.</p>
+
+                        <details class="quote-details">
+                            <summary class="quote-toggle">See all expert comments (9)</summary>
+                            <ul class="quote-list">
+                                <li>"Even with pragmatic mitigations, systemic vulnerabilities and geopolitical factors keep high-severity outcomes in play."</li>
+                                <li>"Rapid advances in AI-driven cyber capabilities and autonomous systems cann heighten the risk of mass harm from offensive AI use. Weak global governance, unregulated dual-use research, and the proliferation of open-source models make substantial to severe harms most probable, including AI-assisted cyberattacks, misinformation-driven conflicts, and weaponization of autonomous drones or malware. Catastrophic harm remains a credible risk if AI-enabled weapons or cyber operations trigger widespread infrastructure collapse or loss of life. With pragmatic mitigations-such as AI safety standards, international treaties, red-teaming of critical systems, and stricter export and dual-use controls-the likelihood of extreme outcomes decreases significantly. Most harms shift to minor or substantial, with coordinated detection, defense mechanisms, and ethical frameworks limiting escalation and reducing the potential for mass-scale impact."</li>
+                                <li>"It is highly likely that lethal autonomous weapons will have killed over 100 people by 2025, given extensive drone use in Ukraine alone, let alone other active conflict areas (e.g Gaza). 
+
+I doubt pragmatic, cost-effective efforts would be sufficient to greatly reduce the use of lethal autonomous weapons, so I have still kept severe harm as highly likely. It may reduce the severity of the harm (1000 deaths instead of 800 000) and reduce rogue actors access to CBRN capabilities, reducing catastrophic risk."</li>
+                                <li>"I would be surprised if the use of AI in cyber attacks is not already causing more than $100m in harm globally. This could get much worse."</li>
+                                <li>"Cyber attacks already cause more economic damage per year than the catastrophic rating.  Agentic attacks are already winning cyber competitions against humans, and cyber teams are already deploying AI offensively and defensively.   Just the portion of present day cyber attacks that include AI, already far exceeds the $20b per year catastrophic economic impact level globally. 
+
+Out-of-bound non-traditional cyber attack vectors unlocked by agentic security researchers make this problem hard to avoid, as cyber professionals aren't even aware of many of the vectors existence
+
+The pragmatic mitigation is for all sides to have the capability, such that a sort of equilibrium is reached.  However even in that scenario, the out of bound attacks are novel,  so we should expect massive successful cyber attacks to still happen at the catastrophic level, just that we can detect an rebuild from them more often. Its like how people in earthquake prone areas build and rebuild better.  There is still a significant economic cost to the earthquakes, its just normalised and integrated as an expected phenomena.  
+
+A UN disaster shelter specialist once told me "There is no such thing as a natural disaster, nature just does its thing and if we're not prepared we call it a disaster".  Agentic AI cyber attacks have a similar profile, they will be big and we probably can't fully stop them, but they are likely recoverable if we prepare, though we'll need to get antifragile and good at rebuilding."</li>
+                                <li>"Cyberattacks already create Catastrophic Harm, according to the financial scale.  As AI capabilities increase, AI will be used more in crafting cyberweapons.  Over 5 years AI fueled cyberattacks should dominate, as AI powered defenses will have closed the holes used in traditional attacks.  This doesn't even account for nation-state cyberattacks, and trying to curb this as a grey-zone activity - it's unlikely all governments stop spying on each other.  Autonomous cyberweapons are likely cause widespread harm, both intentionally and unintentionally."</li>
+                                <li>"Since cyber attacks are a lot more plausible than the development of bio weapons, these ratings might seem conflated if interpreted uniformly for AI misuse in cyber vs CBRN. And as the range of threat actors increases with AI uplift, the livelihood oh severe harm will remain non-zero since it will take a while for mitigations and threat monitoring to catch up with this expanded threat space"</li>
+                                <li>"Business as usual cannot be the answer for Cyber attacks as it will result in catastrophic harm. Even with. pragmatic mitigations expect some harm as attackers typically morph in the face of resistance."</li>
+                                <li>"BAU: rapid diffusion of model-assisted cyber offense, autonomous tooling, and dual-use research raises the floor to substantial and keeps a meaningful severe tail. Catastrophic requires multi-site critical infrastructure disruption or weaponization at scale. Pragmatic: capability gating, evals for dual-use, KYC for high-risk access, provenance and attestation, red teaming in CBRN and cyber, and human-in-the-loop on actuator paths compress the tail, though substantial incidents remain common as usage grows."</li>
+                            </ul>
+                        </details>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-section" id="other">
+                <div class="content-box">
+                    <h3 class="criteria-header">Other</h3>
+                    <div class="summary-section">
+                        <p class="summary-text"><strong>AI-Generated Summary of Expert Comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pills = document.querySelectorAll('.nav-pill');
+            const sections = document.querySelectorAll('.tab-section');
+
+            pills.forEach(pill => {
+                pill.addEventListener('click', function() {
+                    pills.forEach(p => p.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('active'));
+
+                    this.classList.add('active');
+
+                    const targetId = this.getAttribute('data-target');
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.1 Overreliance and unsafe use - Responsibility</title>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8px;
+            flex: 1;
+            min-width: 200px;
+            overflow-wrap: break-word;
+            word-break: break-word;        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
+            color: #000000;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .legend {
+            text-align: center;
+            font-size: 12px;
+            color: #888888;
+            font-style: italic;
+            margin-bottom: 12px;
+            padding: 8px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .selection-title {
+
+
+            text-align: center;
+
+
+            font-size: 14px;
+
+
+            font-weight: 600;
+
+
+            color: #666666;
+
+
+            margin-bottom: 10px;
+
+
+        }
+
+
+
+        .nav-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 15px;
+            justify-content: center;
+        }
+
+        .nav-pill {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 25px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-family: 'Figtree', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            color: #000000;
+        }
+
+        .nav-pill:hover {
+            background: #e9ecef;
+            border-color: #000000;
+        }
+
+        .nav-pill.active {
+            background: #000000;
+            color: white;
+            border-color: #000000;
+        }
+
+        .actor-section {
+            display: none;
+        }
+
+        .actor-section.active {
+            display: block;
+        }
+
+        .content-grid {
+            display: flex;
+            width: 100%;
+            gap: 4px;
+        }
+
+        .content-column {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 8px;
+            flex: 1;
+            min-width: 200px;
+            overflow-wrap: break-word;
+            word-break: break-word;        }
+
+        .criteria-header {
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid;
+        }
+
+        .criteria-header.higher {
+            color: #FF0000;
+            border-bottom-color: #FF0000;
+        }
+
+        .criteria-header.lower {
+            color: #2E5C8A;
+            border-bottom-color: #2E5C8A;
+        }
+
+        .summary-section {
+            margin-bottom: 20px;
+        }
+
+        .summary-text {
+            margin-bottom: 15px;
+            font-weight: 500;
+            color: #000000;
+            font-size: 15px;
+        }
+
+        .quote-details {
+            margin-top: 15px;
+        }
+
+        .quote-toggle {
+            cursor: pointer;
+            color: #000000;
+            font-weight: 500;
+            font-size: 10px;
+            padding: 8px 0;
+            border-bottom: 1px dotted #000000;
+            display: inline-block;
+        }
+
+        .quote-toggle:hover {
+            color: #333333;
+        }
+
+        .quote-list {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .quote-list li {
+            margin-bottom: 12px;
+            font-size: 10px;
+            line-height: 1.3;
+            color: #000000;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                gap: 4px;
+            }
+
+            .selection-title {
+
+
+                text-align: center;
+
+
+                font-size: 14px;
+
+
+                font-weight: 600;
+
+
+                color: #666666;
+
+
+                margin-bottom: 10px;
+
+
+            }
+
+
+
+            .nav-pills {
+                justify-content: flex-start;
+            }
+
+            .nav-pill {
+                font-size: 10px;
+                padding: 4px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>5.1 Overreliance and unsafe use - Responsibility</h1>
+
+
+        <div class="selection-title">Select an actor:</div>
+        <div class="nav-pills">
+            <button class="nav-pill active" data-target="AIDeveloperGeneralpurposeAI">
+                AI Developer (General-purpose AI)
+            </button>
+            <button class="nav-pill" data-target="AIDeveloperSpecializedAI">
+                AI Developer (Specialized AI)
+            </button>
+            <button class="nav-pill" data-target="AIDeployer">
+                AI Deployer
+            </button>
+            <button class="nav-pill" data-target="AIInfrastructureProvider">
+                AI Infrastructure Provider
+            </button>
+            <button class="nav-pill" data-target="AIUser">
+                AI User
+            </button>
+            <button class="nav-pill" data-target="AffectedStakeholder">
+                Affected Stakeholder
+            </button>
+            <button class="nav-pill" data-target="AIGovernanceActor">
+                AI Governance Actor
+            </button>
+        </div>
+
+        <div class="content-sections">
+            <div class="actor-section active" id="AIDeveloperGeneralpurposeAI">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Experts emphasize developers have a "central role in creation" of systems that enable overreliance. While one expert acknowledges users bear some responsibility, they stress upstream actors like developers are far more responsible for limiting these issues, drawing analogy to social media platforms being the "best point of intervention" rather than individual users sharing misinformation.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"I increased the vulnerability rating for AI Governance Actors and Affected Stakeholders based on their disproportionate exposure to systemic drift and downstream risk, respectively. Likewise, I emphasized Primary Responsibility for developers and affected stakeholders due to their central role in both creation and consequence."</li>                    <li>"I upgraded my responsibility for AI users. It's true they do bear some responsibility for overreliance, and they definitely bear responsibility for misuse. I just cannot overstate how much more responsible the "upstream" actors are for limiting these issues. That's where the emphasis should be. I see a directly analogy to social media. Yes, individuals are responsible for sharing misinfo. But the platforms should bear the brunt of our concern about the issue. They are the best point of intervention."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIDeveloperSpecializedAI">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIDeployer">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Experts emphasize deployers make the decision to deploy AI systems and can ignore developer mitigations based on their incentives. When deployers choose not to use existing methods to reduce overreliance, they bear responsibility for resulting harms.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"AI deployers and AI users make the decision to deploy AI systems and will therefore have the primary responsibility to ensure that that they are"</li>                    <li>"While developers have "primary" responsibility in some sense, the firms buying or licensing those models can and will ignore even effective mitigations. If deployers don't use methods which exist to reduce overreliance - and they have reasons and incentives not to do so - it will be their responsibility."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIInfrastructureProvider">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "I've raised my rating for infrastructure provider responsibility because I see monitoring for leading-edge security becoming part of infrastructure services."</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"I've raised my rating for infrastructure provider responsibility because I see monitoring for leading-edge security becoming part of infrastructure services."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "AI infrastructure providers should not be responsible for their customer's actions. They are responsible for maintaining secure infrastructure and avoiding unintended sharing."</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"AI infrastructure providers should not be responsible for their customer's actions.  They are responsible for maintaining secure infrastructure and avoiding unintended sharing."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIUser">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "AI deployers and AI users make the decision to deploy AI systems and will therefore have the primary responsibility to ensure that that they are "</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"AI deployers and AI users make the decision to deploy AI systems and will therefore have the primary responsibility to ensure that that they are"</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "Actually, the responsibility of AI users and Affected stakeholders, in practice, is limited by AI transparency practices."</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"Actually, the responsibility of AI users and Affected stakeholders, in practice, is limited by AI transparency practices."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AffectedStakeholder">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Developers and affected stakeholders have primary responsibility due to their central role in both creation and consequence. In educational settings, affected stakeholders like teachers, school administrators, and parents have major responsibility to help address these problems, not just the direct users.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"I increased the vulnerability rating for AI Governance Actors and Affected Stakeholders based on their disproportionate exposure to systemic drift and downstream risk, respectively. Likewise, I emphasized Primary Responsibility for developers and affected stakeholders due to their central role in both creation and consequence."</li>                    <li>"In terms of affected stakeholders, I'm thinking in educational setting about things like teachers, school administrators, and parents. I think they have major responsibility to help address these problems, not just the direct users."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Affected stakeholders often have little or no influence on the use of AI. In practice, their responsibility is limited by AI transparency practices.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"Affected stakeholders often have little or no influence on the use of AI."</li>                    <li>"Actually, the responsibility of AI users and Affected stakeholders, in practice, is limited by AI transparency practices."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIGovernanceActor">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Experts emphasize governance actors are essential intermediaries bridging developers, deployers and affected stakeholders until incentives align with public interest. They face disproportionate exposure to systemic drift and bear responsibility for brokering critical relationships between AI actors.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"I increased the vulnerability rating for AI Governance Actors and Affected Stakeholders based on their disproportionate exposure to systemic drift and downstream risk, respectively. Likewise, I emphasized Primary Responsibility for developers and affected stakeholders due to their central role in both creation and consequence."</li>                    <li>"The difference between what should be occurring in regards to responsibility and what is currently actually happening is significant and might inadvertently skew the the results of this question.
+Governance actors are the primary bridge between the affected stakeholder and the AI developer and deployer. Until incentives are aligned to the public interest, governance actors are essential to broker the relationship between AI developers and affected stakeholders."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pills = document.querySelectorAll('.nav-pill');
+            const sections = document.querySelectorAll('.actor-section');
+
+            pills.forEach(pill => {
+                pill.addEventListener('click', function() {
+                    // Remove active class from all pills and sections
+                    pills.forEach(p => p.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('active'));
+
+                    // Add active class to clicked pill
+                    this.classList.add('active');
+
+                    // Show corresponding section
+                    const targetId = this.getAttribute('data-target');
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

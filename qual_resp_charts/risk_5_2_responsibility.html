@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.2 Loss of human agency and autonomy - Responsibility</title>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8px;
+            flex: 1;
+            min-width: 200px;
+            overflow-wrap: break-word;
+            word-break: break-word;        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
+            color: #000000;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .legend {
+            text-align: center;
+            font-size: 12px;
+            color: #888888;
+            font-style: italic;
+            margin-bottom: 12px;
+            padding: 8px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .selection-title {
+
+
+            text-align: center;
+
+
+            font-size: 14px;
+
+
+            font-weight: 600;
+
+
+            color: #666666;
+
+
+            margin-bottom: 10px;
+
+
+        }
+
+
+
+        .nav-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 15px;
+            justify-content: center;
+        }
+
+        .nav-pill {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 25px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-family: 'Figtree', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            color: #000000;
+        }
+
+        .nav-pill:hover {
+            background: #e9ecef;
+            border-color: #000000;
+        }
+
+        .nav-pill.active {
+            background: #000000;
+            color: white;
+            border-color: #000000;
+        }
+
+        .actor-section {
+            display: none;
+        }
+
+        .actor-section.active {
+            display: block;
+        }
+
+        .content-grid {
+            display: flex;
+            width: 100%;
+            gap: 4px;
+        }
+
+        .content-column {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 8px;
+            flex: 1;
+            min-width: 200px;
+            overflow-wrap: break-word;
+            word-break: break-word;        }
+
+        .criteria-header {
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid;
+        }
+
+        .criteria-header.higher {
+            color: #FF0000;
+            border-bottom-color: #FF0000;
+        }
+
+        .criteria-header.lower {
+            color: #2E5C8A;
+            border-bottom-color: #2E5C8A;
+        }
+
+        .summary-section {
+            margin-bottom: 20px;
+        }
+
+        .summary-text {
+            margin-bottom: 15px;
+            font-weight: 500;
+            color: #000000;
+            font-size: 15px;
+        }
+
+        .quote-details {
+            margin-top: 15px;
+        }
+
+        .quote-toggle {
+            cursor: pointer;
+            color: #000000;
+            font-weight: 500;
+            font-size: 10px;
+            padding: 8px 0;
+            border-bottom: 1px dotted #000000;
+            display: inline-block;
+        }
+
+        .quote-toggle:hover {
+            color: #333333;
+        }
+
+        .quote-list {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .quote-list li {
+            margin-bottom: 12px;
+            font-size: 10px;
+            line-height: 1.3;
+            color: #000000;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                gap: 4px;
+            }
+
+            .selection-title {
+
+
+                text-align: center;
+
+
+                font-size: 14px;
+
+
+                font-weight: 600;
+
+
+                color: #666666;
+
+
+                margin-bottom: 10px;
+
+
+            }
+
+
+
+            .nav-pills {
+                justify-content: flex-start;
+            }
+
+            .nav-pill {
+                font-size: 10px;
+                padding: 4px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>5.2 Loss of human agency and autonomy - Responsibility</h1>
+
+
+        <div class="selection-title">Select an actor:</div>
+        <div class="nav-pills">
+            <button class="nav-pill active" data-target="AIDeveloperGeneralpurposeAI">
+                AI Developer (General-purpose AI)
+            </button>
+            <button class="nav-pill" data-target="AIDeveloperSpecializedAI">
+                AI Developer (Specialized AI)
+            </button>
+            <button class="nav-pill" data-target="AIDeployer">
+                AI Deployer
+            </button>
+            <button class="nav-pill" data-target="AIInfrastructureProvider">
+                AI Infrastructure Provider
+            </button>
+            <button class="nav-pill" data-target="AIUser">
+                AI User
+            </button>
+            <button class="nav-pill" data-target="AffectedStakeholder">
+                Affected Stakeholder
+            </button>
+            <button class="nav-pill" data-target="AIGovernanceActor">
+                AI Governance Actor
+            </button>
+        </div>
+
+        <div class="content-sections">
+            <div class="actor-section active" id="AIDeveloperGeneralpurposeAI">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Experts questioned why tool vendors should be responsible for lack of agency among end users—companies deploying vendors' models should care about loss of agency/autonomy of their workers. If someone sells robots, they shouldn't be responsible for job losses or reduction in job autonomy among companies that buy products; employers should bear that responsibility. One expert doesn't see significant issues for general-purpose developers, as responsibility relates more to specialized developers.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"Why should tool vendors be responsible for lack of agency among end users?  the companies deploying the vendors' models may care about loss of agency/autonomy of their workers.   If I sell robots, I should not be responsible for job losses or reduction in job autonomy among companies that buy my products.  The employers should.  The tool manufacturers should not."</li>                    <li>"I do not see any significant issues related to a general purpose AI developer, as it will be on the specialized developer's responsibility related to the vulnerability."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIDeveloperSpecializedAI">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "The specialized AI developer has significant control over fine-tuned models and deployment vectors, making their role critical in preventing loss of agency."</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"The specialized AI developer has significant control over fine-tuned models and deployment vectors, making their role critical in preventing loss of agency."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIDeployer">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "Ive given AI developers moderate responsibility for Loss of human agency and autonomy because having worked at various AI startups I have come to observe that devs are burning out to make their investors happy, maintain funding/growth and stay in the race they perceive to be in. The media and the users are pushing the narrative of AGI which shapes the feature requests, but I have not seen anyone deliberately working on turning humans into thoughtless batteries, it's more of a mass psychosis. The only choice the 'awake' engineers have is to quit their jobs and that is not always possible."</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"Ive given AI developers moderate responsibility for Loss of human agency and autonomy because having worked at various AI startups I have come to observe that devs are burning out to make their investors happy, maintain funding/growth and stay in the race they perceive to be in. The media and the users are pushing the narrative of AGI which shapes the feature requests, but I have not seen anyone deliberately working on turning humans into thoughtless batteries, it's more of a mass psychosis. The only choice the "awake" engineers have is to quit their jobs and that is not always possible."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIInfrastructureProvider">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Infrastructure providers are enablers and carry responsibility for compute access and control of training environments. One expert augmented their rating specifically for data providers, given it's up to them to ensure datasets contain as little AI-generated data as possible.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"Infrastructure providers are enablers but do not operate at the layer of alignment and safeguards."</li>                    <li>"AI Infrastructure Provider: I augmented my rating but only for the case of data providers, given that it is up to them to ensure that datasets contain as little AI-generated data as possible. For other cases of AI Infrastructure Providers I would have kept "Not at all"."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "Infrastructure providers are enablers but do not operate at the layer of alignment and safeguards."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIUser">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "I treat "primarily responsible" as a single-slot label and assign it to the user, since users decide when and how to delegate agency in each use."</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"I treat "primarily responsible" as a single-slot label and assign it to the user, since users decide when and how to delegate agency in each use."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "Users rarely have control over level of reliance on systems, especially when designers do not provide the ability to modify it. The users only have a 'final say' and ability to reduce reliance if they actually have the ability to engage control / veto the system, and that is certainly not always the case, both technically, and pragmatically when systems operate at superhuman speeds."</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"Users rarely have control over level of reliance on systems, especially when designers do not provide the ability to modify it. The users only have a "final say" and ability to reduce reliance if they actually have the ability to engage control / veto the system, and that is certainly not always the case, both technically, and pragmatically when systems operate at superhuman speeds."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AffectedStakeholder">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Affected stakeholders typically lack technical agency or systemic access and therefore should not be burdened with responsibility they cannot meaningfully act upon. One expert agrees affected stakeholders should not be responsible if the effect is outside their control.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"Affected stakeholders typically lack technical agency or systemic access and therefore should not be burdened with responsibility they cannot meaningfully act upon."</li>                    <li>"I agree that the affected stakeholder should not be responsible if the effect is outside their control."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIGovernanceActor">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "it is ultimately Governance actors that get to set the incentives of other players. I believe there is a real sense in which AI developers are merely responding to incentives to automate much decision-making away (e.g. our tax code is biased towards automation - see Acemoglu's work). If developers execute poorly, more harm is done, but if the incentives are there to build something, someone is going to do it eventually. One can only expect so much from taboos."</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"I am not changing my rating of General AI developers (Highly responsible) and AI Governance actors (Primarily responsible), and was surprised no one had mentioned it is ultimately Governance actors that get to set the incentives of other players. I believe there is a real sense in which AI developers are merely responding to incentives to automate much decision-making away (e.g. our tax code is biased towards automation - see Acemoglu's work). If developers execute poorly, more harm is done, but if the incentives are there to build something, someone is going to do it eventually. One can only expect so much from taboos."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pills = document.querySelectorAll('.nav-pill');
+            const sections = document.querySelectorAll('.actor-section');
+
+            pills.forEach(pill => {
+                pill.addEventListener('click', function() {
+                    // Remove active class from all pills and sections
+                    pills.forEach(p => p.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('active'));
+
+                    // Add active class to clicked pill
+                    this.classList.add('active');
+
+                    // Show corresponding section
+                    const targetId = this.getAttribute('data-target');
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

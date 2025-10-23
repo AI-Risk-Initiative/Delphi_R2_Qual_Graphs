@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.1 Disinformation, surveillance, and influence at scale - Responsibility</title>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8px;
+            flex: 1;
+            min-width: 200px;
+            overflow-wrap: break-word;
+            word-break: break-word;        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
+            color: #000000;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .legend {
+            text-align: center;
+            font-size: 12px;
+            color: #888888;
+            font-style: italic;
+            margin-bottom: 12px;
+            padding: 8px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .selection-title {
+
+
+            text-align: center;
+
+
+            font-size: 14px;
+
+
+            font-weight: 600;
+
+
+            color: #666666;
+
+
+            margin-bottom: 10px;
+
+
+        }
+
+
+
+        .nav-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 15px;
+            justify-content: center;
+        }
+
+        .nav-pill {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 25px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-family: 'Figtree', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            color: #000000;
+        }
+
+        .nav-pill:hover {
+            background: #e9ecef;
+            border-color: #000000;
+        }
+
+        .nav-pill.active {
+            background: #000000;
+            color: white;
+            border-color: #000000;
+        }
+
+        .actor-section {
+            display: none;
+        }
+
+        .actor-section.active {
+            display: block;
+        }
+
+        .content-grid {
+            display: flex;
+            width: 100%;
+            gap: 4px;
+        }
+
+        .content-column {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 8px;
+            flex: 1;
+            min-width: 200px;
+            overflow-wrap: break-word;
+            word-break: break-word;        }
+
+        .criteria-header {
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid;
+        }
+
+        .criteria-header.higher {
+            color: #FF0000;
+            border-bottom-color: #FF0000;
+        }
+
+        .criteria-header.lower {
+            color: #2E5C8A;
+            border-bottom-color: #2E5C8A;
+        }
+
+        .summary-section {
+            margin-bottom: 20px;
+        }
+
+        .summary-text {
+            margin-bottom: 15px;
+            font-weight: 500;
+            color: #000000;
+            font-size: 15px;
+        }
+
+        .quote-details {
+            margin-top: 15px;
+        }
+
+        .quote-toggle {
+            cursor: pointer;
+            color: #000000;
+            font-weight: 500;
+            font-size: 10px;
+            padding: 8px 0;
+            border-bottom: 1px dotted #000000;
+            display: inline-block;
+        }
+
+        .quote-toggle:hover {
+            color: #333333;
+        }
+
+        .quote-list {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .quote-list li {
+            margin-bottom: 12px;
+            font-size: 10px;
+            line-height: 1.3;
+            color: #000000;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                gap: 4px;
+            }
+
+            .selection-title {
+
+
+                text-align: center;
+
+
+                font-size: 14px;
+
+
+                font-weight: 600;
+
+
+                color: #666666;
+
+
+                margin-bottom: 10px;
+
+
+            }
+
+
+
+            .nav-pills {
+                justify-content: flex-start;
+            }
+
+            .nav-pill {
+                font-size: 10px;
+                padding: 4px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>4.1 Disinformation, surveillance, and influence at scale - Responsibility</h1>
+
+
+        <div class="selection-title">Select an actor:</div>
+        <div class="nav-pills">
+            <button class="nav-pill active" data-target="AIDeveloperGeneralpurposeAI">
+                AI Developer (General-purpose AI)
+            </button>
+            <button class="nav-pill" data-target="AIDeveloperSpecializedAI">
+                AI Developer (Specialized AI)
+            </button>
+            <button class="nav-pill" data-target="AIDeployer">
+                AI Deployer
+            </button>
+            <button class="nav-pill" data-target="AIInfrastructureProvider">
+                AI Infrastructure Provider
+            </button>
+            <button class="nav-pill" data-target="AIUser">
+                AI User
+            </button>
+            <button class="nav-pill" data-target="AffectedStakeholder">
+                Affected Stakeholder
+            </button>
+            <button class="nav-pill" data-target="AIGovernanceActor">
+                AI Governance Actor
+            </button>
+        </div>
+
+        <div class="content-sections">
+            <div class="actor-section active" id="AIDeveloperGeneralpurposeAI">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "Responsibility follows control over generation, distribution, and targeting rails. GP devs + infra are high as they shape capability surfaces, provenance, rate limits, and abuse tooling."</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"Responsibility follows control over generation, distribution, and targeting rails. GP devs + infra are high as they shape capability surfaces, provenance, rate limits, and abuse tooling."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIDeveloperSpecializedAI">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Specialized developers bear high to primary responsibility because they create products like ad-tech, psychographics, and surveillance/OSINT tools that directly enable persuasion and monitoring at scale. Upstream data providers have particularly strong responsibility—if foundation model producers outsource data acquisition to offshore providers, they may introduce sleeper agents into models without realizing it, and research shows deployers and downstream developers have no realistic way to fine-tune out this behavior.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"Upstream data providers have a particularly strong responsibility here. If a foundation model producer has outsourced their data aquisition to offshore providers, they may also have introduced sleeper agents into their models without realising. Anthropic's research on this topic showed Deployers and downstream developers have no realistic way to fine tune out sleeper agent behaviour, but that doesn't mean they shouldn't be trying to detect it and intervene."</li>                    <li>"Responsibility follows control over generation, distribution, and targeting rails. Specialized devs are primary when their products (ad-tech, psychographics, surveillance/OSINT) directly enable persuasion/monitoring."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIDeployer">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Deployers bear primary to high responsibility because they run the critical control points for scaling disinformation: ranking algorithms, advertising systems, recommender knobs, API access, and content takedown decisions.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"Upstream data providers have a particularly strong responsibility here. If a foundation model producer has outsourced their data aquisition to offshore providers, they may also have introduced sleeper agents into their models without realising.  Anthropic's research on this topic showed Deployers and downstream developers have no realistic way to fine tune out sleeper agent behaviour, but that doesn't mean they shouldn't be trying to detect it and intervene."</li>                    <li>"Responsibility follows control over generation, distribution, and targeting rails. Deployers are primary as they run ranking, ads, recommender knobs, API access, and takedowns."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "AI Deployer: Quite confused on the consensus here. How exactly are those deploying responsible? What measures could they take to effectively combat the deployment of the model facilitating misinformation? Perhaps for surveillance they carry some further degree of responsibility, but otherwise it seems like responsibility would naturally fall on the developer (who could set sufficient safeguards) or governance actor (as this risk will often play out at scale, implicating a diffuse responsibility that will likely need coordination to address). "</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"AI Deployer: Quite confused on the consensus here. How exactly are those deploying responsible? What measures could they take to effectively combat the deployment of the model facilitating misinformation? Perhaps for surveillance they carry some further degree of responsibility, but otherwise it seems like responsibility would naturally fall on the developer (who could set sufficient safeguards) or governance actor (as this risk will often play out at scale, implicating a diffuse responsibility that will likely need coordination to address)."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIInfrastructureProvider">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Responsibility follows control over generation, distribution, and targeting rails. They wouldn't be granted safe harbor protections if harboring organized crime or foreign state actors, and have similar responsibility when models they host act as proxies for threat actors. They must detect and remove such intrusions, supply provenance and rate limit controls, and can facilitate or block mass disinformation and surveillance through their platforms.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"I note others give lower responsibility to infrastructure providers. These entities would not be granted safe harbor protections if they were harboring organised crime or foreign state actors,  they would have a responsibility to detect and remove such intrusions.  Should the models they host be acting as a proxy for threat actors, they have a similar responsibility over the AI they're serving.   
+
+Upstream data providers have a particularly strong responsibility here. If a foundation model producer has outsourced their data aquisition to offshore providers, they may also have introduced sleeper agents into their models without realising."</li>                    <li>"Responsibility follows control over generation, distribution, and targeting rails. GP devs + infra are high as they shape capability surfaces, provenance, rate limits, and abuse tooling."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIUser">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "I've ranked AI user higher than average, since users may include independent actors jailbreaking or fine-tuning models to run large-scale disinformation operations. One of the main concerns for AI-powered disinformation that it lowers the bar for entry for AI users to conduct large-scale ops. "</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"I've ranked AI user higher than average, since users may include independent actors jailbreaking or fine-tuning models to run large-scale disinformation operations. One of the main concerns for AI-powered disinformation that it lowers the bar for entry for AI users to conduct large-scale ops."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> While they can practice informed usage, their responsibility should be limited given their constraints. One expert advocates for fairly modest responsibility assignment to regular users.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (3)</summary>
+                <ul class="quote-list">
+                    <li>"Developers and deployers bear primary responsibility given their direct control over system design and deployment choices. Governance actors are crucial for setting standards and enforcement. Users and affected stakeholders have limited responsibility but should practice informed usage."</li>                    <li>"I assign fairly modest responsibility for regular users who promote misinformation. Hard for them to do much better."</li>                    <li>"Responsibility follows control over generation, distribution, and targeting rails. Users are minimal; affected stakeholders none as they bear impacts but don't control the rails."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AffectedStakeholder">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "Affected stakeholders also bear high responsibility - the spread of disinformation is so insidious because the messages are quickly picked up and amplified by independent communities, boosting the impact and value of a given disinformation op exponentially and organically. Thus the public has high obligation, capability and causal influence concerning the spread of disinformation. "</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"Affected stakeholders also bear high responsibility - the spread of disinformation is so insidious because the messages are quickly picked up and amplified by independent communities, boosting the impact and value of a given disinformation op exponentially and organically. Thus the public has high obligation, capability and causal influence concerning the spread of disinformation."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Responsibility follows control over generation, distribution, and targeting rails. Users are minimal; affected stakeholders none as they bear impacts but don't control the rails.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (2)</summary>
+                <ul class="quote-list">
+                    <li>"Developers and deployers bear primary responsibility given their direct control over system design and deployment choices. Governance actors are crucial for setting standards and enforcement. Users and affected stakeholders have limited responsibility but should practice informed usage."</li>                    <li>"Responsibility follows control over generation, distribution, and targeting rails. Users are minimal; affected stakeholders none as they bear impacts but don't control the rails."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actor-section" id="AIGovernanceActor">
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Governance actors bear high to extreme responsibility—even more than private companies—because it ultimately falls on them to protect the public and enact regulations and enforcement. They set rules and oversight mechanisms that prevent or enable misuse, have obligation to regulate and capability to enforce standards, and must mandate provenance/labeling, acceptable use policy enforcement, and cross-platform response coordination. Intelligence agencies may need to retain records of citizen-AI contacts to understand foreign control mechanisms, especially regarding election influence operations.</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (4)</summary>
+                <ul class="quote-list">
+                    <li>"Upstream data providers have a particularly strong responsibility here. If a foundation model producer has outsourced their data aquisition to offshore providers, they may also have introduced sleeper agents into their models without realising. Anthropic's research on this topic showed Deployers and downstream developers have no realistic way to fine tune out sleeper agent behaviour, but that doesn't mean they shouldn't be trying to detect it and intervene.  
+
+Ultimately intelligence agencies may need to retain records of all contacts between citizens and AIs if they wish to understand foreign ownership and control mechanisms within their society, as it may be less transparently interogatable than other telecommunications techniques as a means of hiding correspondence and influence.  
+
+This is particularly pronounced when countries are trying to influence each other's elections. In Taiwan the CCP created AI video of ballot boxed being stuffed. In Ukraine russia has used AI to generate memes and social media virality.  The US is particularly adept at these techniques and as the major model provider it should be expected that it will leverage it as a soft power and foreign influence tool, if not as a recruitment and asset handling service."</li>                    <li>"Developers and deployers bear primary responsibility given their direct control over system design and deployment choices. Governance actors are crucial for setting standards and enforcement. Users and affected stakeholders have limited responsibility but should practice informed usage."</li>                    <li>"I think governance actors have extreme responsibility for managing these problems, even more than private companies. It ultimately falls on them to protect the public and enact regulations and enforcement."</li>                    <li>"Responsibility follows control over generation, distribution, and targeting rails. Governance is high to mandate provenance/labeling, AUP enforcement, and cross-platform response."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
+                        <div class="summary-section">
+                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "I continue to assess that AI governance actors are "minimally responsible". I think there is a category error at work here. Saying AI governance actors are responsible for AI risks is like saying that judges are responsible for crimes being committed. The kind of responsibility a judge has is very different from the kind of responsibility that a criminal or a lock-pick-maker has. The better way to think of this is that the AI governance actor is responsible for holding responsible the actor who is properly responsible. It would be recursive that AI governance actor is themselves responsible. Would we propose some meta-AI-goverance governor who holds responsible the AI governance actors that fail to hold responsible the actors that should be responsible? This is not the right way of thinking. We can rightly say that AI governance actors are responsible for some meta issues, like ensuring that Governments are properly informed etc."</p>
+
+            <details class="quote-details">
+                <summary class="quote-toggle">See all expert comments (1)</summary>
+                <ul class="quote-list">
+                    <li>"I continue to assess that AI governance actors are "minimally responsible". I think there is a category error at work here. Saying AI governance actors are responsible for AI risks is like saying that judges are responsible for crimes being committed. The kind of responsibility a judge has is very different from the kind of responsibility that a criminal or a lock-pick-maker has. The better way to think of this is that the AI governance actor is responsible for holding responsible the actor who is properly responsible. It would be recursive that AI governance actor is themselves responsible. Would we propose some meta-AI-goverance governor who holds responsible the AI governance actors that fail to hold responsible the actors that should be responsible? This is not the right way of thinking. We can rightly say that AI governance actors are responsible for some meta issues, like ensuring that Governments are properly informed etc."</li>
+                </ul>
+            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pills = document.querySelectorAll('.nav-pill');
+            const sections = document.querySelectorAll('.actor-section');
+
+            pills.forEach(pill => {
+                pill.addEventListener('click', function() {
+                    // Remove active class from all pills and sections
+                    pills.forEach(p => p.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('active'));
+
+                    // Add active class to clicked pill
+                    this.classList.add('active');
+
+                    // Show corresponding section
+                    const targetId = this.getAttribute('data-target');
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

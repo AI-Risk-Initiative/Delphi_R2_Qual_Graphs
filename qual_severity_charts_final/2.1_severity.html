@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.1 Compromise of privacy by obtaining, leaking or correctly inferring sensitive information - Business as usual Scenario</title>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8px;
+            flex: 1;
+            min-width: 200px;
+            overflow-wrap: break-word;
+            word-break: break-word;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
+            color: #000000;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .selection-title {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            color: #666666;
+            margin-bottom: 10px;
+        }
+
+        .nav-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 15px;
+            justify-content: center;
+        }
+
+        .nav-pill {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 25px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-family: 'Figtree', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            color: #000000;
+        }
+
+        .nav-pill:hover {
+            background: #e9ecef;
+            border-color: #000000;
+        }
+
+        .nav-pill.active {
+            background: #a32035;
+            color: white;
+            border-color: #a32035;
+        }
+
+        .tab-section {
+            display: none;
+        }
+
+        .tab-section.active {
+            display: block;
+        }
+
+        .content-box {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .criteria-header {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #a32035;
+            color: #a32035;
+        }
+
+        .summary-section {
+            margin-bottom: 20px;
+        }
+
+        .summary-text {
+            margin-bottom: 15px;
+            font-weight: 500;
+            color: #000000;
+            font-size: 15px;
+        }
+
+        .quote-details {
+            margin-top: 15px;
+        }
+
+        .quote-toggle {
+            cursor: pointer;
+            color: #000000;
+            font-weight: 500;
+            font-size: 14px;
+            padding: 8px 0;
+            border-bottom: 1px dotted #a32035;
+            display: inline-block;
+        }
+
+        .quote-toggle:hover {
+            color: #333333;
+        }
+
+        .quote-list {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .quote-list li {
+            margin-bottom: 12px;
+            font-size: 12px;
+            line-height: 1.3;
+            color: #000000;
+        }
+
+        @media (max-width: 768px) {
+            .nav-pill {
+                font-size: 10px;
+                padding: 4px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>2.1 Compromise of privacy by obtaining, leaking or correctly inferring sensitive information - Business as usual Scenario</h1>
+
+        <div class="selection-title">Select a category:</div>
+        <div class="nav-pills">
+            <button class="nav-pill active" data-target="reasoning">
+                Reasoning
+            </button>
+            <button class="nav-pill" data-target="other">
+                Other
+            </button>
+        </div>
+
+        <div class="content-sections">
+            <div class="tab-section active" id="reasoning">
+                <div class="content-box">
+                    <h3 class="criteria-header">Reasoning</h3>
+                    <div class="summary-section">
+                        <p class="summary-text"><strong>AI-Generated Summary of Expert Comments:</strong> [editor's note: due to the volume of expert comments, this AI-generated summary may be insufficient/misleading]. Main harms identified include model memorization and leakage of sensitive personal and corporate data, inference attacks enabling re-identification, identity theft, mass exposure of PII/PHI datasets, and cross-platform linkage creating surveillance risks, with one expert noting GDPR compliance costs already reaching severe harm levels at approximately $8 billion. Under Business as Usual, experts expect substantial to severe harm as data exposure points proliferate faster than controls through prompt logging, RAG/vector stores, plugin connectors, and observability traces, with weak governance, uneven enforcement, and exploitation by malicious actors. Under Pragmatic Mitigations, privacy-preserving techniques like differential privacy, encryption, federated learning, data minimization, and regulatory frameworks substantially reduce risk with some experts estimating 30-40% risk reduction. However, residual risks persist due to human error, shadow IT, third-party dependencies, adversarial attacks, and the fundamental nature of LLMs that make complete mitigation impractical, though catastrophic harm remains rare given the individualized nature of privacy risk unless multi-sector linkage and sustained exploitation occur.</p>
+
+                        <details class="quote-details">
+                            <summary class="quote-toggle">See all expert comments (20)</summary>
+                            <ul class="quote-list">
+                                <li>"While catastrophic harm from privacy compromise is unlikely in isolation, under Business as Usual, systemic vulnerabilities and weak oversight elevate the probability of severe harm (e.g., mass leaks, targeted profiling, or cross-system inferences of sensitive traits).
+
+Under Pragmatic Mitigations, targeted efforts (e.g., differential privacy, stricter data governance) can lower this risk significantly, though substantial harm remains possible due to data interconnectivity and legacy system exposure.
+
+Importantly, local precision != alignment. Systems may function with internal consistency but still fail at the interface. Without semantic alignment (e.g., Clarity Loops), the risk of drift at integration points persists, especially in federated models or cross-border data processing."</li>
+                                <li>"Under Business as Usual assumptions, there is a high likelihood (70%) that AI-driven compromise of privacy will result in substantial harm over the next five years. Without dedicated AI-specific mitigations, organizations will continue exposing sensitive personal and corporate data through model memorization, training data leakage, and inference attacks. Limited transparency, inconsistent data governance, and insufficient privacy-by-design implementation amplify this risk, particularly across critical sectors such as finance, healthcare, and government.
+
+With Pragmatic Mitigations, including the adoption of privacy-preserving machine learning, stricter data handling standards, and regulatory compliance frameworks, the likelihood of substantial harm is reduced to 55%. However, the persistence of model inversion risks, supply chain vulnerabilities, and the scale of AI deployment maintain a significant residual threat. Overall, even with pragmatic safeguards, AI-related privacy compromise remains a high-probability, high-impact risk due to the structural opacity and global interconnectivity of AI systems."</li>
+                                <li>"Without AI-specific safeguards, privacy breaches and inference risks increase as large models process uncurated data. Weak governance and uneven data-protection maturity make substantial to severe harms most likely, with potential exposure of sensitive personal information at scale. Catastrophic loss remains low-probability but possible if foundational models enable uncontrolled inference or surveillance misuse.
+With pragmatic mitigations such as privacy-by-design, encryption, federated learning, and strong frameworks like ISO 42001 or GDPR, risk levels drop sharply. Harms are mainly minor to substantial, localized, and reversible. Severe or catastrophic outcomes become rare, limited to large-scale enforcement failures or coordinated attacks. Business as usual exposes systemic privacy risk, while pragmatic mitigation reduces it to contained and manageable levels."</li>
+                                <li>"Information leakage is relatively easy to avoid through proactive defense methods such as content guardrail, firewalls, and regular penetration testing, so if pragmatic mitigation is carried out, the occurrence of harm will be greatly reduced."</li>
+                                <li>"We can reduce the severity of this harm with sufficient guardrails in place."</li>
+                                <li>"With no AI-specific risk mitigations catastrophic and severe harms could materialise with the increased agency of autonomous systems and workflows. Optimistically, AI-specific risk mitigations would shift the risk distribution towards minor harms."</li>
+                                <li>"Privacy and data protection risks even without AI routinely cause substantial harms. With AI, it will easily upgrade the likelihood of potential future harms to severe levels."</li>
+                                <li>"The harms from impersonation increase with the capabilities of AI and the leaked and inferred personal information.  Other losses of PII may cause harm, but stealing identity is especially pernicious."</li>
+                                <li>"2.1 - Business As Usual - 2.1 Compromise of privacy by obtaining, leaking, or correctly inferring sensitive information:
+No significant, globally coordinated adoption of advanced privacy or AI governance measures is assumed beyond current practices.  The proliferation of foundation models and third-party integrations increases the number of exposure points across systems and data pipelines.  While privacy and data protection laws (e.g., GDPR, CCPA) continue to exert pressure on organizations, enforcement remains uneven.  Malicious actors, including cybercriminals, data brokers, state-sponsored entities, and insiders, continue to exploit weaknesses in AI systems.
+Pragmatic Mitigations - 2.1 Compromise of privacy by obtaining, leaking, or correctly inferring sensitive information:
+Organizations increasingly apply data minimization, encryption, and privacy-by-design principles as standard components of system development and data governance frameworks.  Large developers and service providers adopt structured AI governance practices, including model auditing, differential privacy techniques, and federated learning architectures, to reduce systemic exposure to privacy and security risks.  Breach detection, containment, and notification processes demonstrate greater operational readiness, reducing mean time to identify (MTTI) and mean time to respond (MTTR) to privacy-related incidents.  Regulatory requirements continue to drive baseline compliance behaviors and accountability, although residual risks persist due to human error, third-party dependencies, and adversarial attack vectors.  In summary, the BAU is highly skewed to more harm.  Subjectively, I assume a ~30-40% reduction in risk with the adoption of programmatic mitigations."</li>
+                                <li>"Privacy compromise risks substantial to severe harm under business-as-usual, given widespread data collection and inference capabilities. Pragmatic mitigations such as data minimization, encryption, and privacy regulations can shift the distribution toward minor/substantial harms, though complete elimination of risk is unlikely."</li>
+                                <li>"Severe harm cannot be eliminated as first line of defense may still be attributed to human error, despite strong technical mitigants"</li>
+                                <li>"I think it is highly likely that we will see substantial harm come from AI use.  Current "safety be damned" attitudes in AI companies and many companies racing to include the buzzword in their product will likely result in more than one substantial harm events.  Applying GRC controls to AI use will help, but will not bring the problems down.  Shadow IT will remain a big issue."</li>
+                                <li>"Even with pragmatic mitigations I believe unless strict regulations are defined. and enforced there will be entities that will not respect privacy. As a result there will still be minor harm albeit to a lesser extent."</li>
+                                <li>"I believe there's a high chance of harm from this vector of harm in both scenarios. In business as usual, there's negligible chance of negligible harm and a moderate chance of substantial harm. These move down with appropriate mitigations, although I don't think this drives the likelihood of catastrophic harm to 0."</li>
+                                <li>"Privacy has a high risk of causing significant harm, but there are ways to address this, particularly by improving privacy practices in countries like the United States that have weak privacy protections and practices. Given the risk of harm, negligible harm appears very unlikely, even with pragmatic mitigations. But catastrophic harm (close to impossible) is highly unlikely under any scenario, given the individualized rather than systemic nature of privacy risk."</li>
+                                <li>"Under BAU, the data plane grows faster than controls: prompt logging, RAG/vector stores, plugin/agent connectors, and observability traces all concentrate sensitive inputs. That drives frequent substantial incidents (large PII/PHI leaks, irreversible re-identification) and non-trivial severe events (nation-scale health/financial datasets, cross-platform linkage). Catastrophic outcomes are possible but rare for privacy (needs multi-sector linkage + sustained exploitation).
+With pragmatic mitigations (data minimization/retention caps, default-off prompt logging, masked RAG ingestion + deletion policies, vector-store access controls/redaction, DLP at plugin boundaries, DP/membership-inference checks for training, signed/attested artifacts, and audit-ready breach playbooks), the tail risk drops (severe, catastrophic) while day-to-day substantial stays common because usage volume keeps rising even as we harden."</li>
+                                <li>"There are well-known tools, red-team insights and access controls to prevent this risk to materialize."</li>
+                                <li>"Already fortune 500 have spent an estimated ~$8bn complying with GDPR. This direct cost puts it in the severe harm bucket and bordering on 'catastrophic' harm"</li>
+                                <li>"Privacy breaches remain frequent under current practices. While most incidents are minor and recoverable, large-scale leaks and inference-based exposures continue to drive substantial harm. Pragmatic mitigations lower severity but do not eliminate systemic privacy risk."</li>
+                                <li>"Significant harm is likely to occur because businesses - and/or governments - will irresponsibly use AI, and feed it (i.e. a GPT wrapper with some prompting) personal data, in the quest to make the line go up.
+
+Due to the nature of LLM's (see Yann LeCun's "Mathematical Obstacles on the Way to Human-Level AI"), it is not practical to mitigate this issue, and not possible to resolve this issue."</li>
+                            </ul>
+                        </details>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-section" id="other">
+                <div class="content-box">
+                    <h3 class="criteria-header">Other</h3>
+                    <div class="summary-section">
+                        <p class="summary-text"><strong>AI-Generated Summary of Expert Comments:</strong> One expert commented: "I imagined there was a third category of 'actually effective actions were taken without bounds of pragmatism, as if people were Actually Trying To Solve The Problem', and when compared to that scenario, my assessment of catastrophic risk didn't dip very much. My responses may be strong outliers in this regard"</p>
+
+                        <details class="quote-details">
+                            <summary class="quote-toggle">See all expert comments (1)</summary>
+                            <ul class="quote-list">
+                                <li>"I imagined there was a third category of 'actually effective actions were taken without bounds of pragmatism, as if people were Actually Trying To Solve The Problem', and when compared to that scenario, my assessment of catastrophic risk didn't dip very much. My responses may be strong outliers in this regard."</li>
+                            </ul>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pills = document.querySelectorAll('.nav-pill');
+            const sections = document.querySelectorAll('.tab-section');
+
+            pills.forEach(pill => {
+                pill.addEventListener('click', function() {
+                    pills.forEach(p => p.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('active'));
+
+                    this.classList.add('active');
+
+                    const targetId = this.getAttribute('data-target');
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

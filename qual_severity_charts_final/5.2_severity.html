@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.2 Loss of human agency and autonomy - Business as usual Scenario</title>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8px;
+            flex: 1;
+            min-width: 200px;
+            overflow-wrap: break-word;
+            word-break: break-word;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
+            color: #000000;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .selection-title {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            color: #666666;
+            margin-bottom: 10px;
+        }
+
+        .nav-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 15px;
+            justify-content: center;
+        }
+
+        .nav-pill {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 25px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-family: 'Figtree', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            color: #000000;
+        }
+
+        .nav-pill:hover {
+            background: #e9ecef;
+            border-color: #000000;
+        }
+
+        .nav-pill.active {
+            background: #a32035;
+            color: white;
+            border-color: #a32035;
+        }
+
+        .tab-section {
+            display: none;
+        }
+
+        .tab-section.active {
+            display: block;
+        }
+
+        .content-box {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .criteria-header {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #a32035;
+            color: #a32035;
+        }
+
+        .summary-section {
+            margin-bottom: 20px;
+        }
+
+        .summary-text {
+            margin-bottom: 15px;
+            font-weight: 500;
+            color: #000000;
+            font-size: 15px;
+        }
+
+        .quote-details {
+            margin-top: 15px;
+        }
+
+        .quote-toggle {
+            cursor: pointer;
+            color: #000000;
+            font-weight: 500;
+            font-size: 14px;
+            padding: 8px 0;
+            border-bottom: 1px dotted #a32035;
+            display: inline-block;
+        }
+
+        .quote-toggle:hover {
+            color: #333333;
+        }
+
+        .quote-list {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .quote-list li {
+            margin-bottom: 12px;
+            font-size: 12px;
+            line-height: 1.3;
+            color: #000000;
+        }
+
+        @media (max-width: 768px) {
+            .nav-pill {
+                font-size: 10px;
+                padding: 4px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>5.2 Loss of human agency and autonomy - Business as usual Scenario</h1>
+
+        <div class="selection-title">Select a category:</div>
+        <div class="nav-pills">
+            <button class="nav-pill active" data-target="reasoning">
+                Reasoning
+            </button>
+            <button class="nav-pill" data-target="other">
+                Other
+            </button>
+        </div>
+
+        <div class="content-sections">
+            <div class="tab-section active" id="reasoning">
+                <div class="content-box">
+                    <h3 class="criteria-header">Reasoning</h3>
+                    <div class="summary-section">
+                        <p class="summary-text"><strong>AI-Generated Summary of Expert Comments:</strong> [editor's note: due to the volume of expert comments, this AI-generated summary may be insufficient/misleading]. Main harms identified include job losses potentially reaching $10 million to $1 billion, documented loss of lives from intoxications, drug misuse, self-medication, and suicides linked to emotional dependency on AI assistants particularly among youth, and gradual disempowerment through cheap attention capture, sticky defaults, and value lock-in. Under Business as Usual, experts expect substantial to severe harm as agency erosion becomes structurally embedded with automation shaping opinions, employment, and behavior without transparency, already occurring across industries. Under Pragmatic Mitigations, human-in-command governance, explainability, consent-based interaction, and user education shift risk toward minor and substantial levels. However, experts note a precarious balance between overuse and realizing benefits, with several warning that mitigations can counterintuitively increase tail risks by creating false security around "solved" problems, that pragmatic measures leave large gaps when users delegate poorly due to low AI literacy, and that systemic failure modes like gradual disempowerment are rarely addressed by cost-effective controls.</p>
+
+                        <details class="quote-details">
+                            <summary class="quote-toggle">See all expert comments (13)</summary>
+                            <ul class="quote-list">
+                                <li>"I still feel like there is some harm when it comes to the loss of agency and autonomy and we need to be careful with how we use these AI tools in order to prevent human autonomy to be completely dissolved out of the picture."</li>
+                                <li>"Pragmatic mitigations meaningfully reduce systemic and existential risk, but substantial and severe harm remain likely without aligned governance. Business-as-usual trends show insufficient safeguards to prevent high-impact drift in autonomy loss. Human agency erosion is structurally embedded and worsening under current trajectories."</li>
+                                <li>"Increasing adoption and integration of AI into decision-making, work processes, and social systems raises the risk of individuals and institutions ceding control to algorithmic outputs. Substantial to severe harms are most likely as automation shapes opinions, employment, and behavior without transparency or accountability. Catastrophic harm, though less probable, could arise where pervasive AI influence erodes free will or democratic participation at scale. With pragmatic mitigations such as human-in-command governance, explainable systems, consent-based AI interaction, and digital rights enforcement, risks are significantly reduced. Most harms shift to minor or substantial, with strong oversight and ethical design preserving autonomy and ensuring humans remain central in decision-making loops"</li>
+                                <li>"Loss of human agency is already starting to occur in several industries, and we are likely to see the negative impacts of such losses increase should the business as usual continue."</li>
+                                <li>"While mitigations halve the likelihood of catastrophic risks, I think there will always remain a precarious balance to be held between overuse and overreliance on one hand and then realization of full benefits of the technology on the other hand."</li>
+                                <li>"The main loss I foresee in the next five years is loss of jobs as those jobs become more routine and less demanding on human agency  This  could easily be in the 10M-1B range.  I don't know what mitigations would help, other than government assistance, which would just be transfer of cost, or regulation preventing layoffs, which would lead to losses due to reduced economic growth"</li>
+                                <li>"The loss of lives should be considered a major concern. Already the GPT era has claimed intoxications, drug misuse, self-medication promotion and support of suicidal attempts. The likelihood of these events is high and strict pragmatic mitigations are required. We can't wait the same time we waited to regulate social media in children."</li>
+                                <li>"I see heightened risk of loss of human agency and autonomy with no controls. With pragmatic mitigations I still see risks but less severe impacts."</li>
+                                <li>"Severe Harm (under the assumption of Business as Usual) 10%
+Overreliance on AI assistants or personal agents, and using AI as a conversational partner or therapist on a daily basis, has already been linked to suicide. The frequency of humans depending on AI for emotional support is likely to increase, potentially leading to a spike in suicides, particularly among youth. Additionally, people in certain industries may lose their sense of belonging and purpose, which could contribute to self-harm or harm to others."</li>
+                                <li>"By 2025 we already saw losses &gt;$10k from agency-eroding uses that pragmatic steps would not have averted. I treat the user as primarily responsible; practical mitigations therefore hinge on user AI literacy, hygiene, and critical-thinking at the point of delegation. Under BAU, cheap attention capture, sticky defaults, and lock-in drive frequent minor harms, with occasional substantial/severe cases. Under Pragmatic Mitigations, basic provenance, takedowns, and choice screens reduce frequency yet leave large gaps when users still delegate poorly. I keep a non-zero tail: gradual disempowerment and value lock-in create systemic failure modes that pragmatic, low-cost controls seldom address, which justifies a 10% catastrophic tail in BAU and 5% under Pragmatic Mitigations."</li>
+                                <li>"Mitigations have a risk of making things worse for dependence."</li>
+                                <li>"Mitigations can counterintuitively increase odds of tail risks, as "solved" problems are not mitigated. (The question of whether this overwhelms the primary effect is harder; it seems likely not to, except perhaps in the most extreme loss of control scenarios.)"</li>
+                                <li>"It is a well-known reality right now that AI users delegate too many decisions to AI systems. People do not use them with critical decisions but with simple, daily issues. In the long term, it might lead to an overreliance problem with habituation if there is no precaution. However, small adjustments and educating people can help to mitigate the risks."</li>
+                            </ul>
+                        </details>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-section" id="other">
+                <div class="content-box">
+                    <h3 class="criteria-header">Other</h3>
+                    <div class="summary-section">
+                        <p class="summary-text"><strong>AI-Generated Summary of Expert Comments:</strong> One expert commented: "Estimating the widespread and diffuse harms from loss of human agency and autonomy is laughably difficult. The most intelligent thing I can think to say is that we're trying to predict the behavior of a complex system (a society/civilization) and so it is almost certainly not going to behave linearly (e.g. there are likely feedback loops between loss of agency in our media creation/diet and political violence). As such my probability distribution is bimodal - either things are going to go well, or go terribly."</p>
+
+                        <details class="quote-details">
+                            <summary class="quote-toggle">See all expert comments (1)</summary>
+                            <ul class="quote-list">
+                                <li>"Estimating the widespread and diffuse harms from loss of human agency and autonomy is laughably difficult. The most intelligent thing I can think to say is that we're trying to predict the behavior of a complex system (a society/civilization) and so it is almost certainly not going to behave linearly (e.g. there are likely feedback loops between loss of agency in our media creation/diet and political violence). As such my probability distribution is bimodal - either things are going to go well, or go terribly."</li>
+                            </ul>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pills = document.querySelectorAll('.nav-pill');
+            const sections = document.querySelectorAll('.tab-section');
+
+            pills.forEach(pill => {
+                pill.addEventListener('click', function() {
+                    pills.forEach(p => p.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('active'));
+
+                    this.classList.add('active');
+
+                    const targetId = this.getAttribute('data-target');
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

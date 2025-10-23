@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.2 AI possessing dangerous capabilities - Business as usual Scenario</title>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8px;
+            flex: 1;
+            min-width: 200px;
+            overflow-wrap: break-word;
+            word-break: break-word;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
+            color: #000000;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .selection-title {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            color: #666666;
+            margin-bottom: 10px;
+        }
+
+        .nav-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 15px;
+            justify-content: center;
+        }
+
+        .nav-pill {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 25px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-family: 'Figtree', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            color: #000000;
+        }
+
+        .nav-pill:hover {
+            background: #e9ecef;
+            border-color: #000000;
+        }
+
+        .nav-pill.active {
+            background: #a32035;
+            color: white;
+            border-color: #a32035;
+        }
+
+        .tab-section {
+            display: none;
+        }
+
+        .tab-section.active {
+            display: block;
+        }
+
+        .content-box {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .criteria-header {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #a32035;
+            color: #a32035;
+        }
+
+        .summary-section {
+            margin-bottom: 20px;
+        }
+
+        .summary-text {
+            margin-bottom: 15px;
+            font-weight: 500;
+            color: #000000;
+            font-size: 15px;
+        }
+
+        .quote-details {
+            margin-top: 15px;
+        }
+
+        .quote-toggle {
+            cursor: pointer;
+            color: #000000;
+            font-weight: 500;
+            font-size: 14px;
+            padding: 8px 0;
+            border-bottom: 1px dotted #a32035;
+            display: inline-block;
+        }
+
+        .quote-toggle:hover {
+            color: #333333;
+        }
+
+        .quote-list {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .quote-list li {
+            margin-bottom: 12px;
+            font-size: 12px;
+            line-height: 1.3;
+            color: #000000;
+        }
+
+        @media (max-width: 768px) {
+            .nav-pill {
+                font-size: 10px;
+                padding: 4px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>7.2 AI possessing dangerous capabilities - Business as usual Scenario</h1>
+
+        <div class="selection-title">Select a category:</div>
+        <div class="nav-pills">
+            <button class="nav-pill active" data-target="reasoning">
+                Reasoning
+            </button>
+            <button class="nav-pill" data-target="other">
+                Other
+            </button>
+        </div>
+
+        <div class="content-sections">
+            <div class="tab-section active" id="reasoning">
+                <div class="content-box">
+                    <h3 class="criteria-header">Reasoning</h3>
+                    <div class="summary-section">
+                        <p class="summary-text"><strong>AI-Generated Summary of Expert Comments:</strong> [editor's note: There were many comments for this risk, and this AI-generated summary may be misleading or incomplete]. Experts note dangerous capabilities already exist and are causing harm - AI-enhanced drone warfare has caused thousands of casualties in Ukraine, AI-assisted suicides are documented, and cyber attacks using AI are increasing. Under Business as Usual, most expect substantial to severe harm as capabilities improve in bioengineering, cyber intrusion, and autonomous weapons. Key concerns include malicious actors gaining access, "novices" being enabled in cyber/CBRN domains, and the differential benefit AI provides to offensive over defensive uses. Several experts see this risk as binary - "either this doesn't happen, or it happens and it's very bad." Under Pragmatic Mitigations, views vary significantly. Some believe measures like compute governance, mandatory evaluations, and licensing regimes can "eliminate risks of unsophisticated catastrophic misuse." However, many remain skeptical - one notes pragmatic efforts are "almost definitionally not sufficient to address low probability tail risks," another argues "safety keeps up in no way with capabilities." The fundamental challenge is that strong economic incentives drive capability development while governments won't invest proportionately "until risk has materialized." Multiple experts emphasize that even with mitigations, reducing harm below 100 deaths seems impossible given current conflicts.</p>
+
+                        <details class="quote-details">
+                            <summary class="quote-toggle">See all expert comments (13)</summary>
+                            <ul class="quote-list">
+                                <li>"The rapid open availability of large models with additional capabilities such as bioengineering design, cyber intrusion, or autonomous weapon control creates a high likelihood of substantial to severe harms. Misuse by malicious actors, insufficient access control, and weak safety testing increase the risk of large-scale damage or societal disruption. Catastrophic outcomes remain possible if AI systems are weaponized or leveraged to accelerate mass destruction technologies. With pragmatic mitigations, including strict model governance, usage monitoring, licensing regimes, and red-teaming of powerful systems, overall risk declines sharply. Most harms become minor to substantial, limited by controlled access, layered safeguards, and responsible disclosure practices that constrain dangerous capability proliferation."</li>
+                                <li>"We already have quite dangerous capabilities, particularly in the areas of biorisk and cyberattacks; we should expect performance in these domains to improve and implementation of AI systems by malicious actors to increase, substantially inducing severe and catastrophic harm. This, combined by the moderately high chance we see misalignment in powerful AI systems before 2030, implies a high probability of catastrophic harm under BAU.
+
+By implementing AI control, better security at labs, and other moderately inexpensive measures, we can eliminate risks of unsophisticated catastrophic misuse as well as more prosaic risks (e.g. data loss). However, it is unlikely safety keeps up in any way with capabilities, and we can expect AI systems to differentially benefit capabilities and offensive uses, meaning catastrophic harm isn't reduced much without quite heavy-handed investments."</li>
+                                <li>"There's already "severe" harm from AI possessing dangerous capabilities. For example, AI-enhanced drone warfare has caused somewhere between 1k-100k additional casualties in the Russia-Ukraine war. Even with "pragmatic mitigations" we can't reduce the harm below 100 deaths from dangerous AI capabilities."</li>
+                                <li>"I find it hard to imagine any scenarios where this harm comes out as minor or substantial. Either this doesn't happen, or it happens and it's very bad."</li>
+                                <li>"Unless we substantially change how we govern AI use globally, we incur serious risk of existential harm from dangerous capabilities of AI.  Scientific use can also be converted to CRBN threats, with biological threats requiring the least special equipment or supplies to cause widespread harm.  Catastrophic cyberweapons are also possible with unrestricted use, intentionally or unintentionally worming breaches affecting sector-wide integrity."</li>
+                                <li>"With shifting goalposts like qualitative capability thresholds that are interpreted differently with each model release, we are already seeing models with dangerous capabilities being releases in 2025. So these risks are not going to be negligible but can definitely be stopped from reaching catastrophic levels!"</li>
+                                <li>"I would like to think that consequences like could be headed off before effects reached catastrophic levels."</li>
+                                <li>"Known cases that could be attributed to AI possessing dangerous capabilities are AI assisted suicides, so no/minor harm is out of the question, since these are already occurring. It is debatable whether or not the model does this because it understands the consequences which would be a dangerous capability, or MORE LIKELY the AI just follows its prompt by telling the user what they want to hear. So while the risk of manipulation into self harm is proven, it may not be due to the model's capabilities per se, but due to its system instructions and fine-tuning"</li>
+                                <li>"We're already seeing AI assisting in phishing and cyber attacks. I suspect that the harms from this will be more widespread as critical infrastructure is targeted, especially in state sponsored attacks. Ransomware insurance claims are increasing in severity and frequency, and I would imagine other cyberattacks will follow."</li>
+                                <li>"BAU: Continued capability scaling, agentic tool use, and open-model proliferation outpace evals and governance. Assistance to cyber/CBRN novices, automated persuasion, and autonomy features increase tail risk. Coordination failures between labs and operators keep exposure high
+Pragmatic: Compute governance and capability thresholds, mandatory pre-deployment evals, incident reporting, provenance/containment, and red-team to deployment gating reduce tail probability and shrink exposure, but material residual risk remains as models diffuse and integration incentives persist."</li>
+                                <li>"Think we already spend a huge amount defending against these risks, and AI likely to become a big part for the reason for that spend."</li>
+                                <li>""pragmatic and cost-effective efforts" are almost definitionally not sufficient to address low probability tail risks; governments and others will almost certainly not invest proportionate to the risk until it has materialized."</li>
+                                <li>"I think most pragmatic mitigations can make it significantly harder for moderately skilled actors to cause harm, but tail risks of a severe or catastrophic event remain high given strong incentives to develop AI with dangerous capabilities."</li>
+                            </ul>
+                        </details>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-section" id="other">
+                <div class="content-box">
+                    <h3 class="criteria-header">Other</h3>
+                    <div class="summary-section">
+                        <p class="summary-text"><strong>AI-Generated Summary of Expert Comments:</strong> One expert notes the interconnection between risks, stating misaligned AI and dangerous capabilities have "high positive covariance" as both stem from the current approach of building "generally intelligent agents," with WMD and manipulation capabilities being primary concerns in misalignment scenarios. Another expert reveals their probability of doom is over 50% but on longer timelines, leading them to assign only 20% catastrophic risk under Business as Usual and 5% with Pragmatic Mitigations within the 5-year window.</p>
+
+                        <details class="quote-details">
+                            <summary class="quote-toggle">See all expert comments (2)</summary>
+                            <ul class="quote-list">
+                                <li>"I think in our world, misaligned AI and AI processing dangerous capabilities have high positive covariance, both being downstream of the current 'generally intelligent agents' approach of building AI.  A large mass of these risks comes from WMD and manipulation-related capabilities in the case of misalignment."</li>
+                                <li>"My p(doom) is high (&gt;50%) but on longer timelines, so in this case I only put 20% with Business As Usual, and 5% with Practical Mitigation"</li>
+                            </ul>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pills = document.querySelectorAll('.nav-pill');
+            const sections = document.querySelectorAll('.tab-section');
+
+            pills.forEach(pill => {
+                pill.addEventListener('click', function() {
+                    pills.forEach(p => p.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('active'));
+
+                    this.classList.add('active');
+
+                    const targetId = this.getAttribute('data-target');
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

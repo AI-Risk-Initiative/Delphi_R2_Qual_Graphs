@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.4 Lack of transparency or interpretability - Business as usual Scenario</title>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8px;
+            flex: 1;
+            min-width: 200px;
+            overflow-wrap: break-word;
+            word-break: break-word;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
+            color: #000000;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .selection-title {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            color: #666666;
+            margin-bottom: 10px;
+        }
+
+        .nav-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 15px;
+            justify-content: center;
+        }
+
+        .nav-pill {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 25px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-family: 'Figtree', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            color: #000000;
+        }
+
+        .nav-pill:hover {
+            background: #e9ecef;
+            border-color: #000000;
+        }
+
+        .nav-pill.active {
+            background: #a32035;
+            color: white;
+            border-color: #a32035;
+        }
+
+        .tab-section {
+            display: none;
+        }
+
+        .tab-section.active {
+            display: block;
+        }
+
+        .content-box {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .criteria-header {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #a32035;
+            color: #a32035;
+        }
+
+        .summary-section {
+            margin-bottom: 20px;
+        }
+
+        .summary-text {
+            margin-bottom: 15px;
+            font-weight: 500;
+            color: #000000;
+            font-size: 15px;
+        }
+
+        .quote-details {
+            margin-top: 15px;
+        }
+
+        .quote-toggle {
+            cursor: pointer;
+            color: #000000;
+            font-weight: 500;
+            font-size: 14px;
+            padding: 8px 0;
+            border-bottom: 1px dotted #a32035;
+            display: inline-block;
+        }
+
+        .quote-toggle:hover {
+            color: #333333;
+        }
+
+        .quote-list {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .quote-list li {
+            margin-bottom: 12px;
+            font-size: 12px;
+            line-height: 1.3;
+            color: #000000;
+        }
+
+        @media (max-width: 768px) {
+            .nav-pill {
+                font-size: 10px;
+                padding: 4px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>7.4 Lack of transparency or interpretability - Business as usual Scenario</h1>
+
+        <div class="selection-title">Select a category:</div>
+        <div class="nav-pills">
+            <button class="nav-pill active" data-target="reasoning">
+                Reasoning
+            </button>
+            <button class="nav-pill" data-target="other">
+                Other
+            </button>
+        </div>
+
+        <div class="content-sections">
+            <div class="tab-section active" id="reasoning">
+                <div class="content-box">
+                    <h3 class="criteria-header">Reasoning</h3>
+                    <div class="summary-section">
+                        <p class="summary-text"><strong>AI-Generated Summary of Expert Comments:</strong> [editor's note: There were many comments for this risk, and an AI-generated summary may be misleading or incomplete]. Some experts view transparency as critical for preventing all other harms, citing real examples like Boeing crashes and healthcare misdiagnoses from black-box systems. Others see it as an indirect risk that enables other problems rather than causing direct damage. Under Business as Usual, substantial harm is expected as organizations can't explain model behavior, leading to regulatory non-compliance and untraceable errors. Key concern is inability to detect misaligned AI. Under Pragmatic Mitigations, views diverge - optimists believe explainability mandates will help significantly, while skeptics argue current practices already use available mitigations with little room for improvement. One expert notes transparency interventions "lag behind AI deployment" even with measures in place. Several emphasize this risk is more about provoking "crisis of trust" than direct material losses.</p>
+
+                        <details class="quote-details">
+                            <summary class="quote-toggle">See all expert comments (18)</summary>
+                            <ul class="quote-list">
+                                <li>"Harms from deploying systems in critical infrastructure (e.g. power grids, telecoms) without proper transparency may be severe. Knowing these risks, and reducing usage because of them, will reduce the likelihood of severe harms."</li>
+                                <li>"Limited transparency in model architecture, data provenance, and decision logic will hinder accountability and trust in AI systems. Substantial to severe harms are most probable as organizations struggle to explain model behavior, leading to regulatory non-compliance, bias, or errors that cannot be traced or corrected. Catastrophic outcomes, though unlikely, could occur if opaque AI systems make high-stakes or autonomous decisions without human understanding or oversight. With pragmatic mitigations such as mandatory documentation, explainable AI frameworks, open auditing, and transparent model reporting, risks decline considerably. Most harms shift to minor or substantial, with greater interpretability enabling effective governance, responsible use, and faster resolution of unintended outcomes."</li>
+                                <li>"I put almost all probability mass on "Severe Harm" as I think that level of harm will be achieved in both healthcare and finance. I also didn't change my predictions much between business-as-usual and pragmatic mitigations, because I think that business-as-usual already utilizes available cost-effective mitigations (which there aren't many of), and that not much can be achieved with extra effort. (relative to other types of harm)"</li>
+                                <li>"With sufficient research and safeguards, we maybe able to reduce the likelihood of lack of transparency and interpretability altogether."</li>
+                                <li>"I believe with technological advancement we would get a better understanding of the inner working of AI system and we'll be better placed to limit the harms caused by lack of transparency."</li>
+                                <li>"Pragmatic mitigations will have a strong influence on harm from a lack of transparency and interpretability, this is where AI deployers and developers will be expected to take more care to how they evaluate and assess their solutions, interpreting results and being transparent with users which will ensure appropriate use and auditability of AI"</li>
+                                <li>"Many other risks are mitigated by providing sufficient transparency and interpretability from model developers to AI deployers and users.  Additional telemetry may enable additional controls and evaluations, ensuring alignment and safe use."</li>
+                                <li>"The bulk of the more severe risks from lack of interpretability comes from potentially being unable to detect misaligned AIs, not misperformance in various monitoring systems we may have.  Reducing risks in this area requires scientific advancements."</li>
+                                <li>"With significant progress in interpretability, I think most of the severe and catastrophic harms could be mitigated."</li>
+                                <li>"For Business as Usual, I assigned the highest likelihood (45%) to substantial harm due to the persistent opacity of widely-deployed AI systems in critical domains. Without targeted mitigations, systematic failures in transparency can lead to widespread risks in sectors like finance, healthcare, and the public sector causing significant but generally non-catastrophic harms. Severe harm (25%) remains a notable risk where lack of interpretability directly enables misdiagnosis, regulatory breaches, or systemic discrimination at scale. Minor and negligible harms remain possible where stakes are lower, but even small failures can aggregate over many users. Catastrophic harm remains a low but non-negligible (5%) tail risk, particularly if opaque systems proliferate in high-stakes infrastructure or critical decision-making contexts.
+
+For Pragmatic Mitigations, higher allocations to negligible and minor harms reflect the impact of explainability mandates, basic regulatory guardrails, and sector-specific transparency guidelines. Substantial harm remains most likely (42%) as explainability interventions often lag behind AI deployment, and stakeholder understanding is not guaranteed. Severe harm is reduced (13%) but still possible, while catastrophic harm (5%) reflects persistent tail risk from incomplete mitigation or novel exploitations of system opacity."</li>
+                                <li>"More likely to provoke crisis of trust than a material loss in terms of damage"</li>
+                                <li>"Hard to diagnose risk specifically due to lack of interpretability and transparency. This is a somewhat specific mechanism, which lowers my probabilities estimates relative to broader mechanisms (overreliance, misuse, dangerous capabilities)
+
+Lack of interpretability can be a mechanism behind overreliance, so these estimates are tied to overreliance in a way
+
+I don't think better transparency practices in industry actually reduce risk in the next 5 years, although they're important in the long run"</li>
+                                <li>"I do not believe lacking transparency is a risk with meaningful societal implications in itself. All its potential negative implications are better captured by follow-on risks described on a societal scale. For its potential role in these follow-on risks, I nonetheless give it a low, but nonzero, chance of harm."</li>
+                                <li>"Black boxes makes it impossible to understand the casual reasoning behind the model outputs, to correct it and challenge the decision. Especially in the healthcare sector, but also in transportation, this has already caused deaths (see the Boing plane crashes due to the AI technology, but also in the healthcare sector due to misdiagnosis)"</li>
+                                <li>"The impact are indirect, rated overall risk that I think would be eliminated by better transparency and interpretability (eg risk from secretly power seeking AIs). Very low confidence."</li>
+                                <li>"There are good tools to explain automated decision-making and inferences, even in complex learning."</li>
+                                <li>"Generally, I rated a minor-to-moderate risk of harm, as I do not consider interpretability in and of itself a major risk, unless combined with other factors like smarter-than-human models with high autonomy and especially continual learning."</li>
+                                <li>"Transparency and interpretability are the keys to implementing any measures to mitigate any forms of harm. Without it and with the current trend, there would be no chance of preventing catastrophic risks."</li>
+                            </ul>
+                        </details>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-section" id="other">
+                <div class="content-box">
+                    <h3 class="criteria-header">Other</h3>
+                    <div class="summary-section">
+                        <p class="summary-text"><strong>AI-Generated Summary of Expert Comments:</strong> [SUMMARY TBC]</p>
+
+                        <details class="quote-details">
+                            <summary class="quote-toggle">See all expert comments (1)</summary>
+                            <ul class="quote-list">
+                                <li>"Given the pace of technological progress, I do not expect major changes in the trends within 5 years."</li>
+                            </ul>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pills = document.querySelectorAll('.nav-pill');
+            const sections = document.querySelectorAll('.tab-section');
+
+            pills.forEach(pill => {
+                pill.addEventListener('click', function() {
+                    pills.forEach(p => p.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('active'));
+
+                    this.classList.add('active');
+
+                    const targetId = this.getAttribute('data-target');
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

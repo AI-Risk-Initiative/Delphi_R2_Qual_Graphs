@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.1 Disinformation, surveillance, and influence at scale - Business as usual Scenario</title>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8px;
+            flex: 1;
+            min-width: 200px;
+            overflow-wrap: break-word;
+            word-break: break-word;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
+            color: #000000;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .selection-title {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            color: #666666;
+            margin-bottom: 10px;
+        }
+
+        .nav-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 15px;
+            justify-content: center;
+        }
+
+        .nav-pill {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 25px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-family: 'Figtree', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            color: #000000;
+        }
+
+        .nav-pill:hover {
+            background: #e9ecef;
+            border-color: #000000;
+        }
+
+        .nav-pill.active {
+            background: #a32035;
+            color: white;
+            border-color: #a32035;
+        }
+
+        .tab-section {
+            display: none;
+        }
+
+        .tab-section.active {
+            display: block;
+        }
+
+        .content-box {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .criteria-header {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #a32035;
+            color: #a32035;
+        }
+
+        .summary-section {
+            margin-bottom: 20px;
+        }
+
+        .summary-text {
+            margin-bottom: 15px;
+            font-weight: 500;
+            color: #000000;
+            font-size: 15px;
+        }
+
+        .quote-details {
+            margin-top: 15px;
+        }
+
+        .quote-toggle {
+            cursor: pointer;
+            color: #000000;
+            font-weight: 500;
+            font-size: 14px;
+            padding: 8px 0;
+            border-bottom: 1px dotted #a32035;
+            display: inline-block;
+        }
+
+        .quote-toggle:hover {
+            color: #333333;
+        }
+
+        .quote-list {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .quote-list li {
+            margin-bottom: 12px;
+            font-size: 12px;
+            line-height: 1.3;
+            color: #000000;
+        }
+
+        @media (max-width: 768px) {
+            .nav-pill {
+                font-size: 10px;
+                padding: 4px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>4.1 Disinformation, surveillance, and influence at scale - Business as usual Scenario</h1>
+
+        <div class="selection-title">Select a category:</div>
+        <div class="nav-pills">
+            <button class="nav-pill active" data-target="reasoning">
+                Reasoning
+            </button>
+            <button class="nav-pill" data-target="other">
+                Other
+            </button>
+        </div>
+
+        <div class="content-sections">
+            <div class="tab-section active" id="reasoning">
+                <div class="content-box">
+                    <h3 class="criteria-header">Reasoning</h3>
+                    <div class="summary-section">
+                        <p class="summary-text"><strong>AI-Generated Summary of Expert Comments:</strong> [editor's note: due to the volume of expert comments, this AI-generated summary may be insufficient/misleading]. 
+Main harms identified include deaths from disinformation operations (already documented in Ukraine and Russia conflicts), election manipulation, wars, civil unrest, erosion of democratic norms and public trust, surveillance transformation, and civil liberties costs, with existing AI-powered algorithmic persuasion and astroturfing activities estimated at catastrophic economic levels. 
+Under Business as Usual, experts note harm has already exceeded negligible and minor thresholds given documented deaths, with generative models and algorithmic amplification enabling propaganda, deepfakes, and behavioral profiling to undermine elections and potentially destabilize social cohesion or enable authoritarian control. 
+Under Pragmatic Mitigations including transparency standards, digital provenance, watermarking, verified identity, rate limits, and cross-platform takedown agreements, views diverge on effectiveness, with some experts seeing meaningful shifts toward lower harm through episodic rather than systemic misuse while others express skepticism about what pragmatic measures could achieve given poor societal response to weaker versions of this problem and governments' unwillingness to regulate themselves when AI provides battlefield advantages. 
+Several experts emphasize that even with mitigations, harm remains likely at higher levels due to volume and scale of operations, capacity gaps in deployment preparedness, and distributed costs to civil liberties that accrue to the public in ways unlikely to be measured.</p>
+
+                        <details class="quote-details">
+                            <summary class="quote-toggle">See all expert comments (13)</summary>
+                            <ul class="quote-list">
+                                <li>"Without coordinated global guardrails, the combination of advanced generative models and algorithmic amplification will make disinformation and mass surveillance powerful tools for manipulation. Under business as usual, substantial to severe harms are most likely as AI-generated propaganda, deepfakes, and behavioral profiling undermine public trust, influence elections, and erode privacy at scale. Catastrophic outcomes remain possible where such systems destabilize social cohesion or enable authoritarian control. With pragmatic mitigations, including transparency standards, digital provenance, AI watermarking, algorithmic accountability, and rights-based governance, these risks decline meaningfully. Most harms shift to minor or substantial, limited to episodic or localized misuse rather than systemic influence or global-scale manipulation."</li>
+                                <li>"AI in disinformation ops in Ukraine and Russia has already caused loss of life, and will not stop doing so today, which is why I have left minor harm and negligible harm at 0.1%."</li>
+                                <li>"I seen negligible and minor harms to be disqualified from consideration because disinformation (likely AI assisted in some cases) has leaded to deaths, suicides and damages already. So it's a 0% change we could have no harm or low harm with no deaths because we've already passed that threshold. However, so that the two versions make sense and are different, I think the minor harm level can serve as an indicator of what kinds of harms might be more prevalent alongside the other more severe harms."</li>
+                                <li>"I think mis/dis, like loss of consensus reality, can have downstream high-impact consequences. For instance, it could lead to wars. This makes me rate the consequence highly."</li>
+                                <li>"This rating reflects that countries are already using AI powered algorithmic persuassion techniques to sway each others citizens, and companies routinely use AI bots to astroturf and seed comment sections.  The total economic impact of these activities is hard to estimate accurately, but many estimates place it at a similar order of magnitude to the catastrophic economic impact level.   
+
+Given these AI powered interventions already routinely sway elections, key policy directions, mergers, stock market moves, investments and wars,  there is no indication the scale would reduce below the threshold over this period."</li>
+                                <li>"Substantial Harm (under the assumption of pragmatic mitigations) 40% - AI is transforming the nature of surveillance both digital and physical and targeting. Governments using advanced technologies in conflict are unlikely to impose strict regulations on themselves, as AI-enabled tools provide a battlefield advantage. Even if such regulations were attempted, their real-world impact would likely be minimal."</li>
+                                <li>"Given the rate of AI adoption, I think a lot of actors are unprepared to handle these risks at a deployment point and therefore we will probably still see severe harms manifest until the capacity gap is bridged or the government is more stringent on prohibited uses"</li>
+                                <li>"Unclear what pragmatic mitigations could be deployed in the next five years to make a significant difference, given how poorly society has responded to weaker versions of this problem."</li>
+                                <li>"Under Business as Usual, substantial to severe harm is most likely as disinformation campaigns will likely escalate without strong countermeasures. Pragmatic Mitigations shift probability toward lower severity levels by reducing extreme outcomes, though substantial harm remains most probable even with interventions."</li>
+                                <li>"Disinformation may have indirect impact, but the aggregate damage is more likely to be an aggregate of multiple events rather than a large scale event. That said, a large scale event (e.g. war, etc.) could have catastrophic impact, even if likelihood is much lower."</li>
+                                <li>"Using the "democratic norms" category, which seems the most relevant one for this risk, the potential for AI-generated misinformation, surveillance, and content recommendation to (more intensely) undermine electoral integrity is, in my opinion, overwhelmingly high. Pragmatic mitigations including certain forms of access control and transparency requirements would go a long way to suppress this."</li>
+                                <li>"BAU: Model quality + bot/agent scale + recommender targeting makes substantial harms common (trust erosion, localized policy shifts), with periodic severe episodes (election cycles, civil unrest); catastrophic remains low but plausible with synchronized, cross-platform ops. Pragmatic steps: verified-sender/caller identity, provenance/labeling, bot/automation friction, rate-limits/velocity caps, cross-platform takedown SLAs, and adversarial testing of recommender/targeting compress the tail while substantial stays frequent due to volume."</li>
+                                <li>"The costs and harms are critically accruing to the public even in the best case - they are unlikely to be measured, but the civil liberties and direct financial costs of needing to deal with this are near-certain to occur at a level costing at least few dollars per person, in a distributed fashion due to cost increases and similar; the intangible harms would likely also be systemic. Catastrophic harms would require more explicit and obvious failures."</li>
+                            </ul>
+                        </details>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-section" id="other">
+                <div class="content-box">
+                    <h3 class="criteria-header">Other</h3>
+                    <div class="summary-section">
+                        <p class="summary-text"><strong>AI-Generated Summary of Expert Comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pills = document.querySelectorAll('.nav-pill');
+            const sections = document.querySelectorAll('.tab-section');
+
+            pills.forEach(pill => {
+                pill.addEventListener('click', function() {
+                    pills.forEach(p => p.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('active'));
+
+                    this.classList.add('active');
+
+                    const targetId = this.getAttribute('data-target');
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

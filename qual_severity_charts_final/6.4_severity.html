@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6.4 Competitive dynamics - Business as usual Scenario</title>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8px;
+            flex: 1;
+            min-width: 200px;
+            overflow-wrap: break-word;
+            word-break: break-word;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
+            color: #000000;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .selection-title {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            color: #666666;
+            margin-bottom: 10px;
+        }
+
+        .nav-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 15px;
+            justify-content: center;
+        }
+
+        .nav-pill {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 25px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-family: 'Figtree', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            color: #000000;
+        }
+
+        .nav-pill:hover {
+            background: #e9ecef;
+            border-color: #000000;
+        }
+
+        .nav-pill.active {
+            background: #a32035;
+            color: white;
+            border-color: #a32035;
+        }
+
+        .tab-section {
+            display: none;
+        }
+
+        .tab-section.active {
+            display: block;
+        }
+
+        .content-box {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .criteria-header {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #a32035;
+            color: #a32035;
+        }
+
+        .summary-section {
+            margin-bottom: 20px;
+        }
+
+        .summary-text {
+            margin-bottom: 15px;
+            font-weight: 500;
+            color: #000000;
+            font-size: 15px;
+        }
+
+        .quote-details {
+            margin-top: 15px;
+        }
+
+        .quote-toggle {
+            cursor: pointer;
+            color: #000000;
+            font-weight: 500;
+            font-size: 14px;
+            padding: 8px 0;
+            border-bottom: 1px dotted #a32035;
+            display: inline-block;
+        }
+
+        .quote-toggle:hover {
+            color: #333333;
+        }
+
+        .quote-list {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .quote-list li {
+            margin-bottom: 12px;
+            font-size: 12px;
+            line-height: 1.3;
+            color: #000000;
+        }
+
+        @media (max-width: 768px) {
+            .nav-pill {
+                font-size: 10px;
+                padding: 4px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>6.4 Competitive dynamics - Business as usual Scenario</h1>
+
+        <div class="selection-title">Select a category:</div>
+        <div class="nav-pills">
+            <button class="nav-pill active" data-target="reasoning">
+                Reasoning
+            </button>
+            <button class="nav-pill" data-target="other">
+                Other
+            </button>
+        </div>
+
+        <div class="content-sections">
+            <div class="tab-section active" id="reasoning">
+                <div class="content-box">
+                    <h3 class="criteria-header">Reasoning</h3>
+                    <div class="summary-section">
+                        <p class="summary-text"><strong>AI-Generated Summary of Expert Comments:</strong> Experts see race dynamics as a key driver of risk, with companies prioritizing speed over safety. Under Business as Usual, substantial to severe harm is expected as competition drives under-regulated releases and reduced safety diligence. One expert draws parallels to auto and chemical industries, noting "winner-take-all dynamics" create even stronger pressures. Specific risks include autonomous weapons malfunctions, AI-generated election disinformation, and potential AI-bio events. Under Pragmatic Mitigations, experts see moderate improvement potential. One suggests industry self-regulation through mutual insurance and safety standards could prevent "AI Three Mile Island" scenarios, noting it's in developers' interests to avoid regulatory backlash. Others propose transparency commitments, coordinated testing, and information sharing. However, skepticism remains - one notes "competitive pressures may still create negative externalities" even with pragmatic policies. International coordination is seen as particularly uncertain, with government 'nudges' like incident sharing potentially useful domestically but less clear effects globally.</p>
+
+                        <details class="quote-details">
+                            <summary class="quote-toggle">See all expert comments (6)</summary>
+                            <ul class="quote-list">
+                                <li>"I believe there are very easy things industry can do to cool race dynamics and avoid acute catastrophes (e.g. a rogue AI taking down critical infrastructure, or correlated AI agents sparking a financial meltdown). Furthermore, it's in many actors' interests to avoid these (e.g. developers will want to avoid an AI Three Mile Island, to avoid public / regulatory backlash). It only requires a little bit of coordination. E.g. developers could form a mutual (insurance company owned by its policyholders) and police each other through this institution, while also collaborating on safety R&amp;D, setting minimum standards for the industry. Small nudges from the government can also have outsized impact in prompting these sorts of collaborations (e.g. the gov could facilitate greater incident reporting and information sharing between competing developers or insurers). 
+
+I'm less certain about the situation at the international level."</li>
+                                <li>"Rapid AI advancement may trigger aggressive competition among companies and economies, prioritizing speed and dominance over safety and ethics. Substantial to severe harms are most likely as race dynamics drive under-regulated model releases, uneven access to compute, and strategic secrecy that amplifies systemic risk. Catastrophic harm, while less probable, could occur if competitive escalation leads to uncontrolled AI proliferation or geopolitical instability. With pragmatic mitigations such as enterprise safety standards, shared research frameworks, compute governance, and antitrust enforcement the risk profile shifts toward minor to substantial harms. Responsible collaboration and multilateral regulation reduce race-to-the-bottom behaviors, ensuring innovation remains balanced with transparency, safety, and equitable competition."</li>
+                                <li>"Even with pragmatic policies, competitive pressures may still create negative externalities."</li>
+                                <li>"Business as Usual (BAU) Reasoning
+Under current practices, competitive pressure among AI developers and deployers is expected to intensify, leading to accelerated releases and reduced safety diligence. Without coordinated oversight or shared standards, organizations are likely to prioritize speed and market advantage over governance. This creates systemic exposure to misuse, model instability, and unintended consequences that could disrupt markets or critical infrastructure. The overall likelihood of substantial harm (44%) reflects the expected persistence of these structural incentives.
+
+Pragmatic interventions, such as transparency commitments, coordinated testing frameworks, and moderate regulatory alignment, temper some of the most harmful effects of competitive pressure. While rivalry will continue to drive risk, mechanisms for information sharing and accountability can limit escalation. As a result, the most likely outcome remains substantial harm (41%), but with a reduced probability of severe or catastrophic outcomes due to better safety culture and early-stage governance maturity."</li>
+                                <li>"Like in many industries, competitive pressures and market forces will likely push firms to release and promote models even when internally they understand that outsized harms are probable on their deployment. We have seen this behaviour before in the auto industry or chemical industries, and I suspect the same pressures will apply more strongly here given the winner-take-all dynamics."</li>
+                                <li>"I think negligible and minor harms are very likely to occur. I put the the second-highest distribution of probability on substantial harm, which I think can occur via e.g. a state actor deploying an autonomous weapon system that malfunctions and causes civilian casualties, which is especially salient given the increased number of armed conflicts in recent years, or an sophisticated, AI-generated disinformation campaign during a major national election could cause significant civil unrest and lasting erosion of trust in democratic institutions.
+
+I think there are also significant risks of an AI-bio event or autonomous military escalation causing severe or even catastrophic harms. 
+
+With pragmatic mitigations, I think the overall risk profile can be significantly improved."</li>
+                            </ul>
+                        </details>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-section" id="other">
+                <div class="content-box">
+                    <h3 class="criteria-header">Other</h3>
+                    <div class="summary-section">
+                        <p class="summary-text"><strong>AI-Generated Summary of Expert Comments:</strong> One expert clarifies they're measuring harm from the counterfactual difference between "race dynamics" versus "pragmatically mitigated race dynamics" worlds, noting "the race itself doesn't kill people" but creates conditions for harm. The other states they express harms in absolute rather than net terms, with most risk expected post-2030.</p>
+
+                        <details class="quote-details">
+                            <summary class="quote-toggle">See all expert comments (2)</summary>
+                            <ul class="quote-list">
+                                <li>"Here I'm attributing the total expected harm to the counterfactual 'race dynamics' world vs the 'pragmatically mitigated race dynamics' world. Of course there are other causal factors and the race itself doesn't kill people."</li>
+                                <li>"Here I express harms in absolute terms, not on net. Most of the risk comes from post-2030 dynamics"</li>
+                            </ul>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pills = document.querySelectorAll('.nav-pill');
+            const sections = document.querySelectorAll('.tab-section');
+
+            pills.forEach(pill => {
+                pill.addEventListener('click', function() {
+                    pills.forEach(p => p.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('active'));
+
+                    this.classList.add('active');
+
+                    const targetId = this.getAttribute('data-target');
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

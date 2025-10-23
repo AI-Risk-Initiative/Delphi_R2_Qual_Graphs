@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.1 Unfair discrimination and misrepresentation - Business as usual Scenario</title>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8px;
+            flex: 1;
+            min-width: 200px;
+            overflow-wrap: break-word;
+            word-break: break-word;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
+            color: #000000;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .selection-title {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            color: #666666;
+            margin-bottom: 10px;
+        }
+
+        .nav-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 15px;
+            justify-content: center;
+        }
+
+        .nav-pill {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 25px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-family: 'Figtree', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            color: #000000;
+        }
+
+        .nav-pill:hover {
+            background: #e9ecef;
+            border-color: #000000;
+        }
+
+        .nav-pill.active {
+            background: #a32035;
+            color: white;
+            border-color: #a32035;
+        }
+
+        .tab-section {
+            display: none;
+        }
+
+        .tab-section.active {
+            display: block;
+        }
+
+        .content-box {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .criteria-header {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #a32035;
+            color: #a32035;
+        }
+
+        .summary-section {
+            margin-bottom: 20px;
+        }
+
+        .summary-text {
+            margin-bottom: 15px;
+            font-weight: 500;
+            color: #000000;
+            font-size: 15px;
+        }
+
+        .quote-details {
+            margin-top: 15px;
+        }
+
+        .quote-toggle {
+            cursor: pointer;
+            color: #000000;
+            font-weight: 500;
+            font-size: 14px;
+            padding: 8px 0;
+            border-bottom: 1px dotted #a32035;
+            display: inline-block;
+        }
+
+        .quote-toggle:hover {
+            color: #333333;
+        }
+
+        .quote-list {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .quote-list li {
+            margin-bottom: 12px;
+            font-size: 12px;
+            line-height: 1.3;
+            color: #000000;
+        }
+
+        @media (max-width: 768px) {
+            .nav-pill {
+                font-size: 10px;
+                padding: 4px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>1.1 Unfair discrimination and misrepresentation - Business as usual Scenario</h1>
+
+        <div class="selection-title">Select a category:</div>
+        <div class="nav-pills">
+            <button class="nav-pill active" data-target="reasoning">
+                Reasoning
+            </button>
+            <button class="nav-pill" data-target="other">
+                Other
+            </button>
+        </div>
+
+        <div class="content-sections">
+            <div class="tab-section active" id="reasoning">
+                <div class="content-box">
+                    <h3 class="criteria-header">Reasoning</h3>
+                    <div class="summary-section">
+                        <p class="summary-text"><strong>AI-Generated Summary of Expert Comments:</strong> [editor's note: due to the volume of expert comments, this AI-generated summary may be insufficient/misleading]. Main harms identified include financial losses exceeding billions annually, systemic exclusion from jobs, loans, housing, and healthcare, and intentional discrimination already causing severe harm in documented cases like Uyghurs and Palestine, with losses including both economic impacts and lives lost. Under Business as Usual, experts expect substantial to catastrophic harm as biased AI scales rapidly across high-stakes sectors without adequate safeguards, with institutions underestimating severity due to poor visibility into who is harmed and discrimination manifesting as structural exclusion rather than overt violence. Under Pragmatic Mitigations, the consensus is that measures address surface symptoms through bias audits and diversity efforts rather than root causes, with implementation gaps, weak enforcement outside the EU, and cost-benefit trade-offs that inherently accept some risks. Most experts argue mitigations shift harm from minor to more serious categories rather than reducing overall harm, citing the theoretical impossibility of achieving all forms of fairness simultaneously and the likelihood that measures will be unevenly applied or circumvented by competitive pressures. One contrarian perspective suggests existing regulations like the Equality Act and GDPR already provide substantial protection, expecting only slightly suboptimal outcomes aggregating to millions in losses rather than billions.</p>
+
+                        <details class="quote-details">
+                            <summary class="quote-toggle">See all expert comments (13)</summary>
+                            <ul class="quote-list">
+                                <li>"Under Business as Usual, the severity is likely to be underestimated by institutions due to the lack of visibility into who is harmed and how. Discrimination doesn't always look like violence - but the long-term effect is structural exclusion, compounded inequity, and societal erosion. This reaches catastrophic levels when scaled through decision systems in healthcare, education, and finance.
+
+With Pragmatic Mitigations, some damage is reduced - but not resolved. Bias audits and "diversity layers" help address the surface symptoms, but without architectural realignment and representational inclusion, the core failure persists. These efforts can delay catastrophic outcomes, but not fully prevent them."</li>
+                                <li>"Under a "business as usual" scenario: substantial harm (35%) reflects bias entrenched across multiple sectors (recruitment, finance, insurance, healthcare, public services). 25% chance of severe harm: if high-stakes sectors adopt AI faster than proficiency/capacity. Minor harms (25%) is due to low-stakes sectors.
+
+Under a "Pragmatic Mitigations" scenario: minor (45%) or substantial harm (30%) because mitigation efforts (such as bias scans, system audits), Severe harm (8%) and catastrophic harm (2%) still remain because of some high-stakes contexts."</li>
+                                <li>"I strongly feel that if all countries reached necessary consesus on stopping the R&amp;D and development of AI applications reaching dangerous capabilites which may cause physical harm to human lives at this stage ( 2025-2030) and regulate private sectors in the AI domain , then we may stop the AI from creating severe and catastrophic harm.  Infact , the real  danger is not from use of AI for civilian purposes but real danger lies in use of AI in war /battle fileds . The regulation needs more focused on the same .  Firms working with the Defense sectors are the real danger. I am hopeful that Nations along with private sectors will reach necessary consenus before 2030"</li>
+                                <li>"Governments and organisations are already actively choosing to use AI to discriminate at scale, the cost to minority groups both financially and in lives lost is already high.  Uyghurs and Palestine are examples where discriminatory AI is already resulting in severe harm. Immigration, enforcement and killchain decisions are all impacted by this intentional bias.  The economic impact of unintentional AI bias on decisions is already impacting recruitment, HR, insurance and loans with total impacts that are sure to exceed $2 billion annually. Pragmatic mitigations can't reduce this risk below 100 lives lost in the next five years, and will struggle to keep it under $20 billion annually, but could prevent intentional discrimination becoming more widespread and limit the impacts of unintentional discrimination in high risk scenarios.  
+
+One might call "intentional" discrimination to be in a different risk taxonomy, but the intentional decision to adopt a model with a known bias against uyghurs would result in the outcomes, even if each outcome was not the intention.  Either way, the discriminatory impact from model bias seems extremely difficult to keep under $20b annually with only pragmatic interventions."</li>
+                                <li>"Losses are most likely financial and may be hard to quantify as they may often take the form of missed opportunities."</li>
+                                <li>"The "Pragmatic Mitigations" doesn't sufficiently tackle the likelihood of detection of these harms in an early enough timeline, or the reliability of available mitigations, as well as the absolute lack of incentive (outside the EU) apart from "reputational damages." And with growing invisibilization of bias and discrimination under authoritarian regimes, even despite good faith efforts from all actors involved, I think we will still suffer from substantial harms from AI systems in the near future."</li>
+                                <li>"Organizations and governments have to address mitigation of risks from AI usage as it has become quite clear that AI risks are growing and misrepresented outputs will cause severe harm to groups affected by these outputs. While we realize there is a balance between fostering innovation with low touch regulation and intrusive high touch regulation, right now, the scales are tipped towards no regulation which will cause severe harm in the next few years."</li>
+                                <li>"I assess a high probability of substantial to severe harm because AI systems for hiring, credit, insurance, healthcare, and criminal justice are rapidly scaling without adequate safeguards. The substantial harm rating (70%) reflects that widespread deployment of biased AI will likely cause significant financial losses and systemic discrimination affecting millions, particularly in high-stakes decisions. I see this on my research in AI fairness and safety. I assign 30% to severe harm because there's a meaningful risk of large-scale, irreversible impacts such as entire demographic groups being systematically excluded from economic opportunities, housing, or healthcare, creating compounding disadvantages that persist across the five-year period. Pragmatic mitigations such as bias audits, diverse training data, human oversight, and basic regulatory compliance can reduce but not eliminate harm. I assign 60% to substantial harm because even with mitigation efforts, AI systems will still encode historical biases, operate in discriminatory contexts, and involve implementation gaps between policy and practice. I maintain 20% for severe harm because pragmatic measures may be unevenly applied, insufficiently enforced, or circumvented by competitive pressures, leaving vulnerable populations exposed to systemic discrimination despite mitigation attempts."</li>
+                                <li>"It is very challenging to give a comprehensive explanation of my assessment, as it is based on my professional experience and my knowledge of the relevant literature and public debate on the topic.  I will just say that the notion of "Pragmatic mitigations" implies that there is a cost-effective mitigation effort, which means that the risks are weighted and balanced with other factors (economic mostly). As a result, there will be an acceptance of certain risks which might still occur, like for example in the AI Act (risk-based legislation). In my opinion, this is not effective to prevent harm. Governments should be stricter in banning and prosecuting harmful AI products, uses, and practices."</li>
+                                <li>"Discrimination is associated with well-known Python tools and learning tests to be prevented."</li>
+                                <li>"Reasons for minimal changes under pragmatic mitigations
+- There are already many safeguards against most of the risks here, reducing the expose many people will have to bias and discrimination. E.g. Equality Act makes this unlawful and gives people recourse, financial regulations already require deployments to prove fairness enforced by regulator, GDPR and similar regulations require fairness and transparency of data processing. All of these reduce the likelihood and severity of this risk, and make it more likely to be rectified/individuals to get redress.
+
+Effects I expect:
+- Discrimination and bias likely to lead to slightly suboptimal outcomes for some groups. E.g. particular people getting very slightly worse healthcare, job opportunities etc. Aggregated over an entire population this could add to a fair amount, e.g. millions of $ worth of counterfactual economic downside is very feasible. (I mean, just compare to value of integrating AI: companies already making $ billions in revenue, so presumably if it's just 1% less efficient for being biased that's millions)"</li>
+                                <li>"I think there is no question that the current situation would lead to catastrophic harms if we continue Business as Usual. In the case of the latter, it depends on the scope of Pragmatic Mitigations, but I do not believe that little additions can prevent the catastrophic harms substantially."</li>
+                                <li>"Harms from AI, just like from any other technology, cannot be entirely eliminated. Controls, especially cost-balanced ones, aim to shift the severity of harms to negligible and minor levels, while still allowing for a few substantial, severe, and catastrophic occurrences. When talking specifically about fairness, it is theoretically proven that it is not possible to achieve all forms of fairness simultaneously, so fairness harms will likely still exist."</li>
+                            </ul>
+                        </details>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-section" id="other">
+                <div class="content-box">
+                    <h3 class="criteria-header">Other</h3>
+                    <div class="summary-section">
+                        <p class="summary-text"><strong>AI-Generated Summary of Expert Comments:</strong> Experts raise several considerations about assessment scope and interpretation. Some experts included non-human animal life in their assessments rather than only human life, and based ratings primarily on intangible harms like systemic damage that may indirectly lead to loss of life through disparities in medical aid, housing, or loans. The catastrophic risk category was interpreted to include scenarios where severe AI-driven misrepresentation could promote or enable global war or mass casualty events. Experts note that some degree of differential treatment is inevitable given that models trained on past data will always reflect historical distributions. One expert emphasizes the need to educate AI engineers about ethical and social implications beyond technical coding skills.</p>
+
+                        <details class="quote-details">
+                            <summary class="quote-toggle">See all expert comments (4)</summary>
+                            <ul class="quote-list">
+                                <li>"We need to make sure current data scientist and AI engineers understand what they are writing right now at not just a "code". What they see it as a code can be someone's digital outlet and digital friend. There are social and engineering implications when it comes to AI. We need to educate and bring the bar up to be an AI engineer, it is not only about coding but also ethical implications that this AI model will have for consumers."</li>
+                                <li>"when we talk about total number of life lost, I wonder if most people's first reaction is only considering human life lost. I made my assessments based on all life on earth, including human but also non-human animals too. With the current rate of how AI is being used and integrated in people's life, it will become increasingly hard to tell truth from fake apart, people ask everything about themselves to chatGPT and other AI providers, leaving very little space for privacy."</li>
+                                <li>"The catastrophic chance is mainly based on the potential for severe misrepresentation from AI could promote, or enable, a global war or mass casualty event.
+
+AI systems will arguably always reflect the distribution of things in the past, and so the chances that there is no harm from that is also 0. A small degree of differential treatment will always be present just by the fact of using models trained on past data."</li>
+                                <li>"The ratings were mostly based on intangible harms such as systemic damage, which may lead to loss of life on some cases (e.g., disparities in medical aid, housing, loans)"</li>
+                            </ul>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pills = document.querySelectorAll('.nav-pill');
+            const sections = document.querySelectorAll('.tab-section');
+
+            pills.forEach(pill => {
+                pill.addEventListener('click', function() {
+                    pills.forEach(p => p.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('active'));
+
+                    this.classList.add('active');
+
+                    const targetId = this.getAttribute('data-target');
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

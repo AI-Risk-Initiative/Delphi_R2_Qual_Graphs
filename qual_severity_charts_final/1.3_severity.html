@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.3 Unequal performance across groups - Business as usual Scenario</title>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8px;
+            flex: 1;
+            min-width: 200px;
+            overflow-wrap: break-word;
+            word-break: break-word;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
+            color: #000000;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .selection-title {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            color: #666666;
+            margin-bottom: 10px;
+        }
+
+        .nav-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 15px;
+            justify-content: center;
+        }
+
+        .nav-pill {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 25px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-family: 'Figtree', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            color: #000000;
+        }
+
+        .nav-pill:hover {
+            background: #e9ecef;
+            border-color: #000000;
+        }
+
+        .nav-pill.active {
+            background: #a32035;
+            color: white;
+            border-color: #a32035;
+        }
+
+        .tab-section {
+            display: none;
+        }
+
+        .tab-section.active {
+            display: block;
+        }
+
+        .content-box {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .criteria-header {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #a32035;
+            color: #a32035;
+        }
+
+        .summary-section {
+            margin-bottom: 20px;
+        }
+
+        .summary-text {
+            margin-bottom: 15px;
+            font-weight: 500;
+            color: #000000;
+            font-size: 15px;
+        }
+
+        .quote-details {
+            margin-top: 15px;
+        }
+
+        .quote-toggle {
+            cursor: pointer;
+            color: #000000;
+            font-weight: 500;
+            font-size: 14px;
+            padding: 8px 0;
+            border-bottom: 1px dotted #a32035;
+            display: inline-block;
+        }
+
+        .quote-toggle:hover {
+            color: #333333;
+        }
+
+        .quote-list {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .quote-list li {
+            margin-bottom: 12px;
+            font-size: 12px;
+            line-height: 1.3;
+            color: #000000;
+        }
+
+        @media (max-width: 768px) {
+            .nav-pill {
+                font-size: 10px;
+                padding: 4px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>1.3 Unequal performance across groups - Business as usual Scenario</h1>
+
+        <div class="selection-title">Select a category:</div>
+        <div class="nav-pills">
+            <button class="nav-pill active" data-target="reasoning">
+                Reasoning
+            </button>
+            <button class="nav-pill" data-target="other">
+                Other
+            </button>
+        </div>
+
+        <div class="content-sections">
+            <div class="tab-section active" id="reasoning">
+                <div class="content-box">
+                    <h3 class="criteria-header">Reasoning</h3>
+                    <div class="summary-section">
+                        <p class="summary-text"><strong>AI-Generated Summary of Expert Comments:</strong> [editor's note: due to the volume of expert comments, this AI-generated summary may be insufficient/misleading] 
+Main harms identified include documented cases of unfair denial of financial products, predatory interest rates, and denial of access to care, with AI amplifying existing systemic discrimination across critical services like finance, healthcare, education, and public services. Under Business as Usual, experts expect substantial to severe harm as unequal performance spreads and widens inequality, particularly affecting low-resource language communities and countries with limited digital infrastructure disproportionately. Under Pragmatic Mitigations, fairness testing, data governance, and transparency standards meaningfully reduce large-scale harm and shift probability toward minor and substantial levels, though structural disparities persist due to residual algorithmic bias, insufficiently localized datasets, and uneven implementation across regions. Several experts note pragmatic measures can be overruled by human overseers for sociopolitical reasons and that growing authoritarian regimes may not incentivize better performance, though some suggest low barriers to entry and democratization may reduce inequality or that this risk is more amenable to mitigation than other categories.</p>
+
+                        <details class="quote-details">
+                            <summary class="quote-toggle">See all expert comments (16)</summary>
+                            <ul class="quote-list">
+                                <li>"Unequal performance across groups remains a significant risk under both scenarios. Without intervention, harm is likely to reach substantial or severe levels due to unresolved systemic biases. Pragmatic mitigations reduce the probability of catastrophic outcomes but are unlikely to eliminate structural disparities entirely. These estimates reflect both current evidence and historical precedent in algorithmic deployment across vulnerable populations."</li>
+                                <li>"With Pragmatic mitigations, minor harm is still likely as these systems interface with existing bureaucracy. Pragmatic mitigations can be overruled by human overseers for sociopolitical reasons, something which pragmatic mitigations are probably not designed to resist."</li>
+                                <li>"Under pragmatic mitigations, enterprises and regulators are expected to apply fairness testing, data governance, and transparency standards (e.g., ISO 42001, NIST AI RMF, or GSMA Responsible AI). This significantly reduces the probability of large-scale or irreversible harm.
+However, unequal performance remains a credible risk due to residual algorithmic bias, insufficiently localized datasets, and uneven implementation of AI ethics practices across regions particularly in developing markets.
+Therefore, ‚Minor and Substantial harms remain most probable, while Severe and Catastrophic harms are reduced to low but non-zero likelihoods"</li>
+                                <li>"Harm has already occurred with cases of unfair denial of financial products, predatory or unacceptable rates of interest applied due to characteristics not related to repayment potential, as well as unfair denial of access to care. With increased AI uses across all sectors, potential for harm will only continue to increase in severity unless sufficient safeguards are in place."</li>
+                                <li>"Under a Business as Usual scenario: substantial harm (40%) reflects the spread of unequal performance across critical service such as finance, health, education, and public services. Severe harm (25%) in high-stakes domains, and catastrophic harm (10%) because systemic discrimination causes  widen inequality, or erode public trust. Minor harm (20%) in low-stakes, and 5% remain negligible.
+Under a Pragmatic Mitigations, scenario: minor harm (40%) and substantial harm (30%), with more negligible harm (12%). Severe (15%) and catastrophic harm (3%): means pragmatic interventions can not eliminate unequal performance across groups."</li>
+                                <li>"I have estimated a very low likelihood of severe or catastrophic harm due to the nature of tasks and scale at which AI will be used over the next 5 years. However, in reduced scale events, I can see the risk of events of unequal performance across groups occurring with minor to moderate harm when conducted as business as usual, particularly in industries that receive lower governance oversight to date."</li>
+                                <li>"Even with pragmatic mitigations in place, unequal performance across groups is likely to remain a persistent issue. Efforts such as fairness auditing, diverse data sourcing, and public-sector standards can meaningfully reduce widespread harms, but structural and cross-cultural bias will continue to manifest across many domains.
+Despite these efforts, low-resource language communities and countries with limited digital infrastructure are expected to experience disproportionately severe impacts, as gaps in data diversity and governance capacity remain significant."</li>
+                                <li>"Even with mitigation plan, it does not look like we will slow down AI development. The environmental consequences of AI development and prevalent usage means that inevitably we will be accelerating climate change, destroying habitats of other non-human animals, causing life loss for both human and non-human animals."</li>
+                                <li>"Losses are likely financial and may be hard to quantify."</li>
+                                <li>"Once again, given the growing authoritarian regimes, I dont think these harms will be seriously regarded to incentivize better performance"</li>
+                                <li>"There is not insignificant likelihood that these issues end up being overblown because of inherent data balancing strategies used in training (not to manage risk, but inherently as a way to optimize the models)."</li>
+                                <li>"Unequal performance across groups is likely to produce substantial harm under business-as-usual due to amplification of existing societal inequalities. With pragmatic mitigations including fairness testing and diverse datasets, the risk profile shifts toward minor/negligible harms, though systemic issues persist."</li>
+                                <li>"The fact that barriers of entry are at an all-time low, and democratization increasing at a sustained pace, would make likelihood and severity of any inequality on the lower side."</li>
+                                <li>"Pragmatic Mitigations will alleviate the harm but they is a chance regulations will be still be adequately inadequate leading some residual substanstible harm."</li>
+                                <li>"Systemic discrimination is already present in our society. AI will only accelerate it"</li>
+                                <li>"I believe that in the case of Unequal Performance Across Groups, it is more likely to mitigate the risk with practical mitigations compared to other categories. However, it is also obvious in the recent studies that the current situation would lead to substantial harm in general without any intervention."</li>
+                            </ul>
+                        </details>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-section" id="other">
+                <div class="content-box">
+                    <h3 class="criteria-header">Other</h3>
+                    <div class="summary-section">
+                        <p class="summary-text"><strong>AI-Generated Summary of Expert Comments:</strong> [SUMMARY TBC]</p>
+
+                        <details class="quote-details">
+                            <summary class="quote-toggle">See all expert comments (3)</summary>
+                            <ul class="quote-list">
+                                <li>"There are two seperate issues being covered here, the level of economic impact and whether that impact is a bad thing or not.   When mortgages are a million dollars, Healthcare impacts the rest of your life and employment has impacts for years, it doesn't take many unequal decisions to add up to $20b per year of impact.   The question is not whether that will happen, as its likely already happening.  Nor is the question really whether it gets better or worse with AI replacing human bias.   The question is from whose perspective are we judging it?   Lets say we can set the bias to whatever we want.  If its different to the current biases then someone loses out.  transferring from disadvantaged communities into corporate profits, or from corporate profits into needy people's hands?  Either way that would be catastrophic to someone. One actor's catastrophic risk is another's windfall, they are not mutually exclusive and its likely we get both.    
+
+So my ratings of this risk reflect that the risk is gauranteed, and the pragmatic mitigations are merely balancing where we want the impact to go.  There is no such thing as unbiased in many of these fields."</li>
+                                <li>"My assessments reflect harms related to financial losses and other intangible harms; I think the risk of physical harms is very low."</li>
+                                <li>"Experts raise fundamental questions about how to judge harm in this domain. One expert argues that unequal decisions already add up to billions in annual impact, and the core question is not whether AI is better or worse than human bias but whose perspective determines what counts as harm. This expert emphasizes that "unbiased" is not achievable in many fields, and any shift in bias distribution creates winners and losers, meaning one actor's catastrophic risk is another's windfall. Pragmatic mitigations are viewed as balancing where impact goes rather than eliminating it. Separately, one expert notes their assessments reflect financial and intangible harms rather than physical harms, which they consider very low risk."</li>
+                            </ul>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pills = document.querySelectorAll('.nav-pill');
+            const sections = document.querySelectorAll('.tab-section');
+
+            pills.forEach(pill => {
+                pill.addEventListener('click', function() {
+                    pills.forEach(p => p.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('active'));
+
+                    this.classList.add('active');
+
+                    const targetId = this.getAttribute('data-target');
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

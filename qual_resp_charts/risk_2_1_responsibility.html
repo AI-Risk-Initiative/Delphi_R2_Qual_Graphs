@@ -261,7 +261,7 @@
                     <div class="content-column">
                         <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
                         <div class="summary-section">
-                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Multiple respondents emphasized primary-to-high responsibility because developers bear primary responsibility for implementing privacy protections, create foundational models that can learn and reproduce sensitive information, and have full control over architecture and training data. They exercise substantial control over collection, curation, and preprocessing of training data that frequently contains PII or sensitive information, with direct influence during model training to prevent memorization and unintended reproduction. They establish architectural and data-management foundations that determine whether privacy risks materialize, with control over model design, pre-training data, and embedding privacy-by-design principles. They must minimize memorization/regurgitation through filtering/dedup/differential privacy, and should indicate data provenance so deployers and governance can evaluate regulatory requirements.</p>
+                            <p class="summary-text"><strong>AI-generated summary:</strong> Multiple respondents emphasized primary-to-high responsibility because developers bear primary responsibility for implementing privacy protections, create foundational models that can learn and reproduce sensitive information, and have full control over architecture and training data. They exercise substantial control over collection, curation, and preprocessing of training data that frequently contains PII or sensitive information, with direct influence during model training to prevent memorization and unintended reproduction. They establish architectural and data-management foundations that determine whether privacy risks materialize, with control over model design, pre-training data, and embedding privacy-by-design principles. They must minimize memorization/regurgitation through filtering/dedup/differential privacy, and should indicate data provenance so deployers and governance can evaluate regulatory requirements.</p>
 
             <details class="quote-details">
                 <summary class="quote-toggle">See all expert comments (5)</summary>
@@ -274,7 +274,7 @@
                     <div class="content-column">
                         <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
                         <div class="summary-section">
-                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Several argued developers have secondary responsibility because many decisions really hinge on deployers and users regarding privacy implications—developers are more like data processors while deployers are data controllers. General-purpose providers cannot possibly survey every system for privacy issues and are responsible for mitigating training data leakage, but other leakage (like inputs/prompts with sensitive info) may come through other layers. They don't control live user data or what deployers send, how long it's kept, how it's combined with other data, or what's promised to users—responsibility should track control over exposure.</p>
+                            <p class="summary-text"><strong>AI-generated summary:</strong> Several argued developers have secondary responsibility because many decisions really hinge on deployers and users regarding privacy implications—developers are more like data processors while deployers are data controllers. General-purpose providers cannot possibly survey every system for privacy issues and are responsible for mitigating training data leakage, but other leakage (like inputs/prompts with sensitive info) may come through other layers. They don't control live user data or what deployers send, how long it's kept, how it's combined with other data, or what's promised to users—responsibility should track control over exposure.</p>
 
             <details class="quote-details">
                 <summary class="quote-toggle">See all expert comments (2)</summary>
@@ -291,7 +291,7 @@
                     <div class="content-column">
                         <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
                         <div class="summary-section">
-                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "Responsibility should follow who actually controls the data plane and can fix issues fast.
+                            <p class="summary-text"><strong>AI-generated summary:</strong> One expert commented: "Responsibility should follow who actually controls the data plane and can fix issues fast.
 ‚Ä¢        AI Dev (Specialized) - Primarily responsible. Domain models (health/finance/HR) ingest the spiciest data and are often deployed by the same team; privacy-by-design and release gating sit with them."</p>
 
             <details class="quote-details">
@@ -306,7 +306,7 @@
                     <div class="content-column">
                         <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
                         <div class="summary-section">
-                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                            <p class="summary-text"><strong>AI-generated summary:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
                         </div>
                     </div>
                 </div>
@@ -316,7 +316,7 @@
                     <div class="content-column">
                         <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
                         <div class="summary-section">
-                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Multiple respondents emphasized primary-to-high responsibility because deployers make critical decisions on how and where AI is used, are responsible for ensuring privacy safeguards in real-world deployment, and share high responsibility for enforcement and oversight. Decisions about privacy implications really hinge on deployers—they're the data controllers deciding how data is used. They determine purposes and means of AI use for end users with direct, ongoing relationships, designing and operating end-to-end data flows including collection, preprocessing, inference, logging, storage, and deletion. Deployers run production prompts, files, RAG, logging, plugins, and access controls—most leaks are configuration/integration/telemetry problems, so fixes live here. They have the highest responsibility as they control how privacy controls are implemented, conducting Privacy Impact Assessments and implementing technical controls. Although it's tempting to place primary responsibility on general-purpose AI, deployment is where relevant tradeoffs and decisions are made for specific use-cases.</p>
+                            <p class="summary-text"><strong>AI-generated summary:</strong> Multiple respondents emphasized primary-to-high responsibility because deployers make critical decisions on how and where AI is used, are responsible for ensuring privacy safeguards in real-world deployment, and share high responsibility for enforcement and oversight. Decisions about privacy implications really hinge on deployers—they're the data controllers deciding how data is used. They determine purposes and means of AI use for end users with direct, ongoing relationships, designing and operating end-to-end data flows including collection, preprocessing, inference, logging, storage, and deletion. Deployers run production prompts, files, RAG, logging, plugins, and access controls—most leaks are configuration/integration/telemetry problems, so fixes live here. They have the highest responsibility as they control how privacy controls are implemented, conducting Privacy Impact Assessments and implementing technical controls. Although it's tempting to place primary responsibility on general-purpose AI, deployment is where relevant tradeoffs and decisions are made for specific use-cases.</p>
 
             <details class="quote-details">
                 <summary class="quote-toggle">See all expert comments (7)</summary>
@@ -342,7 +342,7 @@ Bottom line: Responsibility should track control over exposure and privity with 
                     <div class="content-column">
                         <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
                         <div class="summary-section">
-                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                            <p class="summary-text"><strong>AI-generated summary:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
                         </div>
                     </div>
                 </div>
@@ -352,7 +352,7 @@ Bottom line: Responsibility should track control over exposure and privity with 
                     <div class="content-column">
                         <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
                         <div class="summary-section">
-                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert mentioned: "Multi-tenant isolation, snapshots, observability pipelines, vector stores, and KMS are powerful aggregation points; secure defaults and clear shared-responsibility matter.""</p>
+                            <p class="summary-text"><strong>AI-generated summary:</strong> One expert mentioned: "Multi-tenant isolation, snapshots, observability pipelines, vector stores, and KMS are powerful aggregation points; secure defaults and clear shared-responsibility matter.""</p>
 
             <details class="quote-details">
                 <summary class="quote-toggle">See all expert comments (1)</summary>
@@ -365,7 +365,7 @@ Bottom line: Responsibility should track control over exposure and privity with 
                     <div class="content-column">
                         <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
                         <div class="summary-section">
-                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Multiple respondents argued minimal responsibility because infrastructure providers cannot control for privacy risks and have minimal responsibility for data leaks. They don't obtain training data, develop models, train models, or deploy to end users—they only provide underlying hardware and infrastructure. They're primarily responsible for ensuring resources are properly protected and don't inadvertently leak customer data. As upstream processors with limited context about user purpose, consent, or data classifications, they don't control what's sent, how long it's kept, or what's promised to users—responsibility should track control over exposure.</p>
+                            <p class="summary-text"><strong>AI-generated summary:</strong> Multiple respondents argued minimal responsibility because infrastructure providers cannot control for privacy risks and have minimal responsibility for data leaks. They don't obtain training data, develop models, train models, or deploy to end users—they only provide underlying hardware and infrastructure. They're primarily responsible for ensuring resources are properly protected and don't inadvertently leak customer data. As upstream processors with limited context about user purpose, consent, or data classifications, they don't control what's sent, how long it's kept, or what's promised to users—responsibility should track control over exposure.</p>
 
             <details class="quote-details">
                 <summary class="quote-toggle">See all expert comments (3)</summary>
@@ -385,7 +385,7 @@ Bottom line: Responsibility should track control over exposure and privity with 
                     <div class="content-column">
                         <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
                         <div class="summary-section">
-                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "AI User - Moderately responsible. Don't paste secrets, use approved channels-but they can't change model internals or platform telemetry."</p>
+                            <p class="summary-text"><strong>AI-generated summary:</strong> One expert commented: "AI User - Moderately responsible. Don't paste secrets, use approved channels-but they can't change model internals or platform telemetry."</p>
 
             <details class="quote-details">
                 <summary class="quote-toggle">See all expert comments (1)</summary>
@@ -398,7 +398,7 @@ Bottom line: Responsibility should track control over exposure and privity with 
                     <div class="content-column">
                         <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
                         <div class="summary-section">
-                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Multiple respondents emphasized minimal-to-no responsibility because users have limited control over how AI processes data, with low influence and capacity despite medium obligation. They're primarily subjects of privacy protection rather than actors who can meaningfully address systemic privacy risks. Users have been primed by the current information ecosystem to skip Terms & Conditions and have no alternatives to use specific services unless they accept intrusive agreements. Users can't change model internals or platform telemetry, making them minimally responsible despite need for responsible usage.</p>
+                            <p class="summary-text"><strong>AI-generated summary:</strong> Multiple respondents emphasized minimal-to-no responsibility because users have limited control over how AI processes data, with low influence and capacity despite medium obligation. They're primarily subjects of privacy protection rather than actors who can meaningfully address systemic privacy risks. Users have been primed by the current information ecosystem to skip Terms & Conditions and have no alternatives to use specific services unless they accept intrusive agreements. Users can't change model internals or platform telemetry, making them minimally responsible despite need for responsible usage.</p>
 
             <details class="quote-details">
                 <summary class="quote-toggle">See all expert comments (3)</summary>
@@ -415,7 +415,7 @@ Bottom line: Responsibility should track control over exposure and privity with 
                     <div class="content-column">
                         <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
                         <div class="summary-section">
-                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "Two comments.  1) I did not change my choice for Affected Stakeholder to Not at all Responsible from Minimally Responsible because Affected Stakeholders do have some control over how their data is used when accessing a website's privacy settings, e.g., Marketing; if not switched off, will disclose PII to one-to-many third parties.  "</p>
+                            <p class="summary-text"><strong>AI-generated summary:</strong> One expert commented: "Two comments.  1) I did not change my choice for Affected Stakeholder to Not at all Responsible from Minimally Responsible because Affected Stakeholders do have some control over how their data is used when accessing a website's privacy settings, e.g., Marketing; if not switched off, will disclose PII to one-to-many third parties.  "</p>
 
             <details class="quote-details">
                 <summary class="quote-toggle">See all expert comments (1)</summary>
@@ -428,7 +428,7 @@ Bottom line: Responsibility should track control over exposure and privity with 
                     <div class="content-column">
                         <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
                         <div class="summary-section">
-                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Multiple respondents emphasized no-to-minimal responsibility because affected stakeholders are impacted by privacy risks but don't contribute to or control AI systems, holding no responsibility in this context. They lack both agency and systemic leverage to mitigate risk. They're data subjects with duty sitting upstream. One lowered ratings upon reflection that affected stakeholders have limited ability to address and prevent privacy violations, even though malicious actors might circumvent safeguards.</p>
+                            <p class="summary-text"><strong>AI-generated summary:</strong> Multiple respondents emphasized no-to-minimal responsibility because affected stakeholders are impacted by privacy risks but don't contribute to or control AI systems, holding no responsibility in this context. They lack both agency and systemic leverage to mitigate risk. They're data subjects with duty sitting upstream. One lowered ratings upon reflection that affected stakeholders have limited ability to address and prevent privacy violations, even though malicious actors might circumvent safeguards.</p>
 
             <details class="quote-details">
                 <summary class="quote-toggle">See all expert comments (3)</summary>
@@ -446,7 +446,7 @@ Bottom line: Responsibility should track control over exposure and privity with 
                     <div class="content-column">
                         <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
                         <div class="summary-section">
-                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Multiple respondents emphasized high responsibility because governance actors regulate and enforce standards with public duty to ensure responsible AI use and protect privacy. They share high responsibility for enforcement and oversight, establishing rules, regulations, and auditing frameworks that hold other actors accountable. Their responsibility is systemic—ensuring the ecosystem is incentivized to prioritize privacy protection and imposing penalties for non-compliance. They're responsible for making privacy requirements non-optional (minimization, retention limits, telemetry controls, audits, breach duties) and should be highly responsible as they set rules for Terms & Conditions. They specify how AI may be deployed and should evaluate data sovereignty and provenance for regulatory requirements.</p>
+                            <p class="summary-text"><strong>AI-generated summary:</strong> Multiple respondents emphasized high responsibility because governance actors regulate and enforce standards with public duty to ensure responsible AI use and protect privacy. They share high responsibility for enforcement and oversight, establishing rules, regulations, and auditing frameworks that hold other actors accountable. Their responsibility is systemic—ensuring the ecosystem is incentivized to prioritize privacy protection and imposing penalties for non-compliance. They're responsible for making privacy requirements non-optional (minimization, retention limits, telemetry controls, audits, breach duties) and should be highly responsible as they set rules for Terms & Conditions. They specify how AI may be deployed and should evaluate data sovereignty and provenance for regulatory requirements.</p>
 
             <details class="quote-details">
                 <summary class="quote-toggle">See all expert comments (6)</summary>
@@ -461,7 +461,7 @@ Bottom line: Responsibility should track control over exposure and privity with 
                     <div class="content-column">
                         <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
                         <div class="summary-section">
-                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "The Governance actor may be responsible for PREVENTING this harm, but they are not responsible for causing this harm, unless out of negligence."</p>
+                            <p class="summary-text"><strong>AI-generated summary:</strong> One expert commented: "The Governance actor may be responsible for PREVENTING this harm, but they are not responsible for causing this harm, unless out of negligence."</p>
 
             <details class="quote-details">
                 <summary class="quote-toggle">See all expert comments (1)</summary>

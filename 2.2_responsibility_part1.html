@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2.2 AI system security vulnerabilities and attacks - Responsibility - Part 1</title>
+    <title>2.2 AI system security vulnerabilities and attacks - Responsibility</title>
     <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -227,7 +227,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>2.2 AI system security vulnerabilities and attacks - Responsibility - Part 1</h1>
+        <h1>2.2 AI system security vulnerabilities and attacks - Responsibility</h1>
 
 
         <div class="selection-title">Select an actor:</div>
@@ -252,7 +252,7 @@
                     <div class="content-column">
                         <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
                         <div class="summary-section">
-                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Multiple respondents emphasized primary-to-high responsibility because general-purpose developers design and train foundational models widely deployed across sectors. They have technical expertise and direct influence over model architecture, training data, and security features. Their decisions significantly shape the risk landscape. They possess expertise to implement security safeguards, control critical components, and directly influence whether vulnerabilities exist or are mitigated. They must ship secure artifacts (signed/attested weights, supply-chain hygiene), poisoning defenses, and strong controls. Due to damage suffered by systems, general-purpose developers should be highly responsible. They mainly provide model services and should be highly responsible to system attacks.</p>
+                            <p class="summary-text"><strong>AI-generated summary:</strong> Multiple respondents emphasized primary-to-high responsibility because general-purpose developers design and train foundational models widely deployed across sectors. They have technical expertise and direct influence over model architecture, training data, and security features. Their decisions significantly shape the risk landscape. They possess expertise to implement security safeguards, control critical components, and directly influence whether vulnerabilities exist or are mitigated. They must ship secure artifacts (signed/attested weights, supply-chain hygiene), poisoning defenses, and strong controls. Due to damage suffered by systems, general-purpose developers should be highly responsible. They mainly provide model services and should be highly responsible to system attacks.</p>
 
             <details class="quote-details">
                 <summary class="quote-toggle">See all expert comments (3)</summary>
@@ -266,7 +266,7 @@ GP devs &amp; infra = high: must ship secure artifacts (signed/attested weights,
                     <div class="content-column">
                         <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
                         <div class="summary-section">
-                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Two experts argued against primary responsibility, noting it's odd to place this on generalized developers because overall architecture shouldn't be responsible for specialized actions. The model is not where vulnerability is—it's in the AI system itself. There are contexts (like coding apps) where app developers structure the environment in novel ways creating novel risks.</p>
+                            <p class="summary-text"><strong>AI-generated summary:</strong> Two experts argued against primary responsibility, noting it's odd to place this on generalized developers because overall architecture shouldn't be responsible for specialized actions. The model is not where vulnerability is—it's in the AI system itself. There are contexts (like coding apps) where app developers structure the environment in novel ways creating novel risks.</p>
 
             <details class="quote-details">
                 <summary class="quote-toggle">See all expert comments (2)</summary>
@@ -283,7 +283,7 @@ GP devs &amp; infra = high: must ship secure artifacts (signed/attested weights,
                     <div class="content-column">
                         <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
                         <div class="summary-section">
-                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Their deployment choices directly affect exposure to security risks. They also bear high responsibility given their role in integrating AI into operational environments and maintaining system security—misconfigurations or weak monitoring substantially amplify risks. Deployers run the live stack and decide hardening, patching, and incident response, making them primarily responsible. Responsibility follows who controls the attack surface and can remediate fast.</p>
+                            <p class="summary-text"><strong>AI-generated summary:</strong> Their deployment choices directly affect exposure to security risks. They also bear high responsibility given their role in integrating AI into operational environments and maintaining system security—misconfigurations or weak monitoring substantially amplify risks. Deployers run the live stack and decide hardening, patching, and incident response, making them primarily responsible. Responsibility follows who controls the attack surface and can remediate fast.</p>
 
             <details class="quote-details">
                 <summary class="quote-toggle">See all expert comments (2)</summary>
@@ -297,7 +297,7 @@ Deployers = primary: they run the live stack (models, RAG, agents/plugins, CI/CD
                     <div class="content-column">
                         <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
                         <div class="summary-section">
-                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert argued "The model is not where the vulnerability is - it is in the AI system.  Model deployment must engage in security posture management that mitigates known and unknown vulnerabilities.  Putting the responsibility with model developers is wrong-headed, as no system is expected to secure itself (thx Godel!).  Model developers may deploy their models (especially as services), in which case they are a Deployer.  But otherwise the consensus view that Model Developers are primarily responsible for security vulnerabilities doesn't reflect reality.  It's even difficult to hold software vendors responsible for software vulnerabilities in the current software ecosystem."</p>
+                            <p class="summary-text"><strong>AI-generated summary:</strong> One expert argued "The model is not where the vulnerability is - it is in the AI system.  Model deployment must engage in security posture management that mitigates known and unknown vulnerabilities.  Putting the responsibility with model developers is wrong-headed, as no system is expected to secure itself (thx Godel!).  Model developers may deploy their models (especially as services), in which case they are a Deployer.  But otherwise the consensus view that Model Developers are primarily responsible for security vulnerabilities doesn't reflect reality.  It's even difficult to hold software vendors responsible for software vulnerabilities in the current software ecosystem."</p>
 
             <details class="quote-details">
                 <summary class="quote-toggle">See all expert comments (1)</summary>
@@ -314,7 +314,7 @@ Deployers = primary: they run the live stack (models, RAG, agents/plugins, CI/CD
                     <div class="content-column">
                         <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
                         <div class="summary-section">
-                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Multiple respondents emphasized moderate-to-high responsibility because governance actors set policies, standards, and oversight mechanisms. They influence risk mitigation through regulation and accountability frameworks, shaping the environment even without direct technical control. They establish standards, enforce compliance, and shape sector-wide security practices. They can make controls mandatory including secure SDLC, artifact provenance, and reporting/audit requirements. They can set enforceable standards, audit compliance, and coordinate international regulatory responses.</p>
+                            <p class="summary-text"><strong>AI-generated summary:</strong> Multiple respondents emphasized moderate-to-high responsibility because governance actors set policies, standards, and oversight mechanisms. They influence risk mitigation through regulation and accountability frameworks, shaping the environment even without direct technical control. They establish standards, enforce compliance, and shape sector-wide security practices. They can make controls mandatory including secure SDLC, artifact provenance, and reporting/audit requirements. They can set enforceable standards, audit compliance, and coordinate international regulatory responses.</p>
 
             <details class="quote-details">
                 <summary class="quote-toggle">See all expert comments (2)</summary>
@@ -328,7 +328,7 @@ Governance = high: make these controls mandatory (secure SDLC, artifact provenan
                     <div class="content-column">
                         <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
                         <div class="summary-section">
-                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Some argued governance actors have minimal-to-moderate responsibility, arguing that saying governance actors are responsible for AI risks is like saying judges are responsible for crimes. They claim governance actors aren't really in a position to address this risk directly, so while responsible for building the ecosystem, it doesn't make sense to consider them responsible for this specific risk.</p>
+                            <p class="summary-text"><strong>AI-generated summary:</strong> Some argued governance actors have minimal-to-moderate responsibility, arguing that saying governance actors are responsible for AI risks is like saying judges are responsible for crimes. They claim governance actors aren't really in a position to address this risk directly, so while responsible for building the ecosystem, it doesn't make sense to consider them responsible for this specific risk.</p>
 
             <details class="quote-details">
                 <summary class="quote-toggle">See all expert comments (2)</summary>
@@ -345,7 +345,7 @@ Governance = high: make these controls mandatory (secure SDLC, artifact provenan
                     <div class="content-column">
                         <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
                         <div class="summary-section">
-                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One respondent argued "AI users can include any software engineers building systems with generated code that may contain security vulnerabilities. They bear a decent amount of responsibility for reviewing that output." Another mentioned that they "can contribute to risk reduction through basic security hygiene and cautious behavior"</p>
+                            <p class="summary-text"><strong>AI-generated summary:</strong> One respondent argued "AI users can include any software engineers building systems with generated code that may contain security vulnerabilities. They bear a decent amount of responsibility for reviewing that output." Another mentioned that they "can contribute to risk reduction through basic security hygiene and cautious behavior"</p>
 
             <details class="quote-details">
                 <summary class="quote-toggle">See all expert comments (1)</summary>
@@ -358,7 +358,7 @@ Governance = high: make these controls mandatory (secure SDLC, artifact provenan
                     <div class="content-column">
                         <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
                         <div class="summary-section">
-                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Users are at most minimally responsible due to minimal expected capacity (expertise, resources) to effectively control against attacks. Putting onus on users would reduce accountability of companies, going against lessons learned throughout history of product safety, engineering, and regulation. Users generally lack technical capacity to prevent advanced attacks, and they don't control architecture or patch cadence.</p>
+                            <p class="summary-text"><strong>AI-generated summary:</strong> Users are at most minimally responsible due to minimal expected capacity (expertise, resources) to effectively control against attacks. Putting onus on users would reduce accountability of companies, going against lessons learned throughout history of product safety, engineering, and regulation. Users generally lack technical capacity to prevent advanced attacks, and they don't control architecture or patch cadence.</p>
 
             <details class="quote-details">
                 <summary class="quote-toggle">See all expert comments (3)</summary>
@@ -380,7 +380,7 @@ Users = minimal; affected stakeholders = none: they can practice hygiene but don
                     <div class="content-column">
                         <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
                         <div class="summary-section">
-                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Respondents emphasized high-to-primary responsibility because specialized developers create domain-specific models for sensitive applications (healthcare, finance), with control over model design and data selection. Their decisions can introduce or mitigate vulnerabilities, giving them high responsibility. They often also deploy systems in sensitive domains (health/finance/OT) that carry higher stakes. They argued that due to damage suffered by systems, specialized developers should bear primary responsibility.</p>
+                            <p class="summary-text"><strong>AI-generated summary:</strong> Respondents emphasized high-to-primary responsibility because specialized developers create domain-specific models for sensitive applications (healthcare, finance), with control over model design and data selection. Their decisions can introduce or mitigate vulnerabilities, giving them high responsibility. They often also deploy systems in sensitive domains (health/finance/OT) that carry higher stakes. They argued that due to damage suffered by systems, specialized developers should bear primary responsibility.</p>
 
             <details class="quote-details">
                 <summary class="quote-toggle">See all expert comments (3)</summary>
@@ -394,7 +394,7 @@ Specialized devs = primary: often also deploy; domain systems (health/finance/OT
                     <div class="content-column">
                         <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
                         <div class="summary-section">
-                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
+                            <p class="summary-text"><strong>AI-generated summary:</strong> [NO EXPERT COMMENTS PROVIDED]</p>
                         </div>
                     </div>
                 </div>
@@ -404,7 +404,7 @@ Specialized devs = primary: often also deploy; domain systems (health/finance/OT
                     <div class="content-column">
                         <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
                         <div class="summary-section">
-                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Their deployment choices directly affect exposure to security risks. They also bear high responsibility given their role in integrating AI into operational environments and maintaining system security—misconfigurations or weak monitoring substantially amplify risks. Deployers run the live stack and decide hardening, patching, and incident response, making them primarily responsible. Responsibility follows who controls the attack surface and can remediate fast.</p>
+                            <p class="summary-text"><strong>AI-generated summary:</strong> Their deployment choices directly affect exposure to security risks. They also bear high responsibility given their role in integrating AI into operational environments and maintaining system security—misconfigurations or weak monitoring substantially amplify risks. Deployers run the live stack and decide hardening, patching, and incident response, making them primarily responsible. Responsibility follows who controls the attack surface and can remediate fast.</p>
 
             <details class="quote-details">
                 <summary class="quote-toggle">See all expert comments (2)</summary>
@@ -418,7 +418,7 @@ Deployers = primary: they run the live stack (models, RAG, agents/plugins, CI/CD
                     <div class="content-column">
                         <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
                         <div class="summary-section">
-                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert argued "The model is not where the vulnerability is - it is in the AI system.  Model deployment must engage in security posture management that mitigates known and unknown vulnerabilities.  Putting the responsibility with model developers is wrong-headed, as no system is expected to secure itself (thx Godel!).  Model developers may deploy their models (especially as services), in which case they are a Deployer.  But otherwise the consensus view that Model Developers are primarily responsible for security vulnerabilities doesn't reflect reality.  It's even difficult to hold software vendors responsible for software vulnerabilities in the current software ecosystem."</p>
+                            <p class="summary-text"><strong>AI-generated summary:</strong> One expert argued "The model is not where the vulnerability is - it is in the AI system.  Model deployment must engage in security posture management that mitigates known and unknown vulnerabilities.  Putting the responsibility with model developers is wrong-headed, as no system is expected to secure itself (thx Godel!).  Model developers may deploy their models (especially as services), in which case they are a Deployer.  But otherwise the consensus view that Model Developers are primarily responsible for security vulnerabilities doesn't reflect reality.  It's even difficult to hold software vendors responsible for software vulnerabilities in the current software ecosystem."</p>
 
             <details class="quote-details">
                 <summary class="quote-toggle">See all expert comments (1)</summary>
@@ -435,7 +435,7 @@ Deployers = primary: they run the live stack (models, RAG, agents/plugins, CI/CD
                     <div class="content-column">
                         <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
                         <div class="summary-section">
-                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> AI developers and third-party vendors/cloud providers carry very high responsibility, as they possess the technical expertise to implement security safeguards, control critical components of AI systems, and directly influence whether vulnerabilities exist or are mitigated.</p>
+                            <p class="summary-text"><strong>AI-generated summary:</strong> AI developers and third-party vendors/cloud providers carry very high responsibility, as they possess the technical expertise to implement security safeguards, control critical components of AI systems, and directly influence whether vulnerabilities exist or are mitigated.</p>
 
             <details class="quote-details">
                 <summary class="quote-toggle">See all expert comments (2)</summary>
@@ -449,7 +449,7 @@ GP devs &amp; infra = high: must ship secure artifacts (signed/attested weights,
                     <div class="content-column">
                         <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
                         <div class="summary-section">
-                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Multiple respondents argued fpr minimal responsibility because infrastructure providers don't acquire training data, build models, train models, or deploy models. They only provide underlying hardware and infrastructure, with primary responsibility being to ensure resources are properly protected.</p>
+                            <p class="summary-text"><strong>AI-generated summary:</strong> Multiple respondents argued fpr minimal responsibility because infrastructure providers don't acquire training data, build models, train models, or deploy models. They only provide underlying hardware and infrastructure, with primary responsibility being to ensure resources are properly protected.</p>
 
             <details class="quote-details">
                 <summary class="quote-toggle">See all expert comments (1)</summary>
@@ -466,7 +466,7 @@ GP devs &amp; infra = high: must ship secure artifacts (signed/attested weights,
                     <div class="content-column">
                         <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
                         <div class="summary-section">
-                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One respondent argued "AI users can include any software engineers building systems with generated code that may contain security vulnerabilities. They bear a decent amount of responsibility for reviewing that output." Another mentioned that they "can contribute to risk reduction through basic security hygiene and cautious behavior"</p>
+                            <p class="summary-text"><strong>AI-generated summary:</strong> One respondent argued "AI users can include any software engineers building systems with generated code that may contain security vulnerabilities. They bear a decent amount of responsibility for reviewing that output." Another mentioned that they "can contribute to risk reduction through basic security hygiene and cautious behavior"</p>
 
             <details class="quote-details">
                 <summary class="quote-toggle">See all expert comments (1)</summary>
@@ -479,7 +479,7 @@ GP devs &amp; infra = high: must ship secure artifacts (signed/attested weights,
                     <div class="content-column">
                         <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
                         <div class="summary-section">
-                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Users are at most minimally responsible due to minimal expected capacity (expertise, resources) to effectively control against attacks. Putting onus on users would reduce accountability of companies, going against lessons learned throughout history of product safety, engineering, and regulation. Users generally lack technical capacity to prevent advanced attacks, and they don't control architecture or patch cadence.</p>
+                            <p class="summary-text"><strong>AI-generated summary:</strong> Users are at most minimally responsible due to minimal expected capacity (expertise, resources) to effectively control against attacks. Putting onus on users would reduce accountability of companies, going against lessons learned throughout history of product safety, engineering, and regulation. Users generally lack technical capacity to prevent advanced attacks, and they don't control architecture or patch cadence.</p>
 
             <details class="quote-details">
                 <summary class="quote-toggle">See all expert comments (3)</summary>
@@ -497,13 +497,13 @@ Users = minimal; affected stakeholders = none: they can practice hygiene but don
                     <div class="content-column">
                         <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
                         <div class="summary-section">
-                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> [SUMMARY TBC]</p>
+                            <p class="summary-text"><strong>AI-generated summary:</strong> [SUMMARY TBC]</p>
                         </div>
                     </div>
                     <div class="content-column">
                         <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
                         <div class="summary-section">
-                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> One expert commented: "Responsibility follows who controls the attack surface and can remediate fast. affected stakeholders = none: they can practice hygiene but don't control architecture or patch cadence."</p>
+                            <p class="summary-text"><strong>AI-generated summary:</strong> One expert commented: "Responsibility follows who controls the attack surface and can remediate fast. affected stakeholders = none: they can practice hygiene but don't control architecture or patch cadence."</p>
 
             <details class="quote-details">
                 <summary class="quote-toggle">See all expert comments (1)</summary>
@@ -521,7 +521,7 @@ Users = minimal; affected stakeholders = none: they can practice hygiene but don
                     <div class="content-column">
                         <h3 class="criteria-header higher">Reasons for Higher Responsibility</h3>
                         <div class="summary-section">
-                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Multiple respondents emphasized moderate-to-high responsibility because governance actors set policies, standards, and oversight mechanisms. They influence risk mitigation through regulation and accountability frameworks, shaping the environment even without direct technical control. They establish standards, enforce compliance, and shape sector-wide security practices. They can make controls mandatory including secure SDLC, artifact provenance, and reporting/audit requirements. They can set enforceable standards, audit compliance, and coordinate international regulatory responses.</p>
+                            <p class="summary-text"><strong>AI-generated summary:</strong> Multiple respondents emphasized moderate-to-high responsibility because governance actors set policies, standards, and oversight mechanisms. They influence risk mitigation through regulation and accountability frameworks, shaping the environment even without direct technical control. They establish standards, enforce compliance, and shape sector-wide security practices. They can make controls mandatory including secure SDLC, artifact provenance, and reporting/audit requirements. They can set enforceable standards, audit compliance, and coordinate international regulatory responses.</p>
 
             <details class="quote-details">
                 <summary class="quote-toggle">See all expert comments (2)</summary>
@@ -535,7 +535,7 @@ Governance = high: make these controls mandatory (secure SDLC, artifact provenan
                     <div class="content-column">
                         <h3 class="criteria-header lower">Reasons for Lower Responsibility</h3>
                         <div class="summary-section">
-                            <p class="summary-text"><strong>AI-generated summary of expert comments:</strong> Some argued governance actors have minimal-to-moderate responsibility, arguing that saying governance actors are responsible for AI risks is like saying judges are responsible for crimes. They claim governance actors aren't really in a position to address this risk directly, so while responsible for building the ecosystem, it doesn't make sense to consider them responsible for this specific risk.</p>
+                            <p class="summary-text"><strong>AI-generated summary:</strong> Some argued governance actors have minimal-to-moderate responsibility, arguing that saying governance actors are responsible for AI risks is like saying judges are responsible for crimes. They claim governance actors aren't really in a position to address this risk directly, so while responsible for building the ecosystem, it doesn't make sense to consider them responsible for this specific risk.</p>
 
             <details class="quote-details">
                 <summary class="quote-toggle">See all expert comments (2)</summary>
